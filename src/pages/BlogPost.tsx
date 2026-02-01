@@ -239,25 +239,7 @@ const BlogPost = () => {
               {/* Article Content */}
               <div
                 ref={contentRef}
-                className="prose prose-lg max-w-none
-                  prose-headings:font-serif prose-headings:text-foreground prose-headings:scroll-mt-20
-                  prose-h2:text-2xl prose-h2:md:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-3 prose-h2:border-b prose-h2:border-border
-                  prose-h3:text-xl prose-h3:md:text-2xl prose-h3:mt-8 prose-h3:mb-4
-                  prose-p:text-foreground/90 prose-p:leading-relaxed prose-p:mb-6
-                  prose-a:text-secondary prose-a:font-medium prose-a:underline-offset-4 hover:prose-a:text-secondary/80
-                  prose-strong:text-foreground prose-strong:font-semibold
-                  prose-ul:my-6 prose-ul:space-y-2 prose-ol:my-6 prose-ol:space-y-2
-                  prose-li:text-foreground/90 prose-li:marker:text-secondary
-                  prose-blockquote:border-l-4 prose-blockquote:border-secondary prose-blockquote:bg-muted/50 prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:rounded-r-xl prose-blockquote:not-italic prose-blockquote:text-foreground/80
-                  prose-img:rounded-xl prose-img:shadow-card prose-img:my-8
-                  prose-table:border-collapse prose-table:w-full prose-table:my-8 prose-table:overflow-hidden prose-table:rounded-xl prose-table:border prose-table:border-border
-                  prose-th:bg-muted prose-th:p-4 prose-th:text-left prose-th:font-semibold prose-th:border-b prose-th:border-border
-                  prose-td:p-4 prose-td:border-b prose-td:border-border
-                  prose-tr:hover:bg-muted/50 prose-tr:transition-colors
-                  prose-code:bg-muted prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm prose-code:before:content-none prose-code:after:content-none
-                  prose-pre:bg-muted prose-pre:rounded-xl prose-pre:p-4
-                  prose-hr:border-border prose-hr:my-12
-                "
+                className="blog-content"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
 
