@@ -77,22 +77,23 @@ const Gallery = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Mehendi Design Gallery - 1000+ Free डिज़ाइन | AIMehendi.in</title>
-        <meta name="description" content="Browse 1000+ beautiful mehendi designs. Bridal, Arabic, Mandala, Simple mehendi patterns. Free download करें!" />
+        <title>Free Mehndi Download HD | 1000+ Mehendi Design Gallery - AIMehendi.in</title>
+        <meta name="description" content="Free mehndi download HD - Browse 1000+ beautiful mehendi designs. Bridal mehendi design 2026, dulhan mehendi design latest, simple arabic mehndi back hand, mandala mehndi design for beginners। Free download करें!" />
+        <meta name="keywords" content="free mehndi download hd, bridal mehendi design 2026, dulhan mehendi design latest, simple arabic mehndi back hand, mandala mehndi design for beginners, finger mehndi design easy, karwa chauth mehndi design, raksha bandhan mehndi simple" />
         <meta name="author" content="Dheeraj Tagde" />
         <link rel="canonical" href={`${siteUrl}/gallery`} />
         
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${siteUrl}/gallery`} />
-        <meta property="og:title" content="Mehendi Design Gallery - 1000+ Free Patterns" />
-        <meta property="og:description" content="Browse beautiful mehendi designs. Bridal, Arabic, Mandala patterns. Free download!" />
+        <meta property="og:title" content="Free Mehndi Download HD | 1000+ Mehendi Design Gallery" />
+        <meta property="og:description" content="Browse bridal mehendi design 2026, dulhan mehendi design latest, simple arabic mehndi patterns. Free HD download!" />
         <meta property="og:image" content={`${siteUrl}/og-image.jpg`} />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Mehendi Design Gallery | AIMehendi.in" />
-        <meta name="twitter:description" content="1000+ beautiful mehendi designs. Free download!" />
+        <meta name="twitter:title" content="Free Mehndi Download HD | Mehendi Design Gallery" />
+        <meta name="twitter:description" content="1000+ beautiful mehendi designs - bridal, arabic, mandala. Free HD download!" />
         
         {/* JSON-LD Schemas */}
         <script type="application/ld+json">
