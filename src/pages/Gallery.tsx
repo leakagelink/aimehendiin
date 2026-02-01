@@ -157,7 +157,7 @@ const Gallery = () => {
           </div>
 
           {/* Gallery */}
-          <GalleryGrid showFilters={true} />
+          <GalleryGrid showFilters={true} showGenerateButton={false} />
         </div>
       </main>
 
