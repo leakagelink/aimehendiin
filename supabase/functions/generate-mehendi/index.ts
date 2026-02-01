@@ -36,7 +36,7 @@ serve(async (req) => {
   }
 
   try {
-    const { designType, handType, styles, customPrompt } = await req.json();
+    const { designType, handType, styles, customPrompt, referenceImage } = await req.json();
     
     const GOOGLE_API_KEY = Deno.env.get("GOOGLE_GEMINI_API_KEY");
     if (!GOOGLE_API_KEY) {
@@ -51,18 +51,6 @@ serve(async (req) => {
       .filter(Boolean)
       .join(", ");
 
-    const basePrompt = `Create a beautiful traditional Indian mehendi (henna) tattoo design illustration. ${designPrompt} ${handPrompt}. ${stylePrompts}. ${customPrompt || ""}
-    
-Style requirements:
-- The design should be a clean, high-quality illustration showing mehendi/henna art
-- Brown/henna colored design on a light cream/skin-toned background
-- Traditional mehendi art style with authentic Indian patterns
-- The design should be detailed and professional-looking
-- Include paisleys, flowers, leaves, and decorative elements typical of mehendi art
-- Ultra high resolution, detailed illustration`;
-
-    console.log("Generating mehendi design with prompt:", basePrompt);
-
     // Initialize Google Generative AI
     const genAI = new GoogleGenerativeAI(GOOGLE_API_KEY);
     const model = genAI.getGenerativeModel({ 
@@ -72,9 +60,55 @@ Style requirements:
       } as any,
     });
 
-    const response = await model.generateContent(basePrompt);
-    const result = response.response;
+    let response;
 
+    // Check if we have a reference image to edit
+    if (referenceImage) {
+      // Extract base64 data and mime type from the data URL
+      const matches = referenceImage.match(/^data:([^;]+);base64,(.+)$/);
+      if (!matches) {
+        throw new Error("Invalid reference image format");
+      }
+      const mimeType = matches[1];
+      const base64Data = matches[2];
+
+      const editPrompt = `Based on this reference image, create a beautiful traditional Indian mehendi (henna) tattoo design. ${designPrompt} ${handPrompt}. ${stylePrompts}. ${customPrompt || ""}
+      
+Apply mehendi/henna design inspired by this image:
+- Incorporate elements from the reference into the mehendi pattern
+- Brown/henna colored design on light cream/skin-toned background
+- Traditional mehendi art style with authentic Indian patterns
+- Include paisleys, flowers, leaves, and decorative elements
+- Ultra high resolution, detailed illustration`;
+
+      console.log("Editing with reference image, prompt:", editPrompt);
+
+      response = await model.generateContent([
+        { text: editPrompt },
+        {
+          inlineData: {
+            mimeType: mimeType,
+            data: base64Data,
+          },
+        },
+      ]);
+    } else {
+      // Standard generation without reference image
+      const basePrompt = `Create a beautiful traditional Indian mehendi (henna) tattoo design illustration. ${designPrompt} ${handPrompt}. ${stylePrompts}. ${customPrompt || ""}
+    
+Style requirements:
+- The design should be a clean, high-quality illustration showing mehendi/henna art
+- Brown/henna colored design on a light cream/skin-toned background
+- Traditional mehendi art style with authentic Indian patterns
+- The design should be detailed and professional-looking
+- Include paisleys, flowers, leaves, and decorative elements typical of mehendi art
+- Ultra high resolution, detailed illustration`;
+
+      console.log("Generating mehendi design with prompt:", basePrompt);
+      response = await model.generateContent(basePrompt);
+    }
+
+    const result = response.response;
     console.log("AI response received successfully");
 
     // Extract image from the response
@@ -99,7 +133,7 @@ Style requirements:
     return new Response(
       JSON.stringify({ 
         imageUrl,
-        message: "Design generated successfully"
+        message: referenceImage ? "Design generated from reference" : "Design generated successfully"
       }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
