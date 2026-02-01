@@ -60,7 +60,7 @@ const TableOfContents = ({ content }: TableOfContentsProps) => {
   return (
     <nav className="bg-muted/30 border border-border rounded-xl p-5 mb-8">
       <div className="flex items-center gap-2 mb-4">
-        <List className="h-5 w-5 text-secondary" />
+        <List className="h-5 w-5 text-secondary" aria-hidden="true" />
         <h3 className="font-serif font-semibold text-foreground">
           इस Article में
         </h3>

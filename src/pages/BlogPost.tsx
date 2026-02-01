@@ -100,7 +100,7 @@ const BlogPost = () => {
           <div className="container text-center">
             <div className="max-w-md mx-auto">
               <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-muted flex items-center justify-center">
-                <BookOpen className="h-12 w-12 text-muted-foreground" />
+                <BookOpen className="h-12 w-12 text-muted-foreground" aria-hidden="true" />
               </div>
               <h1 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Article Not Found
@@ -110,7 +110,7 @@ const BlogPost = () => {
               </p>
               <Link to="/blog">
                 <Button size="lg">
-                  <ArrowLeft className="h-4 w-4 mr-2" />
+                  <ArrowLeft className="h-4 w-4 mr-2" aria-hidden="true" />
                   Back to Blog
                 </Button>
               </Link>
@@ -210,17 +210,17 @@ const BlogPost = () => {
               {/* Meta Info */}
               <div className="flex flex-wrap items-center gap-4 md:gap-6 text-sm">
                 <div className="flex items-center gap-2 text-muted-foreground">
-                  <User className="h-4 w-4" />
+                  <User className="h-4 w-4" aria-hidden="true" />
                   <span className="font-medium text-foreground">Dheeraj Tagde</span>
                 </div>
                 <div className="flex items-center gap-2 text-muted-foreground">
-                  <Calendar className="h-4 w-4" />
+                  <Calendar className="h-4 w-4" aria-hidden="true" />
                   <time dateTime={post.published_at || post.created_at || ""}>
                     {formatDate(post.published_at || post.created_at)}
                   </time>
                 </div>
                 <div className="flex items-center gap-2 text-muted-foreground">
-                  <Clock className="h-4 w-4" />
+                  <Clock className="h-4 w-4" aria-hidden="true" />
                   <span>{post.read_time} min read</span>
                 </div>
                 <button
@@ -228,7 +228,7 @@ const BlogPost = () => {
                   className="flex items-center gap-2 text-muted-foreground hover:text-secondary transition-colors ml-auto"
                   aria-label="Share article"
                 >
-                  <Share2 className="h-4 w-4" />
+                  <Share2 className="h-4 w-4" aria-hidden="true" />
                   <span className="hidden sm:inline">Share</span>
                 </button>
               </div>
@@ -262,7 +262,7 @@ const BlogPost = () => {
               {post.tags && post.tags.length > 0 && (
                 <div className="mt-12 pt-8 border-t border-border">
                   <div className="flex items-center gap-3 flex-wrap">
-                    <Tag className="h-5 w-5 text-secondary" />
+                    <Tag className="h-5 w-5 text-secondary" aria-hidden="true" />
                     {post.tags.map((tag: string) => (
                       <span
                         key={tag}
@@ -320,7 +320,7 @@ const BlogPost = () => {
               to="/blog"
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-secondary transition-colors font-medium"
             >
-              <ArrowLeft className="h-4 w-4" />
+              <ArrowLeft className="h-4 w-4" aria-hidden="true" />
               सभी Articles देखें
             </Link>
           </div>
