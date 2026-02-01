@@ -40,14 +40,18 @@ const AuthorCard = () => {
               <Globe className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
             </a>
             <a
-              href="#"
+              href="https://twitter.com/aimehendi"
+              target="_blank"
+              rel="noopener noreferrer"
               className="p-2 rounded-full bg-muted hover:bg-secondary/20 transition-colors"
               aria-label="Twitter"
             >
               <Twitter className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/company/aimehendi"
+              target="_blank"
+              rel="noopener noreferrer"
               className="p-2 rounded-full bg-muted hover:bg-secondary/20 transition-colors"
               aria-label="LinkedIn"
             >
