@@ -162,10 +162,10 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
   };
 
   return (
-    <div className={`w-full ${compact ? "" : "max-w-4xl mx-auto"}`}>
-      <div className="grid md:grid-cols-2 gap-6">
+    <div className={`w-full ${compact ? "" : "max-w-4xl mx-auto"} px-0`}>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         {/* Controls */}
-        <div className="space-y-6 bg-card rounded-2xl p-6 shadow-card border border-border">
+        <div className="space-y-4 md:space-y-6 bg-card rounded-2xl p-4 md:p-6 shadow-card border border-border">
           <div className="flex items-center gap-2 mb-4">
             <div className="h-10 w-10 rounded-full bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center">
               <Hand className="h-5 w-5 text-primary-foreground" aria-hidden="true" />
@@ -321,11 +321,11 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
         </div>
 
         {/* Preview */}
-        <div className="bg-card rounded-2xl p-6 shadow-card border border-border flex flex-col">
-          <div className="flex items-center justify-between mb-4">
+        <div className="bg-card rounded-2xl p-4 md:p-6 shadow-card border border-border flex flex-col">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mb-4">
             <h3 className="font-serif text-lg font-semibold text-foreground">Preview</h3>
             {generatedImage && (
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 <Button variant="outline" size="sm" onClick={generateDesign} disabled={isGenerating} aria-label="Regenerate design">
                   <RefreshCw className={`h-4 w-4 ${isGenerating ? "animate-spin" : ""}`} aria-hidden="true" />
                 </Button>
@@ -339,7 +339,7 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
                 </Button>
                 <Button variant="gold" size="sm" onClick={downloadImage}>
                   <Download className="h-4 w-4" aria-hidden="true" />
-                  Download
+                  <span className="hidden xs:inline">Download</span>
                 </Button>
               </div>
             )}

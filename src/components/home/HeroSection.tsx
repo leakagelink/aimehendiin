@@ -9,10 +9,10 @@ const HeroSection = () => {
       {/* Background Pattern */}
       <div className="absolute inset-0 mehendi-pattern opacity-50" />
       
-      {/* Decorative Elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-secondary/20 blur-3xl animate-float" />
-      <div className="absolute bottom-20 right-10 w-40 h-40 rounded-full bg-accent/20 blur-3xl animate-float" style={{ animationDelay: "2s" }} />
-      <div className="absolute top-1/2 left-1/4 w-24 h-24 rounded-full bg-primary/10 blur-2xl animate-float" style={{ animationDelay: "4s" }} />
+      {/* Decorative Elements - contained within section */}
+      <div className="absolute top-20 left-4 md:left-10 w-20 md:w-32 h-20 md:h-32 rounded-full bg-secondary/20 blur-3xl animate-float" />
+      <div className="absolute bottom-20 right-4 md:right-10 w-24 md:w-40 h-24 md:h-40 rounded-full bg-accent/20 blur-3xl animate-float" style={{ animationDelay: "2s" }} />
+      <div className="absolute top-1/2 left-1/4 w-16 md:w-24 h-16 md:h-24 rounded-full bg-primary/10 blur-2xl animate-float hidden sm:block" style={{ animationDelay: "4s" }} />
 
       <div className="container relative z-10 py-16 md:py-24 lg:py-32">
         <div className="max-w-4xl mx-auto text-center">
@@ -26,7 +26,7 @@ const HeroSection = () => {
           </div>
 
           {/* Main Title */}
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-6 animate-fade-in-up">
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-6 animate-fade-in-up px-2">
             AI से बनाएं{" "}
             <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
               खूबसूरत मेहंदी
