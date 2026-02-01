@@ -10,6 +10,8 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import BridalMehendi2026 from "./pages/landing/BridalMehendi2026";
+import KarwaChauthMehendi from "./pages/landing/KarwaChauthMehendi";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +29,9 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/about" element={<About />} />
+          {/* SEO Landing Pages */}
+          <Route path="/bridal-mehendi-design-2026" element={<BridalMehendi2026 />} />
+          <Route path="/karwa-chauth-mehndi-design" element={<KarwaChauthMehendi />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
