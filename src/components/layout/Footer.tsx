@@ -54,19 +54,28 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex gap-3">
               <a
-                href="#"
+                href="https://www.instagram.com/aimehendi.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow us on Instagram"
                 className="h-10 w-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://www.youtube.com/@aimehendi"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Subscribe on YouTube"
                 className="h-10 w-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
                 <Youtube className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/aimehendi.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow us on Facebook"
                 className="h-10 w-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
                 <Facebook className="h-5 w-5" />
