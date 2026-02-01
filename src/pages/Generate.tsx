@@ -1,11 +1,17 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import MehendiGenerator from "@/components/generator/MehendiGenerator";
+import PageSEO from "@/components/seo/PageSEO";
 import { Sparkles } from "lucide-react";
 
 const Generate = () => {
   return (
     <div className="min-h-screen bg-background">
+      <PageSEO
+        title="AI Mehendi Design Generator - Free मेहंदी बनाएं"
+        description="Free AI Mehendi Generator से seconds में beautiful bridal, Arabic, mandala mehendi designs बनाएं। No skills needed!"
+        path="/generate"
+      />
       <Header />
       
       <main className="py-8 md:py-16">

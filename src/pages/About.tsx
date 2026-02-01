@@ -1,10 +1,16 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import PageSEO from "@/components/seo/PageSEO";
 import { Sparkles, Users, Heart, Target } from "lucide-react";
 
 const About = () => {
   return (
     <div className="min-h-screen bg-background">
+      <PageSEO
+        title="About AIMehendi.in - हमारी कहानी"
+        description="AIMehendi.in - AI-powered mehendi design generator. भारतीय परंपरा और आधुनिक तकनीक का मिश्रण।"
+        path="/about"
+      />
       <Header />
       
       <main className="py-8 md:py-16">
