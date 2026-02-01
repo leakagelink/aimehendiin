@@ -4,6 +4,10 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import Generate from "./pages/Generate";
+import Gallery from "./pages/Gallery";
+import Blog from "./pages/Blog";
+import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -16,6 +20,12 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/generate" element={<Generate />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/gallery/:category" element={<Gallery />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<Blog />} />
+          <Route path="/about" element={<About />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

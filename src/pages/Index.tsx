@@ -1,12 +1,46 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import HeroSection from "@/components/home/HeroSection";
+import FeaturesSection from "@/components/home/FeaturesSection";
+import GalleryPreview from "@/components/home/GalleryPreview";
+import CTASection from "@/components/home/CTASection";
+import MehendiGenerator from "@/components/generator/MehendiGenerator";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Header />
+      
+      <main>
+        {/* Hero Section */}
+        <HeroSection />
+
+        {/* Features Section */}
+        <FeaturesSection />
+
+        {/* AI Generator Preview */}
+        <section className="py-16 md:py-24 bg-background">
+          <div className="container">
+            <div className="text-center mb-12">
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Try Our <span className="text-secondary">AI Generator</span>
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                अभी अपना पसंदीदा मेहंदी डिज़ाइन बनाएं | Create your favorite design now
+              </p>
+            </div>
+            <MehendiGenerator compact />
+          </div>
+        </section>
+
+        {/* Gallery Preview */}
+        <GalleryPreview />
+
+        {/* CTA Section */}
+        <CTASection />
+      </main>
+
+      <Footer />
     </div>
   );
 };
