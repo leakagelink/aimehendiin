@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { GoogleGenerativeAI } from "https://esm.sh/@google/generative-ai@0.21.0";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -37,9 +38,9 @@ serve(async (req) => {
   try {
     const { designType, handType, styles, customPrompt } = await req.json();
     
-    const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
-    if (!LOVABLE_API_KEY) {
-      throw new Error("LOVABLE_API_KEY is not configured");
+    const GOOGLE_API_KEY = Deno.env.get("GOOGLE_GEMINI_API_KEY");
+    if (!GOOGLE_API_KEY) {
+      throw new Error("GOOGLE_GEMINI_API_KEY is not configured");
     }
 
     // Build the prompt
@@ -62,54 +63,37 @@ Style requirements:
 
     console.log("Generating mehendi design with prompt:", basePrompt);
 
-    const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${LOVABLE_API_KEY}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model: "google/gemini-2.5-flash-image",
-        messages: [
-          {
-            role: "user",
-            content: basePrompt,
-          },
-        ],
-        modalities: ["image", "text"],
-      }),
+    // Initialize Google Generative AI
+    const genAI = new GoogleGenerativeAI(GOOGLE_API_KEY);
+    const model = genAI.getGenerativeModel({ 
+      model: "gemini-2.0-flash-exp",
+      generationConfig: {
+        responseModalities: ["image", "text"],
+      } as any,
     });
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error("AI gateway error:", response.status, errorText);
-      
-      if (response.status === 429) {
-        return new Response(
-          JSON.stringify({ error: "Rate limit exceeded. Please try again in a few moments." }),
-          { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-        );
-      }
-      
-      if (response.status === 402) {
-        return new Response(
-          JSON.stringify({ error: "AI credits exhausted. Please try again later." }),
-          { status: 402, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-        );
-      }
-      
-      throw new Error(`AI gateway error: ${response.status}`);
-    }
+    const response = await model.generateContent(basePrompt);
+    const result = response.response;
 
-    const data = await response.json();
     console.log("AI response received successfully");
 
-    // Extract the image URL from the response
-    const imageUrl = data.choices?.[0]?.message?.images?.[0]?.image_url?.url;
+    // Extract image from the response
+    let imageUrl: string | null = null;
+    
+    if (result.candidates && result.candidates[0]?.content?.parts) {
+      for (const part of result.candidates[0].content.parts) {
+        if (part.inlineData?.mimeType?.startsWith("image/")) {
+          const base64Data = part.inlineData.data;
+          const mimeType = part.inlineData.mimeType;
+          imageUrl = `data:${mimeType};base64,${base64Data}`;
+          break;
+        }
+      }
+    }
     
     if (!imageUrl) {
-      console.error("No image URL in response:", JSON.stringify(data));
-      throw new Error("No image generated");
+      console.error("No image in response:", JSON.stringify(result));
+      throw new Error("No image generated. Please try again.");
     }
 
     return new Response(
@@ -122,10 +106,26 @@ Style requirements:
 
   } catch (error) {
     console.error("Error generating mehendi design:", error);
+    
+    const errorMessage = error instanceof Error ? error.message : "Failed to generate design";
+    
+    // Handle specific error cases
+    if (errorMessage.includes("429") || errorMessage.includes("quota") || errorMessage.includes("rate")) {
+      return new Response(
+        JSON.stringify({ error: "Rate limit exceeded. Please try again in a few moments." }),
+        { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+    
+    if (errorMessage.includes("API key") || errorMessage.includes("authentication") || errorMessage.includes("401")) {
+      return new Response(
+        JSON.stringify({ error: "API key issue. Please check your Google API key." }),
+        { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+    
     return new Response(
-      JSON.stringify({ 
-        error: error instanceof Error ? error.message : "Failed to generate design" 
-      }),
+      JSON.stringify({ error: errorMessage }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   }
