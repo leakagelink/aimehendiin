@@ -1,6 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
 import DesignCard from "./DesignCard";
 import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Sparkles, Loader2, RefreshCw } from "lucide-react";
+import { toast } from "sonner";
 
 const categories = [
   { value: "all", label: "All", labelHi: "सभी" },
@@ -12,59 +17,111 @@ const categories = [
   { value: "festival", label: "Festival", labelHi: "त्योहार" },
 ];
 
-// Sample gallery data - In production, this would come from the database
-const sampleDesigns = [
-  {
-    id: "1",
-    image: "https://images.unsplash.com/photo-1595486650748-8f08e7839c90?w=400&h=600&fit=crop",
-    title: "Bridal Full Hand Design",
-    category: "bridal",
-  },
-  {
-    id: "2",
-    image: "https://images.unsplash.com/photo-1560707854-fb9a10ced6e2?w=400&h=600&fit=crop",
-    title: "Arabic Pattern Mehendi",
-    category: "arabic",
-  },
-  {
-    id: "3",
-    image: "https://images.unsplash.com/photo-1591213954196-2d0ccb3f8d4c?w=400&h=600&fit=crop",
-    title: "Mandala Circle Design",
-    category: "mandala",
-  },
-  {
-    id: "4",
-    image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=600&fit=crop",
-    title: "Simple Elegant Mehendi",
-    category: "simple",
-  },
-  {
-    id: "5",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=600&fit=crop",
-    title: "Finger Mehendi Pattern",
-    category: "finger",
-  },
-  {
-    id: "6",
-    image: "https://images.unsplash.com/photo-1583089892943-e02e5b017b6a?w=400&h=600&fit=crop",
-    title: "Diwali Special Design",
-    category: "festival",
-  },
-];
+interface GalleryImage {
+  id: string;
+  image_url: string;
+  title: string;
+  title_hindi: string | null;
+  category: string;
+  likes_count: number | null;
+  downloads_count: number | null;
+  is_featured: boolean | null;
+}
 
 interface GalleryGridProps {
   limit?: number;
   showFilters?: boolean;
+  showGenerateButton?: boolean;
 }
 
-const GalleryGrid = ({ limit, showFilters = true }: GalleryGridProps) => {
+const GalleryGrid = ({ limit, showFilters = true, showGenerateButton = true }: GalleryGridProps) => {
   const [activeCategory, setActiveCategory] = useState("all");
+  const queryClient = useQueryClient();
 
-  const filteredDesigns = activeCategory === "all"
-    ? sampleDesigns
-    : sampleDesigns.filter((design) => design.category === activeCategory);
+  // Fetch gallery images from Supabase
+  const { data: galleryImages = [], isLoading, error } = useQuery({
+    queryKey: ["gallery-images", activeCategory],
+    queryFn: async () => {
+      let query = supabase
+        .from("gallery_images")
+        .select("*")
+        .order("created_at", { ascending: false });
 
-  const displayedDesigns = limit ? filteredDesigns.slice(0, limit) : filteredDesigns;
+      if (activeCategory !== "all") {
+        query = query.eq("category", activeCategory);
+      }
+
+      if (limit) {
+        query = query.limit(limit);
+      }
+
+      const { data, error } = await query;
+      
+      if (error) {
+        console.error("Error fetching gallery images:", error);
+        throw error;
+      }
+      
+      return data as GalleryImage[];
+    },
+  });
+
+  // Generate new images mutation
+  const generateMutation = useMutation({
+    mutationFn: async (category: string) => {
+      const response = await supabase.functions.invoke("generate-gallery-image", {
+        body: { category: category === "all" ? "bridal" : category, count: 2 },
+      });
+
+      if (response.error) {
+        throw new Error(response.error.message || "Failed to generate images");
+      }
+
+      return response.data;
+    },
+    onSuccess: (data) => {
+      queryClient.invalidateQueries({ queryKey: ["gallery-images"] });
+      toast.success(`${data.generatedCount} नई मेहंदी डिज़ाइन जनरेट हो गई!`, {
+        description: "New designs have been added to the gallery",
+      });
+    },
+    onError: (error: Error) => {
+      console.error("Generation error:", error);
+      if (error.message.includes("Rate limit") || error.message.includes("429")) {
+        toast.error("Rate limit exceeded. कृपया थोड़ी देर बाद कोशिश करें।");
+      } else {
+        toast.error("डिज़ाइन जनरेट करने में समस्या हुई", {
+          description: error.message,
+        });
+      }
+    },
+  });
+
+  const handleGenerate = () => {
+    generateMutation.mutate(activeCategory);
+  };
+
+  // Loading skeletons
+  if (isLoading) {
+    return (
+      <div className="w-full">
+        {showFilters && (
+          <div className="flex flex-wrap gap-2 mb-8 justify-center">
+            {categories.map((cat) => (
+              <Skeleton key={cat.value} className="h-9 w-20 rounded-full" />
+            ))}
+          </div>
+        )}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <div key={i} className="rounded-2xl overflow-hidden">
+              <Skeleton className="aspect-[3/4] w-full" />
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full">
@@ -88,29 +145,72 @@ const GalleryGrid = ({ limit, showFilters = true }: GalleryGridProps) => {
         </div>
       )}
 
-      {/* Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-        {displayedDesigns.map((design) => (
-          <DesignCard
-            key={design.id}
-            image={design.image}
-            title={design.title}
-            category={categories.find((c) => c.value === design.category)?.label || design.category}
-            likes={Math.floor(Math.random() * 500)}
-            onView={() => console.log("View design:", design.id)}
-          />
-        ))}
-      </div>
+      {/* Generate Button */}
+      {showGenerateButton && (
+        <div className="flex justify-center mb-8">
+          <Button
+            onClick={handleGenerate}
+            disabled={generateMutation.isPending}
+            className="gap-2"
+            variant="gold"
+          >
+            {generateMutation.isPending ? (
+              <>
+                <Loader2 className="h-4 w-4 animate-spin" />
+                AI से डिज़ाइन बना रहे हैं...
+              </>
+            ) : (
+              <>
+                <Sparkles className="h-4 w-4" />
+                AI से नई डिज़ाइन बनाएं
+              </>
+            )}
+          </Button>
+        </div>
+      )}
 
-      {/* Empty State */}
-      {displayedDesigns.length === 0 && (
-        <div className="text-center py-12">
-          <p className="text-muted-foreground">
-            इस श्रेणी में अभी कोई डिज़ाइन नहीं है।
+      {/* Grid */}
+      {galleryImages.length > 0 ? (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+          {galleryImages.map((design) => (
+            <DesignCard
+              key={design.id}
+              image={design.image_url}
+              title={design.title}
+              category={categories.find((c) => c.value === design.category)?.label || design.category}
+              likes={design.likes_count || 0}
+              onView={() => console.log("View design:", design.id)}
+            />
+          ))}
+        </div>
+      ) : (
+        /* Empty State */
+        <div className="text-center py-12 bg-card/50 rounded-2xl border border-border/50">
+          <Sparkles className="h-12 w-12 text-secondary/50 mx-auto mb-4" />
+          <h3 className="text-lg font-semibold text-foreground mb-2">
+            अभी कोई डिज़ाइन नहीं है
+          </h3>
+          <p className="text-muted-foreground mb-6">
+            No designs in this category yet. Generate some beautiful mehendi designs!
           </p>
-          <p className="text-sm text-muted-foreground mt-1">
-            No designs in this category yet.
-          </p>
+          <Button
+            onClick={handleGenerate}
+            disabled={generateMutation.isPending}
+            className="gap-2"
+            variant="gold"
+          >
+            {generateMutation.isPending ? (
+              <>
+                <Loader2 className="h-4 w-4 animate-spin" />
+                Generating...
+              </>
+            ) : (
+              <>
+                <Sparkles className="h-4 w-4" />
+                AI से पहली डिज़ाइन बनाएं
+              </>
+            )}
+          </Button>
         </div>
       )}
     </div>
