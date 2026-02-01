@@ -14,7 +14,168 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      blog_posts: {
+        Row: {
+          category: string
+          content: string
+          created_at: string | null
+          excerpt: string
+          excerpt_en: string | null
+          featured_image: string | null
+          id: string
+          is_featured: boolean | null
+          is_published: boolean | null
+          meta_description: string
+          meta_title: string
+          published_at: string | null
+          read_time: number | null
+          secondary_keywords: string[] | null
+          slug: string
+          tags: string[] | null
+          target_keyword: string
+          title: string
+          title_en: string | null
+          updated_at: string | null
+          view_count: number | null
+        }
+        Insert: {
+          category: string
+          content: string
+          created_at?: string | null
+          excerpt: string
+          excerpt_en?: string | null
+          featured_image?: string | null
+          id?: string
+          is_featured?: boolean | null
+          is_published?: boolean | null
+          meta_description: string
+          meta_title: string
+          published_at?: string | null
+          read_time?: number | null
+          secondary_keywords?: string[] | null
+          slug: string
+          tags?: string[] | null
+          target_keyword: string
+          title: string
+          title_en?: string | null
+          updated_at?: string | null
+          view_count?: number | null
+        }
+        Update: {
+          category?: string
+          content?: string
+          created_at?: string | null
+          excerpt?: string
+          excerpt_en?: string | null
+          featured_image?: string | null
+          id?: string
+          is_featured?: boolean | null
+          is_published?: boolean | null
+          meta_description?: string
+          meta_title?: string
+          published_at?: string | null
+          read_time?: number | null
+          secondary_keywords?: string[] | null
+          slug?: string
+          tags?: string[] | null
+          target_keyword?: string
+          title?: string
+          title_en?: string | null
+          updated_at?: string | null
+          view_count?: number | null
+        }
+        Relationships: []
+      }
+      gallery_images: {
+        Row: {
+          category: string
+          created_at: string | null
+          description: string | null
+          downloads_count: number | null
+          id: string
+          image_url: string
+          is_featured: boolean | null
+          likes_count: number | null
+          occasion: string | null
+          tags: string[] | null
+          title: string
+          title_hindi: string | null
+          view_count: number | null
+        }
+        Insert: {
+          category: string
+          created_at?: string | null
+          description?: string | null
+          downloads_count?: number | null
+          id?: string
+          image_url: string
+          is_featured?: boolean | null
+          likes_count?: number | null
+          occasion?: string | null
+          tags?: string[] | null
+          title: string
+          title_hindi?: string | null
+          view_count?: number | null
+        }
+        Update: {
+          category?: string
+          created_at?: string | null
+          description?: string | null
+          downloads_count?: number | null
+          id?: string
+          image_url?: string
+          is_featured?: boolean | null
+          likes_count?: number | null
+          occasion?: string | null
+          tags?: string[] | null
+          title?: string
+          title_hindi?: string | null
+          view_count?: number | null
+        }
+        Relationships: []
+      }
+      generated_designs: {
+        Row: {
+          created_at: string | null
+          design_type: string
+          downloads_count: number | null
+          hand_type: string | null
+          id: string
+          image_url: string | null
+          is_public: boolean | null
+          likes_count: number | null
+          prompt: string
+          session_id: string | null
+          style_modifiers: string[] | null
+        }
+        Insert: {
+          created_at?: string | null
+          design_type: string
+          downloads_count?: number | null
+          hand_type?: string | null
+          id?: string
+          image_url?: string | null
+          is_public?: boolean | null
+          likes_count?: number | null
+          prompt: string
+          session_id?: string | null
+          style_modifiers?: string[] | null
+        }
+        Update: {
+          created_at?: string | null
+          design_type?: string
+          downloads_count?: number | null
+          hand_type?: string | null
+          id?: string
+          image_url?: string | null
+          is_public?: boolean | null
+          likes_count?: number | null
+          prompt?: string
+          session_id?: string | null
+          style_modifiers?: string[] | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
