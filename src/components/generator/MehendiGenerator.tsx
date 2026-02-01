@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Sparkles, Download, RefreshCw, Hand, Loader2 } from "lucide-react";
+import { useState, useRef } from "react";
+import { Sparkles, Download, RefreshCw, Hand, Loader2, Upload, X, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import SocialShareButtons from "./SocialShareButtons";
 
 const designTypes = [
   { value: "bridal", label: "Bridal (दुल्हन)", labelHi: "दुल्हन मेहंदी" },
@@ -43,6 +44,9 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
   const [customPrompt, setCustomPrompt] = useState("");
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
+  const [referenceImage, setReferenceImage] = useState<string | null>(null);
+  const [showShareMenu, setShowShareMenu] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const { toast } = useToast();
 
   const toggleStyle = (style: string) => {
@@ -53,9 +57,52 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
     );
   };
 
+  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    // Check file size (max 5MB)
+    if (file.size > 5 * 1024 * 1024) {
+      toast({
+        title: "File too large",
+        description: "कृपया 5MB से छोटी image upload करें।",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Check file type
+    if (!file.type.startsWith("image/")) {
+      toast({
+        title: "Invalid file",
+        description: "कृपया एक valid image file upload करें।",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      setReferenceImage(e.target?.result as string);
+      toast({
+        title: "Image uploaded! 📷",
+        description: "Reference image add हो गई। अब Generate करें!",
+      });
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const removeReferenceImage = () => {
+    setReferenceImage(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  };
+
   const generateDesign = async () => {
     setIsGenerating(true);
     setGeneratedImage(null);
+    setShowShareMenu(false);
 
     try {
       const { data, error } = await supabase.functions.invoke("generate-mehendi", {
@@ -64,6 +111,7 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
           handType,
           styles: selectedStyles,
           customPrompt,
+          referenceImage,
         },
       });
 
@@ -81,7 +129,9 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
         setGeneratedImage(data.imageUrl);
         toast({
           title: "Success! 🎉",
-          description: "आपका मेहंदी डिज़ाइन तैयार है!",
+          description: referenceImage 
+            ? "आपका custom मेहंदी डिज़ाइन तैयार है!"
+            : "आपका मेहंदी डिज़ाइन तैयार है!",
         });
       }
     } catch (err) {
@@ -125,6 +175,56 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
               <p className="text-xs text-muted-foreground">अपनी पसंद चुनें</p>
             </div>
           </div>
+
+          {/* Reference Image Upload */}
+          {!compact && (
+            <div className="space-y-2">
+              <Label className="text-sm font-medium">Reference Image (वैकल्पिक)</Label>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageUpload}
+                ref={fileInputRef}
+                className="hidden"
+                id="reference-image-upload"
+              />
+              
+              {referenceImage ? (
+                <div className="relative rounded-lg border border-border overflow-hidden">
+                  <img 
+                    src={referenceImage} 
+                    alt="Reference" 
+                    className="w-full h-24 object-cover"
+                  />
+                  <Button
+                    variant="destructive"
+                    size="sm"
+                    className="absolute top-2 right-2 h-7 w-7 p-0"
+                    onClick={removeReferenceImage}
+                    aria-label="Remove reference image"
+                  >
+                    <X className="h-4 w-4" />
+                  </Button>
+                  <div className="absolute bottom-0 left-0 right-0 bg-background/80 backdrop-blur-sm px-2 py-1">
+                    <p className="text-xs text-muted-foreground truncate">Reference image added ✓</p>
+                  </div>
+                </div>
+              ) : (
+                <label
+                  htmlFor="reference-image-upload"
+                  className="flex items-center justify-center gap-2 w-full h-20 rounded-lg border-2 border-dashed border-border hover:border-secondary/50 hover:bg-secondary/5 transition-colors cursor-pointer"
+                >
+                  <Upload className="h-5 w-5 text-muted-foreground" />
+                  <span className="text-sm text-muted-foreground">
+                    Upload reference photo
+                  </span>
+                </label>
+              )}
+              <p className="text-xs text-muted-foreground">
+                अपनी photo upload करें, AI उस पर mehendi design बनाएगी
+              </p>
+            </div>
+          )}
 
           {/* Design Type */}
           <div className="space-y-2">
@@ -214,7 +314,7 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
             ) : (
               <>
                 <Sparkles className="h-5 w-5" aria-hidden="true" />
-                Generate Design | डिज़ाइन बनाएं
+                {referenceImage ? "Generate from Photo" : "Generate Design | डिज़ाइन बनाएं"}
               </>
             )}
           </Button>
@@ -229,6 +329,14 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
                 <Button variant="outline" size="sm" onClick={generateDesign} disabled={isGenerating} aria-label="Regenerate design">
                   <RefreshCw className={`h-4 w-4 ${isGenerating ? "animate-spin" : ""}`} aria-hidden="true" />
                 </Button>
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  onClick={() => setShowShareMenu(!showShareMenu)}
+                  aria-label="Share design"
+                >
+                  <Share2 className="h-4 w-4" aria-hidden="true" />
+                </Button>
                 <Button variant="gold" size="sm" onClick={downloadImage}>
                   <Download className="h-4 w-4" aria-hidden="true" />
                   Download
@@ -236,6 +344,17 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
               </div>
             )}
           </div>
+
+          {/* Share Menu */}
+          {showShareMenu && generatedImage && (
+            <div className="mb-4 p-4 rounded-lg bg-muted/50 border border-border">
+              <p className="text-sm font-medium text-foreground mb-3">Share on Social Media</p>
+              <SocialShareButtons 
+                imageUrl={generatedImage} 
+                title="Check out this beautiful Mehendi design I created with AI!"
+              />
+            </div>
+          )}
 
           <div className="flex-1 min-h-[300px] rounded-xl bg-gradient-to-br from-muted to-muted/50 border-2 border-dashed border-border flex items-center justify-center overflow-hidden">
             {isGenerating ? (
@@ -245,7 +364,7 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
                   <Sparkles className="h-8 w-8 text-secondary absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-spin-slow" aria-hidden="true" />
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  AI आपका डिज़ाइन बना रही है...
+                  {referenceImage ? "Reference से design बन रही है..." : "AI आपका डिज़ाइन बना रही है..."}
                 </p>
                 <p className="text-xs text-muted-foreground mt-1">
                   Creating your beautiful design
