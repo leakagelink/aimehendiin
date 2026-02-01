@@ -1,0 +1,4 @@
+project_id = "ybpzprgmfdbalbyaelxi"
+
+[functions.generate-mehendi]
+verify_jwt = false
