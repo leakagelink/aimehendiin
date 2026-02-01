@@ -55,6 +55,30 @@ const HomeSEO = () => {
     }
   };
 
+  // OnlineBusiness Schema (instead of LocalBusiness since no physical address)
+  const onlineBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "OnlineBusiness",
+    name: "AIMehendi.in",
+    url: siteUrl,
+    logo: `${siteUrl}/logo.png`,
+    image: `${siteUrl}/og-image.jpg`,
+    description: "India's #1 AI Mehendi Design Generator - Create beautiful bridal, Arabic, mandala mehndi designs instantly with artificial intelligence.",
+    priceRange: "Free",
+    areaServed: {
+      "@type": "Country",
+      name: "India"
+    },
+    serviceType: "AI Design Generation",
+    availableLanguage: ["Hindi", "English"],
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      url: `${siteUrl}/contact`,
+      availableLanguage: ["Hindi", "English"]
+    }
+  };
+
   return (
     <Helmet>
       <script type="application/ld+json">
@@ -65,6 +89,9 @@ const HomeSEO = () => {
       </script>
       <script type="application/ld+json">
         {JSON.stringify(appSchema)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(onlineBusinessSchema)}
       </script>
     </Helmet>
   );
