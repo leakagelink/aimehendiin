@@ -47,42 +47,43 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-muted/50 mehendi-pattern">
-      <div className="container">
+    <section className="py-10 md:py-24 bg-muted/50 mehendi-pattern">
+      <div className="container px-4">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="font-serif text-2xl md:text-4xl font-bold text-foreground mb-2 md:mb-4">
             Why Choose <span className="text-secondary">AIMehendi</span>?
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto px-2">
             हमारे AI Generator की खास बातें | Unique features of our AI Mehendi Generator
           </p>
         </div>
 
-        {/* Features Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Features Grid - 2 columns on mobile, 3 on larger */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className="group bg-card rounded-2xl p-6 shadow-soft hover:shadow-card transition-all duration-300 border border-border hover:border-secondary/30 card-hover"
+              className="group bg-card rounded-xl md:rounded-2xl p-3 md:p-6 shadow-soft hover:shadow-card transition-all duration-300 border border-border hover:border-secondary/30 card-hover"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Icon */}
-              <div className="h-14 w-14 rounded-xl bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <feature.icon className="h-7 w-7 text-secondary" aria-hidden="true" />
+              {/* Icon - smaller on mobile */}
+              <div className="h-10 w-10 md:h-14 md:w-14 rounded-lg md:rounded-xl bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 flex items-center justify-center mb-2 md:mb-4 group-hover:scale-110 transition-transform duration-300">
+                <feature.icon className="h-5 w-5 md:h-7 md:w-7 text-secondary" aria-hidden="true" />
               </div>
 
-              {/* Content */}
-              <h3 className="font-serif text-xl font-semibold text-foreground mb-2">
+              {/* Content - compact on mobile */}
+              <h3 className="font-serif text-sm md:text-xl font-semibold text-foreground mb-1 md:mb-2 leading-tight">
                 {feature.title}
               </h3>
-              <p className="text-xs text-secondary font-medium mb-2">
+              <p className="text-[10px] md:text-xs text-secondary font-medium mb-1 md:mb-2">
                 {feature.titleHi}
               </p>
-              <p className="text-muted-foreground text-sm">
+              {/* Hide English description on mobile, show Hindi only for space */}
+              <p className="hidden md:block text-muted-foreground text-sm">
                 {feature.description}
               </p>
-              <p className="text-muted-foreground text-xs mt-1">
+              <p className="text-muted-foreground text-xs md:text-xs leading-snug">
                 {feature.descriptionHi}
               </p>
             </div>
