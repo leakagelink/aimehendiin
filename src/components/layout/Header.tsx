@@ -24,7 +24,7 @@ const Header = () => {
         <Link to="/" className="flex items-center gap-2 group">
           <div className="relative">
             <div className="h-10 w-10 rounded-full bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center shadow-gold group-hover:shadow-glow transition-all duration-300">
-              <Sparkles className="h-5 w-5 text-primary-foreground" />
+              <Sparkles className="h-5 w-5 text-primary-foreground" aria-hidden="true" />
             </div>
             <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary via-secondary to-accent opacity-20 blur-sm group-hover:opacity-40 transition-opacity" />
           </div>
@@ -59,7 +59,7 @@ const Header = () => {
         <div className="hidden md:flex items-center gap-4">
           <Button variant="hero" size="lg" asChild>
             <Link to="/generate">
-              <Sparkles className="h-4 w-4" />
+              <Sparkles className="h-4 w-4" aria-hidden="true" />
               फ्री डिज़ाइन बनाएं
             </Link>
           </Button>
@@ -69,11 +69,13 @@ const Header = () => {
         <button
           className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMenuOpen}
         >
           {isMenuOpen ? (
-            <X className="h-6 w-6 text-foreground" />
+            <X className="h-6 w-6 text-foreground" aria-hidden="true" />
           ) : (
-            <Menu className="h-6 w-6 text-foreground" />
+            <Menu className="h-6 w-6 text-foreground" aria-hidden="true" />
           )}
         </button>
       </div>
@@ -98,7 +100,7 @@ const Header = () => {
             ))}
             <Button variant="hero" size="lg" className="mt-4" asChild>
               <Link to="/generate" onClick={() => setIsMenuOpen(false)}>
-                <Sparkles className="h-4 w-4" />
+                <Sparkles className="h-4 w-4" aria-hidden="true" />
                 फ्री डिज़ाइन बनाएं
               </Link>
             </Button>

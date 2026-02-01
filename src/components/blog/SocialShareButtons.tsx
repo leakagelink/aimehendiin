@@ -39,7 +39,7 @@ const SocialShareButtons = ({ title, url, excerpt }: SocialShareButtonsProps) =>
   return (
     <div className="flex flex-col gap-4">
       <h4 className="font-semibold text-foreground flex items-center gap-2">
-        <Share2 className="h-4 w-4 text-secondary" />
+        <Share2 className="h-4 w-4 text-secondary" aria-hidden="true" />
         Share this article
       </h4>
       <div className="flex flex-wrap gap-3">
@@ -50,7 +50,7 @@ const SocialShareButtons = ({ title, url, excerpt }: SocialShareButtonsProps) =>
           onClick={() => handleShare("whatsapp")}
           className="flex items-center gap-2 bg-[#25D366]/10 border-[#25D366]/30 text-[#25D366] hover:bg-[#25D366] hover:text-white hover:border-[#25D366]"
         >
-          <MessageCircle className="h-4 w-4" />
+          <MessageCircle className="h-4 w-4" aria-hidden="true" />
           WhatsApp
         </Button>
 
@@ -61,7 +61,7 @@ const SocialShareButtons = ({ title, url, excerpt }: SocialShareButtonsProps) =>
           onClick={() => handleShare("facebook")}
           className="flex items-center gap-2 bg-[#1877F2]/10 border-[#1877F2]/30 text-[#1877F2] hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2]"
         >
-          <Facebook className="h-4 w-4" />
+          <Facebook className="h-4 w-4" aria-hidden="true" />
           Facebook
         </Button>
 
@@ -72,7 +72,7 @@ const SocialShareButtons = ({ title, url, excerpt }: SocialShareButtonsProps) =>
           onClick={() => handleShare("twitter")}
           className="flex items-center gap-2 bg-foreground/5 border-foreground/20 text-foreground hover:bg-foreground hover:text-background hover:border-foreground"
         >
-          <Twitter className="h-4 w-4" />
+          <Twitter className="h-4 w-4" aria-hidden="true" />
           Twitter
         </Button>
 
@@ -84,7 +84,7 @@ const SocialShareButtons = ({ title, url, excerpt }: SocialShareButtonsProps) =>
             onClick={handleNativeShare}
             className="flex items-center gap-2"
           >
-            <Share2 className="h-4 w-4" />
+            <Share2 className="h-4 w-4" aria-hidden="true" />
             More
           </Button>
         )}
