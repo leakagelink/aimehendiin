@@ -1,11 +1,17 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import GalleryGrid from "@/components/gallery/GalleryGrid";
+import PageSEO from "@/components/seo/PageSEO";
 import { Sparkles } from "lucide-react";
 
 const Gallery = () => {
   return (
     <div className="min-h-screen bg-background">
+      <PageSEO
+        title="Mehendi Design Gallery - 1000+ Free डिज़ाइन"
+        description="Browse 1000+ beautiful mehendi designs. Bridal, Arabic, Mandala, Simple mehendi patterns. Free download करें!"
+        path="/gallery"
+      />
       <Header />
       
       <main className="py-8 md:py-16">

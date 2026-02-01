@@ -5,10 +5,12 @@ import FeaturesSection from "@/components/home/FeaturesSection";
 import GalleryPreview from "@/components/home/GalleryPreview";
 import CTASection from "@/components/home/CTASection";
 import MehendiGenerator from "@/components/generator/MehendiGenerator";
+import HomeSEO from "@/components/seo/HomeSEO";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <HomeSEO />
       <Header />
       
       <main>
