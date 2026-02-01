@@ -9,9 +9,9 @@ const CTASection = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-mehendi-dark" />
       <div className="absolute inset-0 mehendi-pattern opacity-10" />
       
-      {/* Decorative Elements */}
-      <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-secondary/20 blur-3xl" />
-      <div className="absolute bottom-10 right-10 w-40 h-40 rounded-full bg-accent/20 blur-3xl" />
+      {/* Decorative Elements - contained within section */}
+      <div className="absolute top-10 left-4 md:left-10 w-20 md:w-32 h-20 md:h-32 rounded-full bg-secondary/20 blur-3xl" />
+      <div className="absolute bottom-10 right-4 md:right-10 w-24 md:w-40 h-24 md:h-40 rounded-full bg-accent/20 blur-3xl" />
 
       <div className="container relative z-10">
         <div className="max-w-3xl mx-auto text-center">
@@ -21,7 +21,7 @@ const CTASection = () => {
           </div>
 
           {/* Title */}
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4 px-2">
             अभी बनाएं अपना{" "}
             <span className="text-secondary">Perfect</span>{" "}
             मेहंदी डिज़ाइन

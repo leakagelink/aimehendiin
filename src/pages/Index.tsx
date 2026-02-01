@@ -9,7 +9,7 @@ import HomeSEO from "@/components/seo/HomeSEO";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       <HomeSEO />
       <Header />
       
