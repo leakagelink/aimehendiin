@@ -26,7 +26,7 @@ const GalleryPreview = () => {
         </div>
 
         {/* Gallery Grid */}
-        <GalleryGrid limit={4} showFilters={false} />
+        <GalleryGrid limit={4} showFilters={false} showGenerateButton={false} />
       </div>
     </section>
   );
