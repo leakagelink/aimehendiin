@@ -42,9 +42,13 @@ const DesignCard = ({ image, title, category, likes = 0, onView }: DesignCardPro
       <div className="aspect-[3/4] relative overflow-hidden">
         <img
           src={image}
-          alt={title}
+          alt={`${title} - ${category} Mehendi Design`}
+          title={title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
+          decoding="async"
+          width={400}
+          height={533}
         />
         
         {/* Gradient Overlay */}

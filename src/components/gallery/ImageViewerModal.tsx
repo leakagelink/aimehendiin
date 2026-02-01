@@ -78,9 +78,11 @@ const ImageViewerModal = ({
           
           <img
             src={image}
-            alt={title}
+            alt={`${title} - ${category} Mehendi Design`}
+            title={title}
             className="max-w-full max-h-[70vh] object-contain"
             loading="eager"
+            decoding="async"
           />
           
           {hasNext && (
