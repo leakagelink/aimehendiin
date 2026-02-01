@@ -1,5 +1,10 @@
 import { Helmet } from "react-helmet-async";
 
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
 interface BlogPostSEOProps {
   title: string;
   metaTitle: string;
@@ -10,7 +15,35 @@ interface BlogPostSEOProps {
   category: string;
   tags?: string[] | null;
   excerpt: string;
+  content?: string;
 }
+
+// Extract FAQ items from HTML content
+const extractFAQs = (content: string): FAQItem[] => {
+  const faqs: FAQItem[] = [];
+  
+  // Match FAQ section patterns in HTML
+  const faqSectionRegex = /<h[23][^>]*>.*?(?:FAQ|सवाल|Questions).*?<\/h[23]>([\s\S]*?)(?=<h[23]|$)/gi;
+  const matches = content.match(faqSectionRegex);
+  
+  if (matches) {
+    matches.forEach(section => {
+      // Extract Q&A pairs - look for strong/bold questions followed by answers
+      const qaRegex = /<(?:strong|b)[^>]*>\s*(?:Q\d*[.:])?\s*([^<]+)<\/(?:strong|b)>\s*(?:<br\s*\/?>)?\s*([^<]+)/gi;
+      let match;
+      while ((match = qaRegex.exec(section)) !== null) {
+        if (match[1] && match[2]) {
+          faqs.push({
+            question: match[1].trim().replace(/\?$/, '') + '?',
+            answer: match[2].trim()
+          });
+        }
+      }
+    });
+  }
+  
+  return faqs.slice(0, 10); // Limit to 10 FAQs
+};
 
 const BlogPostSEO = ({
   title,
@@ -22,10 +55,14 @@ const BlogPostSEO = ({
   category,
   tags,
   excerpt,
+  content = "",
 }: BlogPostSEOProps) => {
   const siteUrl = "https://aimehendi.in";
   const articleUrl = `${siteUrl}/blog/${slug}`;
   const authorName = "Dheeraj Tagde";
+
+  // Extract FAQs from content
+  const faqs = extractFAQs(content);
 
   // JSON-LD Structured Data for Article
   const articleSchema = {
@@ -83,6 +120,20 @@ const BlogPostSEO = ({
     ],
   };
 
+  // FAQPage Schema (only if FAQs exist)
+  const faqSchema = faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map(faq => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer
+      }
+    }))
+  } : null;
+
   return (
     <Helmet>
       {/* Primary Meta Tags */}
@@ -122,6 +173,11 @@ const BlogPostSEO = ({
       <script type="application/ld+json">
         {JSON.stringify(breadcrumbSchema)}
       </script>
+      {faqSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      )}
     </Helmet>
   );
 };

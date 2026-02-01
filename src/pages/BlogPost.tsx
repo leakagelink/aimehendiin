@@ -135,6 +135,7 @@ const BlogPost = () => {
         category={post.category}
         tags={post.tags}
         excerpt={post.excerpt}
+        content={post.content}
       />
 
       {/* Floating Share Bar */}
