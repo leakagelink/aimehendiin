@@ -17,7 +17,7 @@ const CTASection = () => {
         <div className="max-w-3xl mx-auto text-center">
           {/* Icon */}
           <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-secondary/20 backdrop-blur-sm mb-6">
-            <Sparkles className="h-8 w-8 text-secondary" />
+            <Sparkles className="h-8 w-8 text-secondary" aria-hidden="true" />
           </div>
 
           {/* Title */}
@@ -36,9 +36,9 @@ const CTASection = () => {
           {/* CTA Button */}
           <Button variant="gold" size="xl" asChild className="group">
             <Link to="/generate">
-              <Sparkles className="h-5 w-5" />
+              <Sparkles className="h-5 w-5" aria-hidden="true" />
               Start Creating | शुरू करें
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
             </Link>
           </Button>
 

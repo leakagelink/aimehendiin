@@ -118,7 +118,7 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
         <div className="space-y-6 bg-card rounded-2xl p-6 shadow-card border border-border">
           <div className="flex items-center gap-2 mb-4">
             <div className="h-10 w-10 rounded-full bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center">
-              <Hand className="h-5 w-5 text-primary-foreground" />
+              <Hand className="h-5 w-5 text-primary-foreground" aria-hidden="true" />
             </div>
             <div>
               <h3 className="font-serif text-lg font-semibold text-foreground">Design Options</h3>
@@ -208,12 +208,12 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
           >
             {isGenerating ? (
               <>
-                <Loader2 className="h-5 w-5 animate-spin" />
+                <Loader2 className="h-5 w-5 animate-spin" aria-hidden="true" />
                 Generating... बन रहा है
               </>
             ) : (
               <>
-                <Sparkles className="h-5 w-5" />
+                <Sparkles className="h-5 w-5" aria-hidden="true" />
                 Generate Design | डिज़ाइन बनाएं
               </>
             )}
@@ -226,11 +226,11 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
             <h3 className="font-serif text-lg font-semibold text-foreground">Preview</h3>
             {generatedImage && (
               <div className="flex gap-2">
-                <Button variant="outline" size="sm" onClick={generateDesign} disabled={isGenerating}>
-                  <RefreshCw className={`h-4 w-4 ${isGenerating ? "animate-spin" : ""}`} />
+                <Button variant="outline" size="sm" onClick={generateDesign} disabled={isGenerating} aria-label="Regenerate design">
+                  <RefreshCw className={`h-4 w-4 ${isGenerating ? "animate-spin" : ""}`} aria-hidden="true" />
                 </Button>
                 <Button variant="gold" size="sm" onClick={downloadImage}>
-                  <Download className="h-4 w-4" />
+                  <Download className="h-4 w-4" aria-hidden="true" />
                   Download
                 </Button>
               </div>
@@ -242,7 +242,7 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
               <div className="text-center p-8">
                 <div className="relative">
                   <div className="h-20 w-20 rounded-full bg-gradient-to-br from-primary via-secondary to-accent animate-pulse mx-auto mb-4" />
-                  <Sparkles className="h-8 w-8 text-secondary absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-spin-slow" />
+                  <Sparkles className="h-8 w-8 text-secondary absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-spin-slow" aria-hidden="true" />
                 </div>
                 <p className="text-sm text-muted-foreground">
                   AI आपका डिज़ाइन बना रही है...
@@ -260,7 +260,7 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
             ) : (
               <div className="text-center p-8">
                 <div className="h-20 w-20 rounded-full bg-muted flex items-center justify-center mx-auto mb-4">
-                  <Hand className="h-10 w-10 text-muted-foreground" />
+                  <Hand className="h-10 w-10 text-muted-foreground" aria-hidden="true" />
                 </div>
                 <p className="text-sm text-muted-foreground">
                   अपनी पसंद चुनें और "Generate" दबाएं

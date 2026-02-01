@@ -37,21 +37,21 @@ const AuthorCard = () => {
               className="p-2 rounded-full bg-muted hover:bg-secondary/20 transition-colors"
               aria-label="Website"
             >
-              <Globe className="h-4 w-4 text-muted-foreground" />
+              <Globe className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
             </a>
             <a
               href="#"
               className="p-2 rounded-full bg-muted hover:bg-secondary/20 transition-colors"
               aria-label="Twitter"
             >
-              <Twitter className="h-4 w-4 text-muted-foreground" />
+              <Twitter className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
             </a>
             <a
               href="#"
               className="p-2 rounded-full bg-muted hover:bg-secondary/20 transition-colors"
               aria-label="LinkedIn"
             >
-              <Linkedin className="h-4 w-4 text-muted-foreground" />
+              <Linkedin className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
             </a>
           </div>
         </div>

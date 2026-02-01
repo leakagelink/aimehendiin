@@ -69,7 +69,7 @@ const FeaturesSection = () => {
             >
               {/* Icon */}
               <div className="h-14 w-14 rounded-xl bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <feature.icon className="h-7 w-7 text-secondary" />
+                <feature.icon className="h-7 w-7 text-secondary" aria-hidden="true" />
               </div>
 
               {/* Content */}

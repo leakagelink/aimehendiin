@@ -37,7 +37,7 @@ const Footer = () => {
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
               <div className="h-10 w-10 rounded-full bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center shadow-gold">
-                <Sparkles className="h-5 w-5 text-primary-foreground" />
+                <Sparkles className="h-5 w-5 text-primary-foreground" aria-hidden="true" />
               </div>
               <div className="flex flex-col">
                 <span className="font-serif text-xl font-bold text-foreground">
@@ -60,7 +60,7 @@ const Footer = () => {
                 aria-label="Follow us on Instagram"
                 className="h-10 w-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
-                <Instagram className="h-5 w-5" />
+                <Instagram className="h-5 w-5" aria-hidden="true" />
               </a>
               <a
                 href="https://www.youtube.com/@aimehendi"
@@ -69,7 +69,7 @@ const Footer = () => {
                 aria-label="Subscribe on YouTube"
                 className="h-10 w-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
-                <Youtube className="h-5 w-5" />
+                <Youtube className="h-5 w-5" aria-hidden="true" />
               </a>
               <a
                 href="https://www.facebook.com/aimehendi.in"
@@ -78,7 +78,7 @@ const Footer = () => {
                 aria-label="Follow us on Facebook"
                 className="h-10 w-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
-                <Facebook className="h-5 w-5" />
+                <Facebook className="h-5 w-5" aria-hidden="true" />
               </a>
             </div>
           </div>
@@ -158,7 +158,7 @@ const Footer = () => {
             © {currentYear} AIMehendi.in. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground flex items-center gap-1">
-            Made with <Heart className="h-4 w-4 text-accent fill-accent" /> in India
+            Made with <Heart className="h-4 w-4 text-accent fill-accent" aria-hidden="true" /> in India
           </p>
         </div>
       </div>
