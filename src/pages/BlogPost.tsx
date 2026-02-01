@@ -11,6 +11,7 @@ import AuthorCard from "@/components/blog/AuthorCard";
 import TableOfContents from "@/components/blog/TableOfContents";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 import SocialShareButtons from "@/components/blog/SocialShareButtons";
+import FloatingShareBar from "@/components/blog/FloatingShareBar";
 import { useEffect, useRef } from "react";
 
 const BlogPost = () => {
@@ -133,6 +134,13 @@ const BlogPost = () => {
         publishedAt={post.published_at}
         category={post.category}
         tags={post.tags}
+        excerpt={post.excerpt}
+      />
+
+      {/* Floating Share Bar */}
+      <FloatingShareBar
+        title={post.title}
+        url={typeof window !== "undefined" ? window.location.href : `https://aimehendi.in/blog/${post.slug}`}
         excerpt={post.excerpt}
       />
 
