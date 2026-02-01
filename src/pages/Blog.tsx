@@ -158,7 +158,12 @@ const Blog = () => {
                   <div className="relative aspect-video md:aspect-auto md:h-full overflow-hidden">
                     <img
                       src={featuredPost.featured_image || "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&h=500&fit=crop"}
-                      alt={featuredPost.title}
+                      alt={`${featuredPost.title} - ${featuredPost.category} Mehendi Design`}
+                      title={featuredPost.title}
+                      loading="eager"
+                      decoding="async"
+                      width={800}
+                      height={500}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-background/20" />
@@ -239,7 +244,12 @@ const Blog = () => {
                 <div className="relative aspect-video overflow-hidden">
                   <img
                     src={post.featured_image || "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&h=500&fit=crop"}
-                    alt={post.title}
+                    alt={`${post.title} - ${post.category} Mehendi Design`}
+                    title={post.title}
+                    loading="lazy"
+                    decoding="async"
+                    width={800}
+                    height={500}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
