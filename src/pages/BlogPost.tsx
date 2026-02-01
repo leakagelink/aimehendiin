@@ -151,8 +151,14 @@ const BlogPost = () => {
         <div className="relative w-full h-[40vh] md:h-[50vh] overflow-hidden">
           <img
             src={post.featured_image}
-            alt={post.title}
+            alt={`${post.title} - ${post.category} Mehendi Design`}
+            title={post.meta_title}
+            loading="eager"
+            decoding="async"
+            width={1200}
+            height={672}
             className="w-full h-full object-cover"
+            itemProp="image"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
         </div>
