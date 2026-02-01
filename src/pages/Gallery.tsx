@@ -79,6 +79,7 @@ const Gallery = () => {
       <Helmet>
         <title>Mehendi Design Gallery - 1000+ Free डिज़ाइन | AIMehendi.in</title>
         <meta name="description" content="Browse 1000+ beautiful mehendi designs. Bridal, Arabic, Mandala, Simple mehendi patterns. Free download करें!" />
+        <meta name="author" content="Dheeraj Tagde" />
         <link rel="canonical" href={`${siteUrl}/gallery`} />
         
         {/* Open Graph */}
@@ -109,7 +110,7 @@ const Gallery = () => {
           {/* Page Header */}
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 mb-6">
-              <Sparkles className="h-4 w-4 text-secondary" />
+              <Sparkles className="h-4 w-4 text-secondary" aria-hidden="true" />
               <span className="text-sm font-medium text-secondary">
                 Curated Collection
               </span>

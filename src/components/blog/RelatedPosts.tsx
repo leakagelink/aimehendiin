@@ -43,7 +43,12 @@ const RelatedPosts = ({ currentSlug, category }: RelatedPostsProps) => {
               <div className="aspect-video overflow-hidden">
                 <img
                   src={post.featured_image}
-                  alt={post.title}
+                  alt={`${post.title} - Related Mehendi Article`}
+                  title={post.title}
+                  loading="lazy"
+                  decoding="async"
+                  width={400}
+                  height={225}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -54,7 +59,7 @@ const RelatedPosts = ({ currentSlug, category }: RelatedPostsProps) => {
               </h4>
               <div className="flex items-center justify-between mt-3 text-xs text-muted-foreground">
                 <span>{post.read_time} min read</span>
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </div>
             </div>
           </Link>

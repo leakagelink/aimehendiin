@@ -19,7 +19,7 @@ const Generate = () => {
           {/* Page Header */}
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 mb-6">
-              <Sparkles className="h-4 w-4 text-secondary" />
+              <Sparkles className="h-4 w-4 text-secondary" aria-hidden="true" />
               <span className="text-sm font-medium text-secondary">
                 Free AI Generator
               </span>

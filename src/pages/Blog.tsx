@@ -112,6 +112,11 @@ const Blog = () => {
         <meta property="og:title" content="Mehendi Blog - Tips & Tutorials | AIMehendi.in" />
         <meta property="og:description" content="Latest mehendi design tips, tutorials, and inspiration." />
         <meta property="og:url" content="https://aimehendi.in/blog" />
+        <meta property="og:image" content="https://aimehendi.in/og-image.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Mehendi Blog - Tips & Tutorials | AIMehendi.in" />
+        <meta name="twitter:description" content="Latest mehendi design tips, tutorials, and inspiration." />
+        <meta name="twitter:image" content="https://aimehendi.in/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(blogSchema)}</script>
       </Helmet>
 
@@ -122,7 +127,7 @@ const Blog = () => {
           {/* Page Header */}
           <div className="text-center mb-12 md:mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-medium mb-6">
-              <BookOpen className="h-4 w-4" />
+              <BookOpen className="h-4 w-4" aria-hidden="true" />
               Expert Mehendi Guides
             </div>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-5">
@@ -169,7 +174,7 @@ const Blog = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-background/20" />
                     {/* Featured Badge */}
                     <div className="absolute top-4 left-4 flex items-center gap-2 px-4 py-2 rounded-full bg-secondary text-secondary-foreground text-sm font-medium shadow-lg">
-                      <Sparkles className="h-4 w-4" />
+                      <Sparkles className="h-4 w-4" aria-hidden="true" />
                       Featured Article
                     </div>
                   </div>
@@ -207,11 +212,11 @@ const Blog = () => {
                       </div>
                       <span className="text-muted-foreground">•</span>
                       <span className="flex items-center gap-1 text-sm text-muted-foreground">
-                        <Calendar className="h-4 w-4" />
+                        <Calendar className="h-4 w-4" aria-hidden="true" />
                         {formatDate(featuredPost.published_at || featuredPost.created_at)}
                       </span>
                       <span className="flex items-center gap-1 text-sm text-muted-foreground">
-                        <Clock className="h-4 w-4" />
+                        <Clock className="h-4 w-4" aria-hidden="true" />
                         {featuredPost.read_time} min read
                       </span>
                     </div>
@@ -284,7 +289,7 @@ const Blog = () => {
                     </div>
                     <div className="flex items-center gap-1 text-secondary font-medium text-sm group-hover:translate-x-1 transition-transform">
                       Read
-                      <ArrowRight className="h-4 w-4" />
+                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </div>
                   </div>
                 </div>
@@ -296,7 +301,7 @@ const Blog = () => {
           {(!blogPosts || blogPosts.length === 0) && (
             <div className="text-center py-16">
               <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-muted flex items-center justify-center">
-                <BookOpen className="h-10 w-10 text-muted-foreground" />
+                <BookOpen className="h-10 w-10 text-muted-foreground" aria-hidden="true" />
               </div>
               <h3 className="font-serif text-2xl font-bold text-foreground mb-2">
                 Coming Soon!
@@ -323,7 +328,7 @@ const Blog = () => {
               className="inline-flex items-center gap-2 px-6 py-3 bg-secondary hover:bg-secondary/90 text-secondary-foreground font-medium rounded-full shadow-gold transition-all"
             >
               Generate Design Free
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
         </div>

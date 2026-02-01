@@ -75,7 +75,7 @@ const FloatingShareBar = ({ title, url, excerpt }: FloatingShareBarProps) => {
         className="h-10 w-10 rounded-full bg-background/80 backdrop-blur-sm border-border shadow-lg hover:bg-[#25D366] hover:text-white hover:border-[#25D366] hover:scale-110 transition-all duration-200"
         title="Share on WhatsApp"
       >
-        <MessageCircle className="h-4 w-4" />
+        <MessageCircle className="h-4 w-4" aria-hidden="true" />
       </Button>
 
       {/* Facebook */}
@@ -86,7 +86,7 @@ const FloatingShareBar = ({ title, url, excerpt }: FloatingShareBarProps) => {
         className="h-10 w-10 rounded-full bg-background/80 backdrop-blur-sm border-border shadow-lg hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2] hover:scale-110 transition-all duration-200"
         title="Share on Facebook"
       >
-        <Facebook className="h-4 w-4" />
+        <Facebook className="h-4 w-4" aria-hidden="true" />
       </Button>
 
       {/* Twitter/X */}
@@ -97,7 +97,7 @@ const FloatingShareBar = ({ title, url, excerpt }: FloatingShareBarProps) => {
         className="h-10 w-10 rounded-full bg-background/80 backdrop-blur-sm border-border shadow-lg hover:bg-foreground hover:text-background hover:border-foreground hover:scale-110 transition-all duration-200"
         title="Share on Twitter"
       >
-        <Twitter className="h-4 w-4" />
+        <Twitter className="h-4 w-4" aria-hidden="true" />
       </Button>
 
       {/* Copy Link */}
@@ -113,7 +113,7 @@ const FloatingShareBar = ({ title, url, excerpt }: FloatingShareBarProps) => {
         )}
         title={copied ? "Link copied!" : "Copy link"}
       >
-        {copied ? <Check className="h-4 w-4" /> : <Link2 className="h-4 w-4" />}
+        {copied ? <Check className="h-4 w-4" aria-hidden="true" /> : <Link2 className="h-4 w-4" aria-hidden="true" />}
       </Button>
     </div>
   );
