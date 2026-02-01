@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient, SupabaseClient } from "https://esm.sh/@supabase/supabase-js@2.93.0";
+import { GoogleGenerativeAI } from "https://esm.sh/@google/generative-ai@0.21.0";
 
 declare const EdgeRuntime: {
   waitUntil(promise: Promise<unknown>): void;
@@ -41,7 +42,7 @@ async function generateSingleImage(
   category: string,
   index: number,
   supabase: SupabaseClient,
-  LOVABLE_API_KEY: string
+  genAI: GoogleGenerativeAI
 ): Promise<Record<string, unknown> | null> {
   const categoryInfo = categoryPrompts[category] || categoryPrompts.bridal;
   
@@ -59,41 +60,31 @@ Style requirements:
   console.log(`Generating image ${index + 1} for category: ${category}`);
 
   try {
-    const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${LOVABLE_API_KEY}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model: "google/gemini-2.5-flash-image",
-        messages: [
-          {
-            role: "user",
-            content: uniquePrompt,
-          },
-        ],
-        modalities: ["image", "text"],
-      }),
+    const model = genAI.getGenerativeModel({ 
+      model: "gemini-2.5-flash-image",
+      generationConfig: {
+        responseModalities: ["image", "text"],
+      } as any,
     });
 
-    if (!response.ok) {
-      if (response.status === 429) {
-        console.error("Rate limit hit");
-        return null;
-      }
-      const errorText = await response.text();
-      console.error(`AI gateway error: ${response.status}`, errorText);
-      return null;
-    }
+    const response = await model.generateContent(uniquePrompt);
+    const result = response.response;
 
-    const data = await response.json();
-    const imageData = data.choices?.[0]?.message?.images?.[0]?.image_url?.url;
+    // Extract image from the response
+    let imageData: string | null = null;
+    
+    if (result.candidates && result.candidates[0]?.content?.parts) {
+      for (const part of result.candidates[0].content.parts) {
+        if (part.inlineData?.mimeType?.startsWith("image/")) {
+          imageData = part.inlineData.data;
+          break;
+        }
+      }
+    }
 
     if (imageData) {
       // Upload to Supabase Storage
-      const base64Data = imageData.replace(/^data:image\/\w+;base64,/, "");
-      const imageBuffer = Uint8Array.from(atob(base64Data), c => c.charCodeAt(0));
+      const imageBuffer = Uint8Array.from(atob(imageData), c => c.charCodeAt(0));
       const fileName = `mehendi-${category}-${Date.now()}-${index}.png`;
 
       const { error: uploadError } = await supabase.storage
@@ -149,7 +140,7 @@ async function generateImagesInBackground(
   categories: string[],
   countPerCategory: number,
   supabase: SupabaseClient,
-  LOVABLE_API_KEY: string
+  genAI: GoogleGenerativeAI
 ) {
   console.log(`Starting background generation: ${categories.length} categories, ${countPerCategory} images each`);
   
@@ -158,7 +149,7 @@ async function generateImagesInBackground(
     
     for (let i = 0; i < countPerCategory; i++) {
       try {
-        await generateSingleImage(category, i, supabase, LOVABLE_API_KEY);
+        await generateSingleImage(category, i, supabase, genAI);
         // Small delay between images to avoid rate limits
         await new Promise(resolve => setTimeout(resolve, 2000));
       } catch (error) {
@@ -180,26 +171,30 @@ serve(async (req) => {
   try {
     const { category, count = 1, bulk = false, categories: bulkCategories, countPerCategory = 4 } = await req.json();
     
-    const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
-    if (!LOVABLE_API_KEY) {
-      throw new Error("LOVABLE_API_KEY is not configured");
+    // Use your own Gemini API key instead of Lovable AI
+    const GOOGLE_API_KEY = Deno.env.get("GOOGLE_GEMINI_API_KEY");
+    if (!GOOGLE_API_KEY) {
+      throw new Error("GOOGLE_GEMINI_API_KEY is not configured");
     }
 
     const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
     const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const supabase = createClient(supabaseUrl, supabaseKey);
+    
+    // Initialize Google Generative AI with your API key
+    const genAI = new GoogleGenerativeAI(GOOGLE_API_KEY);
 
     // Bulk generation mode - runs in background
     if (bulk && bulkCategories && Array.isArray(bulkCategories)) {
       // Start background task
       EdgeRuntime.waitUntil(
-        generateImagesInBackground(bulkCategories, countPerCategory, supabase, LOVABLE_API_KEY)
+        generateImagesInBackground(bulkCategories, countPerCategory, supabase, genAI)
       );
       
       return new Response(
         JSON.stringify({ 
           success: true,
-          message: `Started generating ${countPerCategory} images for ${bulkCategories.length} categories in background`,
+          message: `Started generating ${countPerCategory} images for ${bulkCategories.length} categories in background (using your Gemini API)`,
           categories: bulkCategories,
           countPerCategory,
         }),
@@ -212,7 +207,7 @@ serve(async (req) => {
     const maxCount = Math.min(count, 4);
 
     for (let i = 0; i < maxCount; i++) {
-      const image = await generateSingleImage(category, i, supabase, LOVABLE_API_KEY);
+      const image = await generateSingleImage(category, i, supabase, genAI);
       if (image) {
         generatedImages.push(image);
       }
@@ -231,6 +226,14 @@ serve(async (req) => {
     console.error("Error generating gallery images:", error);
     
     const errorMessage = error instanceof Error ? error.message : "Failed to generate images";
+    
+    // Handle specific error cases
+    if (errorMessage.includes("429") || errorMessage.includes("quota") || errorMessage.includes("rate")) {
+      return new Response(
+        JSON.stringify({ error: "Rate limit exceeded. Please try again in a few moments." }),
+        { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
     
     return new Response(
       JSON.stringify({ error: errorMessage }),
