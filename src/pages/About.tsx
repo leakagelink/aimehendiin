@@ -1,16 +1,74 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import PageSEO from "@/components/seo/PageSEO";
-import { Sparkles, Users, Heart, Target } from "lucide-react";
+import { Helmet } from "react-helmet-async";
+import { Sparkles, Users, Heart, Target, HelpCircle } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+const faqs = [
+  {
+    question: "AIMehendi.in क्या है?",
+    answer: "AIMehendi.in एक free AI-powered mehendi design generator है जो seconds में beautiful bridal, Arabic, mandala और simple mehendi designs बनाता है।"
+  },
+  {
+    question: "क्या AI Mehendi Generator free है?",
+    answer: "हाँ, हमारा AI Mehendi Generator पूरी तरह से free है। आप unlimited designs generate कर सकते हैं बिना किसी payment के।"
+  },
+  {
+    question: "कौन-कौन से mehendi design styles available हैं?",
+    answer: "हमारे पास Bridal, Arabic, Mandala, Simple, Finger और Back Hand designs available हैं। आप Intricate, Minimal, Floral, Geometric, Traditional और Modern styles भी choose कर सकते हैं।"
+  },
+  {
+    question: "Generated designs को download कैसे करें?",
+    answer: "Design generate होने के बाद Download button पर click करें। Image automatically आपके device में save हो जाएगी।"
+  },
+  {
+    question: "क्या मैं commercial use के लिए designs use कर सकता/सकती हूं?",
+    answer: "हाँ, आप generated designs को personal और commercial दोनों purposes के लिए use कर सकते हैं। Mehendi artists इन्हें reference के तौर पर भी use कर सकते हैं।"
+  },
+  {
+    question: "Mobile पर काम करता है?",
+    answer: "हाँ, AIMehendi.in पूरी तरह से mobile-friendly है। आप किसी भी device - mobile, tablet या desktop पर designs generate कर सकते हैं।"
+  }
+];
 
 const About = () => {
+  // FAQ Schema for Google Rich Results
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map(faq => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer
+      }
+    }))
+  };
+
   return (
     <div className="min-h-screen bg-background">
-      <PageSEO
-        title="About AIMehendi.in - हमारी कहानी"
-        description="AIMehendi.in - AI-powered mehendi design generator. भारतीय परंपरा और आधुनिक तकनीक का मिश्रण।"
-        path="/about"
-      />
+      <Helmet>
+        <title>About AIMehendi.in - हमारी कहानी | Free AI Mehendi Generator</title>
+        <meta name="title" content="About AIMehendi.in - हमारी कहानी" />
+        <meta name="description" content="AIMehendi.in - AI-powered mehendi design generator. भारतीय परंपरा और आधुनिक तकनीक का मिश्रण। FAQs और हमारी कहानी जानें।" />
+        <link rel="canonical" href="https://aimehendi.in/about" />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://aimehendi.in/about" />
+        <meta property="og:title" content="About AIMehendi.in - हमारी कहानी" />
+        <meta property="og:description" content="AIMehendi.in - AI-powered mehendi design generator. भारतीय परंपरा और आधुनिक तकनीक का मिश्रण।" />
+        
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </Helmet>
+      
       <Header />
       
       <main className="py-8 md:py-16">
@@ -92,6 +150,35 @@ const About = () => {
               <p className="text-muted-foreground">
                 नवाचार पहले। Combining traditional art with cutting-edge AI technology.
               </p>
+            </div>
+          </div>
+
+          {/* FAQ Section */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 mb-4">
+                <HelpCircle className="h-4 w-4 text-secondary" />
+                <span className="text-sm font-medium text-secondary">FAQs</span>
+              </div>
+              <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground">
+                अक्सर पूछे जाने वाले सवाल
+              </h2>
+              <p className="text-muted-foreground mt-2">Frequently Asked Questions</p>
+            </div>
+            
+            <div className="bg-card rounded-2xl border border-border shadow-soft overflow-hidden">
+              <Accordion type="single" collapsible className="w-full">
+                {faqs.map((faq, index) => (
+                  <AccordionItem key={index} value={`item-${index}`} className="border-border">
+                    <AccordionTrigger className="px-6 py-4 text-left font-medium text-foreground hover:text-secondary hover:no-underline">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 pb-4 text-muted-foreground">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </div>
           </div>
 
