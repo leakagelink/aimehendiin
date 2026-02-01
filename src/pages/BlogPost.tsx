@@ -10,6 +10,7 @@ import BlogPostSEO from "@/components/blog/BlogPostSEO";
 import AuthorCard from "@/components/blog/AuthorCard";
 import TableOfContents from "@/components/blog/TableOfContents";
 import RelatedPosts from "@/components/blog/RelatedPosts";
+import SocialShareButtons from "@/components/blog/SocialShareButtons";
 import { useEffect, useRef } from "react";
 
 const BlogPost = () => {
@@ -259,6 +260,15 @@ const BlogPost = () => {
                   </div>
                 </div>
               )}
+
+              {/* Social Share Buttons */}
+              <div className="mt-10 pt-8 border-t border-border">
+                <SocialShareButtons
+                  title={post.title}
+                  url={typeof window !== "undefined" ? window.location.href : `https://aimehendi.in/blog/${post.slug}`}
+                  excerpt={post.excerpt}
+                />
+              </div>
             </div>
           </div>
 
