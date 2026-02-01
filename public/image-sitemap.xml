@@ -10,6 +10,11 @@
       <image:title>AI Mehendi Design Generator - Free मेहंदी Patterns</image:title>
       <image:caption>Create beautiful mehendi designs with AI. Free generator for bridal, Arabic, mandala patterns.</image:caption>
     </image:image>
+    <image:image>
+      <image:loc>https://aimehendi.in/logo.png</image:loc>
+      <image:title>AIMehendi.in Logo - AI Mehendi Design Generator</image:title>
+      <image:caption>Official logo of AIMehendi.in - AI powered mehendi design platform.</image:caption>
+    </image:image>
   </url>
 
   <!-- Gallery Page -->
@@ -19,52 +24,6 @@
       <image:loc>https://aimehendi.in/og-image.jpg</image:loc>
       <image:title>Mehendi Design Gallery - 1000+ Free Patterns</image:title>
       <image:caption>Browse beautiful mehendi designs including bridal, Arabic, mandala, simple patterns.</image:caption>
-    </image:image>
-  </url>
-
-  <!-- Blog Posts with Thumbnails -->
-  <url>
-    <loc>https://aimehendi.in/blog/simple-mehendi-designs-2025</loc>
-    <image:image>
-      <image:loc>https://aimehendi.in/assets/blog/simple-mehendi-thumbnail.jpg</image:loc>
-      <image:title>50+ Simple Mehendi Designs 2025 - Easy Patterns</image:title>
-      <image:caption>आसान मेहंदी डिज़ाइन जो beginners भी बना सकते हैं। Simple mehendi for everyday occasions.</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://aimehendi.in/blog/bridal-mehendi-designs-2025</loc>
-    <image:image>
-      <image:loc>https://aimehendi.in/assets/blog/bridal-mehendi-thumbnail.jpg</image:loc>
-      <image:title>Latest Bridal Mehendi Designs 2025 - Wedding Patterns</image:title>
-      <image:caption>Beautiful bridal mehendi designs for your special day. दुल्हन के लिए खास मेहंदी डिज़ाइन।</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://aimehendi.in/blog/arabic-mehendi-designs-2025</loc>
-    <image:image>
-      <image:loc>https://aimehendi.in/assets/blog/arabic-mehendi-thumbnail.jpg</image:loc>
-      <image:title>Arabic Mehendi Designs 2025 - Elegant Patterns</image:title>
-      <image:caption>Elegant Arabic mehendi patterns with bold floral motifs. अरबी मेहंदी की खूबसूरत डिज़ाइन।</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://aimehendi.in/blog/finger-mehendi-designs-2025</loc>
-    <image:image>
-      <image:loc>https://aimehendi.in/assets/blog/finger-mehendi-thumbnail.jpg</image:loc>
-      <image:title>Finger Mehendi Designs 2025 - Trendy Patterns</image:title>
-      <image:caption>Stylish finger mehendi designs for modern look. उंगलियों के लिए trendy मेहंदी patterns।</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://aimehendi.in/blog/karwa-chauth-mehendi-designs-2025</loc>
-    <image:image>
-      <image:loc>https://aimehendi.in/assets/blog/karwa-chauth-mehendi-thumbnail.jpg</image:loc>
-      <image:title>Karwa Chauth Mehendi Designs 2025 - Festival Patterns</image:title>
-      <image:caption>Special Karwa Chauth mehendi designs. करवा चौथ के लिए खास मेहंदी डिज़ाइन।</image:caption>
     </image:image>
   </url>
 
@@ -85,6 +44,177 @@
       <image:loc>https://aimehendi.in/og-image.jpg</image:loc>
       <image:title>About AIMehendi.in - AI Mehendi Design Platform</image:title>
       <image:caption>Learn about AIMehendi.in - the AI-powered mehendi design generator by Dheeraj Tagde.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Blog Posts with Thumbnails -->
+  
+  <!-- 1. Simple Mehendi Design 2026 -->
+  <url>
+    <loc>https://aimehendi.in/blog/simple-mehendi-design-2026</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/simple-mehendi-thumbnail.jpg</image:loc>
+      <image:title>Simple Mehendi Design 2026 - Easy Patterns for Beginners</image:title>
+      <image:caption>आसान मेहंदी डिज़ाइन जो beginners भी बना सकते हैं। Simple mehendi for everyday occasions.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 2. Arabic Mehendi Design for Beginners -->
+  <url>
+    <loc>https://aimehendi.in/blog/arabic-mehendi-design-for-beginners</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/arabic-mehendi-thumbnail.jpg</image:loc>
+      <image:title>Arabic Mehendi Design for Beginners - Step by Step Guide</image:title>
+      <image:caption>Elegant Arabic mehendi patterns with bold floral motifs. अरबी मेहंदी की खूबसूरत डिज़ाइन।</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 3. Karwa Chauth Mehendi Design 2026 -->
+  <url>
+    <loc>https://aimehendi.in/blog/karwa-chauth-mehendi-design-2026</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/karwa-chauth-mehendi-thumbnail.jpg</image:loc>
+      <image:title>Karwa Chauth Mehendi Design 2026 - Festival Special</image:title>
+      <image:caption>Special Karwa Chauth mehendi designs. करवा चौथ के लिए खास मेहंदी डिज़ाइन।</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 4. Finger Mehendi Design Simple -->
+  <url>
+    <loc>https://aimehendi.in/blog/finger-mehendi-design-simple</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/finger-mehendi-thumbnail.jpg</image:loc>
+      <image:title>Finger Mehendi Design Simple - Trendy Patterns 2026</image:title>
+      <image:caption>Stylish finger mehendi designs for modern look. उंगलियों के लिए trendy मेहंदी patterns।</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 5. Bridal Mehendi Design Back Hand -->
+  <url>
+    <loc>https://aimehendi.in/blog/bridal-mehendi-design-back-hand</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/bridal-mehendi-thumbnail.jpg</image:loc>
+      <image:title>Bridal Mehendi Design Back Hand - Wedding Patterns 2026</image:title>
+      <image:caption>Beautiful bridal mehendi designs for your special day. दुल्हन के लिए खास मेहंदी डिज़ाइन।</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 6. AI se Mehndi Design Kaise Banaye -->
+  <url>
+    <loc>https://aimehendi.in/blog/ai-se-mehndi-design-kaise-banaye-free-tutorial-2026</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/ai-mehndi-tutorial-thumbnail.jpg</image:loc>
+      <image:title>AI se Mehndi Design Kaise Banaye Free - Complete Tutorial 2026</image:title>
+      <image:caption>AI से मेहंदी डिज़ाइन बनाना सीखें। Step by step free tutorial with AIMehendi.in।</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 7. Gol Tikki Mehndi Design Easy -->
+  <url>
+    <loc>https://aimehendi.in/blog/gol-tikki-mehndi-design-easy-round-mehndi-2026</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/gol-tikki-mehndi-easy-thumbnail.jpg</image:loc>
+      <image:title>Gol Tikki Mehndi Design Easy - Round Mehndi Patterns 2026</image:title>
+      <image:caption>गोल टिक्की मेहंदी डिज़ाइन - easy round patterns for all occasions।</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 8. Finger Mehndi Design Easy for Beginners -->
+  <url>
+    <loc>https://aimehendi.in/blog/finger-mehndi-design-easy-for-beginners-2026</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/finger-mehndi-beginners-thumbnail.jpg</image:loc>
+      <image:title>Finger Mehndi Design Easy for Beginners - 5 Minute Patterns 2026</image:title>
+      <image:caption>5 minute finger mehndi designs for beginners। आसान उंगली मेहंदी पैटर्न।</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 9. Arabic Mehndi Left Hand Simple -->
+  <url>
+    <loc>https://aimehendi.in/blog/arabic-mehndi-left-hand-simple-designs-2026</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/arabic-mehndi-left-hand-thumbnail.jpg</image:loc>
+      <image:title>Arabic Mehndi Left Hand Simple - Elegant Designs 2026</image:title>
+      <image:caption>Left hand Arabic mehndi designs - simple yet elegant patterns।</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 10. Diwali Mehndi Design Simple 2026 -->
+  <url>
+    <loc>https://aimehendi.in/blog/diwali-mehndi-design-simple-2026</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/diwali-mehndi-simple-2026-thumbnail.jpg</image:loc>
+      <image:title>Diwali Mehndi Design Simple 2026 - Festival Special</image:title>
+      <image:caption>दिवाली के लिए simple mehndi designs। Festive patterns with diya motifs।</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 11. Karwa Chauth Mehndi Design 2026 Special -->
+  <url>
+    <loc>https://aimehendi.in/blog/karwa-chauth-mehndi-design-2026-special</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/karwa-chauth-mehndi-2026-thumbnail.jpg</image:loc>
+      <image:title>Karwa Chauth Mehndi Design 2026 Special - Moon Patterns</image:title>
+      <image:caption>करवा चौथ 2026 के लिए special mehndi - चाँद और छलनी designs।</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 12. Best Mehndi Apps Comparison 2026 -->
+  <url>
+    <loc>https://aimehendi.in/blog/best-mehndi-apps-comparison-2026</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/mehndi-apps-comparison-thumbnail.jpg</image:loc>
+      <image:title>Best Mehndi Apps Comparison 2026 - Top 10 Apps Review</image:title>
+      <image:caption>10 best mehndi design apps comparison। Which app is best for you?</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 13. Shaded Mehndi Design Tutorial -->
+  <url>
+    <loc>https://aimehendi.in/blog/shaded-mehndi-design-tutorial-3d-effect-technique-2026</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/shaded-mehndi-tutorial-thumbnail.jpg</image:loc>
+      <image:title>Shaded Mehndi Design Tutorial - 3D Effect Technique 2026</image:title>
+      <image:caption>Shaded mehndi 3D effect tutorial। Professional shading techniques सीखें।</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 14. Mehndi Lagane Ka Tarika Step by Step -->
+  <url>
+    <loc>https://aimehendi.in/blog/mehndi-lagane-ka-tarika-step-by-step-complete-guide-2026</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/mehndi-lagane-ka-tarika-thumbnail.jpg</image:loc>
+      <image:title>Mehndi Lagane Ka Tarika Step by Step - Complete Guide 2026</image:title>
+      <image:caption>मेहंदी लगाने का तरीका - complete beginner's guide with cone grip techniques।</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 15. Hatheli Pe Simple Mehndi -->
+  <url>
+    <loc>https://aimehendi.in/blog/hatheli-pe-simple-mehndi-palm-designs-2026</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/hatheli-simple-mehndi-thumbnail.jpg</image:loc>
+      <image:title>Hatheli Pe Simple Mehndi - Palm Designs for All Occasions 2026</image:title>
+      <image:caption>हथेली पर simple mehndi designs - 15+ palm patterns for daily to weddings।</image:caption>
+    </image:image>
+  </url>
+
+  <!-- SEO Landing Pages -->
+  <url>
+    <loc>https://aimehendi.in/bridal-mehendi-design-2026</loc>
+    <image:image>
+      <image:loc>https://aimehendi.in/og-image.jpg</image:loc>
+      <image:title>Bridal Mehendi Design 2026 - Latest Wedding Patterns</image:title>
+      <image:caption>Latest bridal mehendi designs for 2026 weddings. दुल्हन मेहंदी।</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://aimehendi.in/karwa-chauth-mehndi-design</loc>
+    <image:image>
+      <image:loc>https://aimehendi.in/og-image.jpg</image:loc>
+      <image:title>Karwa Chauth Mehndi Design - Festival Special Patterns</image:title>
+      <image:caption>Beautiful Karwa Chauth mehndi designs। करवा चौथ मेहंदी।</image:caption>
     </image:image>
   </url>
 
