@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage with hero image -->
+  <url>
+    <loc>https://aimehendi.in/</loc>
+    <image:image>
+      <image:loc>https://aimehendi.in/og-image.jpg</image:loc>
+      <image:title>AI Mehendi Design Generator - Free मेहंदी Patterns</image:title>
+      <image:caption>Create beautiful mehendi designs with AI. Free generator for bridal, Arabic, mandala patterns.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Gallery Page -->
+  <url>
+    <loc>https://aimehendi.in/gallery</loc>
+    <image:image>
+      <image:loc>https://aimehendi.in/og-image.jpg</image:loc>
+      <image:title>Mehendi Design Gallery - 1000+ Free Patterns</image:title>
+      <image:caption>Browse beautiful mehendi designs including bridal, Arabic, mandala, simple patterns.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Blog Posts with Thumbnails -->
+  <url>
+    <loc>https://aimehendi.in/blog/simple-mehendi-designs-2025</loc>
+    <image:image>
+      <image:loc>https://aimehendi.in/assets/blog/simple-mehendi-thumbnail.jpg</image:loc>
+      <image:title>50+ Simple Mehendi Designs 2025 - Easy Patterns</image:title>
+      <image:caption>आसान मेहंदी डिज़ाइन जो beginners भी बना सकते हैं। Simple mehendi for everyday occasions.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://aimehendi.in/blog/bridal-mehendi-designs-2025</loc>
+    <image:image>
+      <image:loc>https://aimehendi.in/assets/blog/bridal-mehendi-thumbnail.jpg</image:loc>
+      <image:title>Latest Bridal Mehendi Designs 2025 - Wedding Patterns</image:title>
+      <image:caption>Beautiful bridal mehendi designs for your special day. दुल्हन के लिए खास मेहंदी डिज़ाइन।</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://aimehendi.in/blog/arabic-mehendi-designs-2025</loc>
+    <image:image>
+      <image:loc>https://aimehendi.in/assets/blog/arabic-mehendi-thumbnail.jpg</image:loc>
+      <image:title>Arabic Mehendi Designs 2025 - Elegant Patterns</image:title>
+      <image:caption>Elegant Arabic mehendi patterns with bold floral motifs. अरबी मेहंदी की खूबसूरत डिज़ाइन।</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://aimehendi.in/blog/finger-mehendi-designs-2025</loc>
+    <image:image>
+      <image:loc>https://aimehendi.in/assets/blog/finger-mehendi-thumbnail.jpg</image:loc>
+      <image:title>Finger Mehendi Designs 2025 - Trendy Patterns</image:title>
+      <image:caption>Stylish finger mehendi designs for modern look. उंगलियों के लिए trendy मेहंदी patterns।</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://aimehendi.in/blog/karwa-chauth-mehendi-designs-2025</loc>
+    <image:image>
+      <image:loc>https://aimehendi.in/assets/blog/karwa-chauth-mehendi-thumbnail.jpg</image:loc>
+      <image:title>Karwa Chauth Mehendi Designs 2025 - Festival Patterns</image:title>
+      <image:caption>Special Karwa Chauth mehendi designs. करवा चौथ के लिए खास मेहंदी डिज़ाइन।</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Generate Page -->
+  <url>
+    <loc>https://aimehendi.in/generate</loc>
+    <image:image>
+      <image:loc>https://aimehendi.in/og-image.jpg</image:loc>
+      <image:title>AI Mehendi Design Generator - Create Free Patterns</image:title>
+      <image:caption>Generate custom mehendi designs with AI. Free tool for bridal, Arabic, mandala patterns.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://aimehendi.in/about</loc>
+    <image:image>
+      <image:loc>https://aimehendi.in/og-image.jpg</image:loc>
+      <image:title>About AIMehendi.in - AI Mehendi Design Platform</image:title>
+      <image:caption>Learn about AIMehendi.in - the AI-powered mehendi design generator by Dheeraj Tagde.</image:caption>
+    </image:image>
+  </url>
+
+</urlset>
