@@ -57,12 +57,20 @@ const About = () => {
         <title>About AIMehendi.in - हमारी कहानी | Free AI Mehendi Generator</title>
         <meta name="title" content="About AIMehendi.in - हमारी कहानी" />
         <meta name="description" content="AIMehendi.in - AI-powered mehendi design generator. भारतीय परंपरा और आधुनिक तकनीक का मिश्रण। FAQs और हमारी कहानी जानें।" />
+        <meta name="author" content="Dheeraj Tagde" />
         <link rel="canonical" href="https://aimehendi.in/about" />
         
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://aimehendi.in/about" />
         <meta property="og:title" content="About AIMehendi.in - हमारी कहानी" />
         <meta property="og:description" content="AIMehendi.in - AI-powered mehendi design generator. भारतीय परंपरा और आधुनिक तकनीक का मिश्रण।" />
+        <meta property="og:image" content="https://aimehendi.in/og-image.jpg" />
+        <meta property="og:site_name" content="AIMehendi.in" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About AIMehendi.in - हमारी कहानी" />
+        <meta name="twitter:description" content="AIMehendi.in - AI-powered mehendi design generator. भारतीय परंपरा और आधुनिक तकनीक का मिश्रण।" />
+        <meta name="twitter:image" content="https://aimehendi.in/og-image.jpg" />
         
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
