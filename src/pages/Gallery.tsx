@@ -1,59 +1,30 @@
+import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import GalleryGrid from "@/components/gallery/GalleryGrid";
 import { Helmet } from "react-helmet-async";
 import { Sparkles } from "lucide-react";
 
-// Gallery images data for schema
-const galleryImages = [
-  {
-    id: "1",
-    url: "https://images.unsplash.com/photo-1595486650748-8f08e7839c90?w=800",
-    title: "Bridal Full Hand Mehendi Design",
-    description: "Beautiful intricate bridal mehendi pattern covering full hand with traditional motifs",
-    category: "Bridal Mehendi",
-  },
-  {
-    id: "2",
-    url: "https://images.unsplash.com/photo-1560707854-fb9a10ced6e2?w=800",
-    title: "Arabic Mehendi Pattern",
-    description: "Elegant Arabic style mehendi design with flowing floral patterns",
-    category: "Arabic Mehendi",
-  },
-  {
-    id: "3",
-    url: "https://images.unsplash.com/photo-1591213954196-2d0ccb3f8d4c?w=800",
-    title: "Mandala Circle Mehendi Design",
-    description: "Symmetrical mandala mehendi pattern with intricate geometric details",
-    category: "Mandala Mehendi",
-  },
-  {
-    id: "4",
-    url: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800",
-    title: "Simple Elegant Mehendi",
-    description: "Minimalist simple mehendi design perfect for casual occasions",
-    category: "Simple Mehendi",
-  },
-  {
-    id: "5",
-    url: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800",
-    title: "Finger Mehendi Pattern",
-    description: "Delicate finger mehendi design with detailed fingertip patterns",
-    category: "Finger Mehendi",
-  },
-  {
-    id: "6",
-    url: "https://images.unsplash.com/photo-1583089892943-e02e5b017b6a?w=800",
-    title: "Diwali Festival Mehendi",
-    description: "Festive mehendi design perfect for Diwali and other celebrations",
-    category: "Festival Mehendi",
-  },
-];
-
 const Gallery = () => {
   const siteUrl = "https://aimehendi.in";
 
-  // ImageGallery Schema
+  // Fetch gallery images for schema
+  const { data: galleryImages = [] } = useQuery({
+    queryKey: ["gallery-images-schema"],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("gallery_images")
+        .select("id, image_url, title, description, category")
+        .order("created_at", { ascending: false })
+        .limit(20);
+      
+      if (error) throw error;
+      return data || [];
+    },
+  });
+
+  // ImageGallery Schema - dynamic from database
   const imageGallerySchema = {
     "@context": "https://schema.org",
     "@type": "ImageGallery",
@@ -61,22 +32,22 @@ const Gallery = () => {
     description: "Browse 1000+ beautiful mehendi designs including bridal, Arabic, mandala, simple patterns. Free download available.",
     url: `${siteUrl}/gallery`,
     author: {
-      "@type": "Organization",
-      name: "AIMehendi.in",
+      "@type": "Person",
+      name: "Dheeraj Tagde",
     },
     image: galleryImages.map((img) => ({
       "@type": "ImageObject",
-      contentUrl: img.url,
+      contentUrl: img.image_url,
       name: img.title,
-      description: img.description,
+      description: img.description || `${img.title} - Beautiful mehendi design`,
       caption: img.title,
       representativeOfPage: false,
       license: `${siteUrl}/terms`,
       acquireLicensePage: `${siteUrl}/gallery`,
-      creditText: "AIMehendi.in",
+      creditText: "AIMehendi.in - Dheeraj Tagde",
       creator: {
-        "@type": "Organization",
-        name: "AIMehendi.in",
+        "@type": "Person",
+        name: "Dheeraj Tagde",
       },
     })),
   };
@@ -96,8 +67,8 @@ const Gallery = () => {
         item: {
           "@type": "ImageObject",
           name: img.title,
-          contentUrl: img.url,
-          description: img.description,
+          contentUrl: img.image_url,
+          description: img.description || `${img.title} - Mehendi design`,
         },
       })),
     },

@@ -77,7 +77,12 @@ const HeroSection = () => {
           <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-border">
             <img 
               src={heroBanner} 
-              alt="AI Mehendi Design Generator - Beautiful Henna Patterns" 
+              alt="AI Mehendi Design Generator - Beautiful Henna Patterns for Indian Women"
+              title="AI Mehendi Design Generator - Create Beautiful Henna Designs"
+              loading="eager"
+              decoding="async"
+              width={1920}
+              height={1080}
               className="w-full aspect-[16/9] object-cover"
             />
             {/* Overlay gradient */}
