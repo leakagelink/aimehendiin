@@ -44,7 +44,8 @@ const HomeSEO = () => {
       price: "0",
       priceCurrency: "INR"
     },
-    description: "Free AI-powered mehendi design generator. Create bridal, Arabic, mandala, and simple mehendi patterns instantly.",
+    description: "Free AI Mehendi Design Generator - Create bridal mehendi design 2026, dulhan mehendi design latest, simple arabic mehndi back hand, finger mehndi design easy, mandala mehndi design for beginners। Mehndi design AI se kaise banaye सीखें।",
+    keywords: "ai mehendi design generator, bridal mehendi design 2026, simple arabic mehndi back hand, finger mehndi design easy, dulhan mehendi design latest, karwa chauth mehndi design, raksha bandhan mehndi simple, mandala mehndi design for beginners, mehndi design ai se kaise banaye, free mehndi download hd",
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.8",
