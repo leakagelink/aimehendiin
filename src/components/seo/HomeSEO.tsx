@@ -14,7 +14,9 @@ const HomeSEO = () => {
     sameAs: [
       "https://www.instagram.com/aimehendi.in",
       "https://www.youtube.com/@aimehendi",
-      "https://www.facebook.com/aimehendi.in"
+      "https://www.facebook.com/aimehendi.in",
+      "https://twitter.com/aimehendi",
+      "https://www.linkedin.com/company/aimehendi"
     ]
   };
 
