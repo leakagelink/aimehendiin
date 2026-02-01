@@ -162,17 +162,18 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
   };
 
   return (
-    <div className={`w-full ${compact ? "" : "max-w-4xl mx-auto"} px-0`}>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+    <div className={`w-full ${compact ? "" : "max-w-4xl mx-auto"}`}>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
         {/* Controls */}
-        <div className="space-y-4 md:space-y-6 bg-card rounded-2xl p-4 md:p-6 shadow-card border border-border">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="h-10 w-10 rounded-full bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center">
-              <Hand className="h-5 w-5 text-primary-foreground" aria-hidden="true" />
+        <div className="space-y-3 md:space-y-6 bg-card rounded-xl md:rounded-2xl p-3 md:p-6 shadow-card border border-border">
+          {/* Header - More compact on mobile */}
+          <div className="flex items-center gap-2 pb-2 border-b border-border md:border-0 md:pb-0 mb-2 md:mb-4">
+            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center flex-shrink-0">
+              <Hand className="h-4 w-4 md:h-5 md:w-5 text-primary-foreground" aria-hidden="true" />
             </div>
-            <div>
-              <h3 className="font-serif text-lg font-semibold text-foreground">Design Options</h3>
-              <p className="text-xs text-muted-foreground">अपनी पसंद चुनें</p>
+            <div className="min-w-0">
+              <h3 className="font-serif text-base md:text-lg font-semibold text-foreground leading-tight">Design Options</h3>
+              <p className="text-[10px] md:text-xs text-muted-foreground">अपनी पसंद चुनें</p>
             </div>
           </div>
 
@@ -226,57 +227,59 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
             </div>
           )}
 
-          {/* Design Type */}
-          <div className="space-y-2">
-            <Label className="text-sm font-medium">Design Type (डिज़ाइन प्रकार)</Label>
-            <Select value={designType} onValueChange={setDesignType}>
-              <SelectTrigger className="w-full">
-                <SelectValue placeholder="Select design type" />
-              </SelectTrigger>
-              <SelectContent>
-                {designTypes.map((type) => (
-                  <SelectItem key={type.value} value={type.value}>
-                    {type.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+          {/* Design Type & Hand Type - Side by side on mobile */}
+          <div className="grid grid-cols-2 gap-2 md:grid-cols-1 md:gap-4">
+            <div className="space-y-1 md:space-y-2">
+              <Label className="text-xs md:text-sm font-medium">Design Type</Label>
+              <Select value={designType} onValueChange={setDesignType}>
+                <SelectTrigger className="w-full h-9 md:h-10 text-xs md:text-sm">
+                  <SelectValue placeholder="Select" />
+                </SelectTrigger>
+                <SelectContent>
+                  {designTypes.map((type) => (
+                    <SelectItem key={type.value} value={type.value} className="text-xs md:text-sm">
+                      {type.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="space-y-1 md:space-y-2">
+              <Label className="text-xs md:text-sm font-medium">Hand Type</Label>
+              <Select value={handType} onValueChange={setHandType}>
+                <SelectTrigger className="w-full h-9 md:h-10 text-xs md:text-sm">
+                  <SelectValue placeholder="Select" />
+                </SelectTrigger>
+                <SelectContent>
+                  {handTypes.map((type) => (
+                    <SelectItem key={type.value} value={type.value} className="text-xs md:text-sm">
+                      {type.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
           </div>
 
-          {/* Hand Type */}
+          {/* Style Modifiers - Compact grid */}
           <div className="space-y-2">
-            <Label className="text-sm font-medium">Hand Type (हाथ का प्रकार)</Label>
-            <Select value={handType} onValueChange={setHandType}>
-              <SelectTrigger className="w-full">
-                <SelectValue placeholder="Select hand type" />
-              </SelectTrigger>
-              <SelectContent>
-                {handTypes.map((type) => (
-                  <SelectItem key={type.value} value={type.value}>
-                    {type.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-
-          {/* Style Modifiers */}
-          <div className="space-y-3">
-            <Label className="text-sm font-medium">Style (स्टाइल चुनें)</Label>
-            <div className="grid grid-cols-2 gap-2">
+            <Label className="text-xs md:text-sm font-medium">Style (स्टाइल)</Label>
+            <div className="grid grid-cols-2 gap-x-2 gap-y-1.5 md:gap-2">
               {styleModifiers.map((style) => (
                 <div
                   key={style.value}
-                  className="flex items-center space-x-2"
+                  className="flex items-center space-x-1.5 md:space-x-2"
                 >
                   <Checkbox
                     id={style.value}
                     checked={selectedStyles.includes(style.value)}
                     onCheckedChange={() => toggleStyle(style.value)}
+                    className="h-4 w-4"
                   />
                   <label
                     htmlFor={style.value}
-                    className="text-sm text-foreground cursor-pointer"
+                    className="text-xs md:text-sm text-foreground cursor-pointer leading-tight"
                   >
                     {style.label}
                   </label>
@@ -298,48 +301,43 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
             </div>
           )}
 
-          {/* Generate Button */}
+          {/* Generate Button - Prominent but compact */}
           <Button
             variant="hero"
-            size="xl"
-            className="w-full"
+            size="lg"
+            className="w-full h-10 md:h-12 text-sm md:text-base"
             onClick={generateDesign}
             disabled={isGenerating}
           >
             {isGenerating ? (
               <>
-                <Loader2 className="h-5 w-5 animate-spin" aria-hidden="true" />
-                Generating... बन रहा है
+                <Loader2 className="h-4 w-4 md:h-5 md:w-5 animate-spin" aria-hidden="true" />
+                <span className="ml-2">Generating...</span>
               </>
             ) : (
               <>
-                <Sparkles className="h-5 w-5" aria-hidden="true" />
-                {referenceImage ? "Generate from Photo" : "Generate Design | डिज़ाइन बनाएं"}
+                <Sparkles className="h-4 w-4 md:h-5 md:w-5" aria-hidden="true" />
+                <span className="ml-2">{referenceImage ? "Generate" : "Generate Design"}</span>
               </>
             )}
           </Button>
         </div>
 
         {/* Preview */}
-        <div className="bg-card rounded-2xl p-4 md:p-6 shadow-card border border-border flex flex-col">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mb-4">
-            <h3 className="font-serif text-lg font-semibold text-foreground">Preview</h3>
+        <div className="bg-card rounded-xl md:rounded-2xl p-3 md:p-6 shadow-card border border-border flex flex-col">
+          <div className="flex items-center justify-between gap-2 mb-3 md:mb-4">
+            <h3 className="font-serif text-base md:text-lg font-semibold text-foreground">Preview</h3>
             {generatedImage && (
-              <div className="flex flex-wrap gap-2">
-                <Button variant="outline" size="sm" onClick={generateDesign} disabled={isGenerating} aria-label="Regenerate design">
-                  <RefreshCw className={`h-4 w-4 ${isGenerating ? "animate-spin" : ""}`} aria-hidden="true" />
+              <div className="flex gap-1.5 md:gap-2">
+                <Button variant="outline" size="sm" onClick={generateDesign} disabled={isGenerating} aria-label="Regenerate" className="h-8 w-8 p-0 md:h-9 md:w-auto md:px-3">
+                  <RefreshCw className={`h-3.5 w-3.5 md:h-4 md:w-4 ${isGenerating ? "animate-spin" : ""}`} aria-hidden="true" />
                 </Button>
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  onClick={() => setShowShareMenu(!showShareMenu)}
-                  aria-label="Share design"
-                >
-                  <Share2 className="h-4 w-4" aria-hidden="true" />
+                <Button variant="outline" size="sm" onClick={() => setShowShareMenu(!showShareMenu)} aria-label="Share" className="h-8 w-8 p-0 md:h-9 md:w-auto md:px-3">
+                  <Share2 className="h-3.5 w-3.5 md:h-4 md:w-4" aria-hidden="true" />
                 </Button>
-                <Button variant="gold" size="sm" onClick={downloadImage}>
-                  <Download className="h-4 w-4" aria-hidden="true" />
-                  <span className="hidden xs:inline">Download</span>
+                <Button variant="gold" size="sm" onClick={downloadImage} className="h-8 px-2 md:h-9 md:px-3">
+                  <Download className="h-3.5 w-3.5 md:h-4 md:w-4" aria-hidden="true" />
+                  <span className="hidden md:inline ml-1.5">Download</span>
                 </Button>
               </div>
             )}
@@ -356,18 +354,15 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
             </div>
           )}
 
-          <div className="flex-1 min-h-[300px] rounded-xl bg-gradient-to-br from-muted to-muted/50 border-2 border-dashed border-border flex items-center justify-center overflow-hidden">
+          <div className="flex-1 min-h-[200px] md:min-h-[300px] rounded-lg md:rounded-xl bg-gradient-to-br from-muted to-muted/50 border-2 border-dashed border-border flex items-center justify-center overflow-hidden">
             {isGenerating ? (
-              <div className="text-center p-8">
+              <div className="text-center p-4 md:p-8">
                 <div className="relative">
-                  <div className="h-20 w-20 rounded-full bg-gradient-to-br from-primary via-secondary to-accent animate-pulse mx-auto mb-4" />
-                  <Sparkles className="h-8 w-8 text-secondary absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-spin-slow" aria-hidden="true" />
+                  <div className="h-14 w-14 md:h-20 md:w-20 rounded-full bg-gradient-to-br from-primary via-secondary to-accent animate-pulse mx-auto mb-3 md:mb-4" />
+                  <Sparkles className="h-6 w-6 md:h-8 md:w-8 text-secondary absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-spin-slow" aria-hidden="true" />
                 </div>
-                <p className="text-sm text-muted-foreground">
-                  {referenceImage ? "Reference से design बन रही है..." : "AI आपका डिज़ाइन बना रही है..."}
-                </p>
-                <p className="text-xs text-muted-foreground mt-1">
-                  Creating your beautiful design
+                <p className="text-xs md:text-sm text-muted-foreground">
+                  AI आपका डिज़ाइन बना रही है...
                 </p>
               </div>
             ) : generatedImage ? (
@@ -377,15 +372,12 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
                 className="w-full h-full object-contain rounded-lg"
               />
             ) : (
-              <div className="text-center p-8">
-                <div className="h-20 w-20 rounded-full bg-muted flex items-center justify-center mx-auto mb-4">
-                  <Hand className="h-10 w-10 text-muted-foreground" aria-hidden="true" />
+              <div className="text-center p-4 md:p-8">
+                <div className="h-14 w-14 md:h-20 md:w-20 rounded-full bg-muted flex items-center justify-center mx-auto mb-3 md:mb-4">
+                  <Hand className="h-7 w-7 md:h-10 md:w-10 text-muted-foreground" aria-hidden="true" />
                 </div>
-                <p className="text-sm text-muted-foreground">
-                  अपनी पसंद चुनें और "Generate" दबाएं
-                </p>
-                <p className="text-xs text-muted-foreground mt-1">
-                  Select your preferences and click Generate
+                <p className="text-xs md:text-sm text-muted-foreground">
+                  अपनी पसंद चुनें और Generate दबाएं
                 </p>
               </div>
             )}
