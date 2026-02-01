@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import DesignCard from "./DesignCard";
+import ImageViewerModal from "./ImageViewerModal";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Sparkles, Loader2, RefreshCw } from "lucide-react";
+import { Sparkles, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
 const categories = [
@@ -36,6 +37,7 @@ interface GalleryGridProps {
 
 const GalleryGrid = ({ limit, showFilters = true, showGenerateButton = true }: GalleryGridProps) => {
   const [activeCategory, setActiveCategory] = useState("all");
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
   const queryClient = useQueryClient();
 
   // Fetch gallery images from Supabase
@@ -171,18 +173,35 @@ const GalleryGrid = ({ limit, showFilters = true, showGenerateButton = true }: G
 
       {/* Grid */}
       {galleryImages.length > 0 ? (
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-          {galleryImages.map((design) => (
-            <DesignCard
-              key={design.id}
-              image={design.image_url}
-              title={design.title}
-              category={categories.find((c) => c.value === design.category)?.label || design.category}
-              likes={design.likes_count || 0}
-              onView={() => console.log("View design:", design.id)}
+        <>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            {galleryImages.map((design, index) => (
+              <DesignCard
+                key={design.id}
+                image={design.image_url}
+                title={design.title}
+                category={categories.find((c) => c.value === design.category)?.label || design.category}
+                likes={design.likes_count || 0}
+                onView={() => setSelectedImageIndex(index)}
+              />
+            ))}
+          </div>
+          
+          {/* Image Viewer Modal */}
+          {selectedImageIndex !== null && galleryImages[selectedImageIndex] && (
+            <ImageViewerModal
+              isOpen={selectedImageIndex !== null}
+              onClose={() => setSelectedImageIndex(null)}
+              image={galleryImages[selectedImageIndex].image_url}
+              title={galleryImages[selectedImageIndex].title}
+              category={categories.find((c) => c.value === galleryImages[selectedImageIndex].category)?.label || galleryImages[selectedImageIndex].category}
+              hasPrev={selectedImageIndex > 0}
+              hasNext={selectedImageIndex < galleryImages.length - 1}
+              onPrev={() => setSelectedImageIndex(selectedImageIndex - 1)}
+              onNext={() => setSelectedImageIndex(selectedImageIndex + 1)}
             />
-          ))}
-        </div>
+          )}
+        </>
       ) : (
         /* Empty State */
         <div className="text-center py-12 bg-card/50 rounded-2xl border border-border/50">
