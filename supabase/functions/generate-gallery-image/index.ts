@@ -1,6 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient, SupabaseClient } from "https://esm.sh/@supabase/supabase-js@2.93.0";
-import { GoogleGenerativeAI } from "https://esm.sh/@google/generative-ai@0.21.0";
+import { generateImage } from "../_shared/wavespeed.ts";
 
 declare const EdgeRuntime: {
   waitUntil(promise: Promise<unknown>): void;
@@ -41,13 +41,12 @@ const categoryPrompts: Record<string, { prompt: string; titleHindi: string }> = 
 async function generateSingleImage(
   category: string,
   index: number,
-  supabase: SupabaseClient,
-  genAI: GoogleGenerativeAI
+  supabase: SupabaseClient
 ): Promise<Record<string, unknown> | null> {
   const categoryInfo = categoryPrompts[category] || categoryPrompts.bridal;
-  
+
   const uniquePrompt = `Create a beautiful traditional Indian mehendi (henna) tattoo design illustration. ${categoryInfo.prompt}.
-      
+
 Style requirements:
 - The design should be a clean, high-quality illustration showing mehendi/henna art
 - Brown/henna colored design on a light cream/skin-toned background
@@ -60,107 +59,74 @@ Style requirements:
   console.log(`Generating image ${index + 1} for category: ${category}`);
 
   try {
-    const model = genAI.getGenerativeModel({ 
-      model: "gemini-2.5-flash-image",
-      generationConfig: {
-        responseModalities: ["image", "text"],
-      } as any,
-    });
+    const dataUrl = await generateImage({ prompt: uniquePrompt, outputFormat: "png" });
+    const match = dataUrl.match(/^data:([^;]+);base64,(.+)$/);
+    if (!match) {
+      console.error("Invalid data URL from WaveSpeed");
+      return null;
+    }
+    const mimeType = match[1];
+    const base64Data = match[2];
+    const imageBuffer = Uint8Array.from(atob(base64Data), (c) => c.charCodeAt(0));
+    const ext = mimeType.includes("jpeg") ? "jpg" : "png";
+    const fileName = `mehendi-${category}-${Date.now()}-${index}.${ext}`;
 
-    const response = await model.generateContent(uniquePrompt);
-    const result = response.response;
-
-    // Extract image from the response
-    let imageData: string | null = null;
-    
-    if (result.candidates && result.candidates[0]?.content?.parts) {
-      for (const part of result.candidates[0].content.parts) {
-        if (part.inlineData?.mimeType?.startsWith("image/")) {
-          imageData = part.inlineData.data;
-          break;
-        }
-      }
+    const { error: uploadError } = await supabase.storage
+      .from("gallery-images")
+      .upload(fileName, imageBuffer, { contentType: mimeType, upsert: false });
+    if (uploadError) {
+      console.error("Upload error:", uploadError);
+      return null;
     }
 
-    if (imageData) {
-      // Upload to Supabase Storage
-      const imageBuffer = Uint8Array.from(atob(imageData), c => c.charCodeAt(0));
-      const fileName = `mehendi-${category}-${Date.now()}-${index}.png`;
+    const { data: publicUrlData } = supabase.storage
+      .from("gallery-images")
+      .getPublicUrl(fileName);
+    const imageUrl = publicUrlData.publicUrl;
 
-      const { error: uploadError } = await supabase.storage
-        .from("gallery-images")
-        .upload(fileName, imageBuffer, {
-          contentType: "image/png",
-          upsert: false,
-        });
+    const { data: insertData, error: insertError } = await supabase
+      .from("gallery_images")
+      .insert({
+        title: `${category.charAt(0).toUpperCase() + category.slice(1)} Mehendi Design ${Date.now()}`,
+        title_hindi: categoryInfo.titleHindi,
+        image_url: imageUrl,
+        category,
+        description: `Beautiful AI-generated ${category} mehendi design pattern`,
+        tags: [category, "mehendi", "henna", "ai-generated"],
+        is_featured: false,
+      } as Record<string, unknown>)
+      .select()
+      .single();
 
-      if (uploadError) {
-        console.error("Upload error:", uploadError);
-        return null;
-      }
-
-      // Get public URL
-      const { data: publicUrlData } = supabase.storage
-        .from("gallery-images")
-        .getPublicUrl(fileName);
-
-      const imageUrl = publicUrlData.publicUrl;
-
-      // Insert into gallery_images table
-      const { data: insertData, error: insertError } = await supabase
-        .from("gallery_images")
-        .insert({
-          title: `${category.charAt(0).toUpperCase() + category.slice(1)} Mehendi Design ${Date.now()}`,
-          title_hindi: categoryInfo.titleHindi,
-          image_url: imageUrl,
-          category: category,
-          description: `Beautiful AI-generated ${category} mehendi design pattern`,
-          tags: [category, "mehendi", "henna", "ai-generated"],
-          is_featured: false,
-        } as Record<string, unknown>)
-        .select()
-        .single();
-
-      if (insertError) {
-        console.error("Insert error:", insertError);
-        return null;
-      }
-
-      console.log(`Successfully generated and saved image ${index + 1} for ${category}`);
-      return insertData as Record<string, unknown>;
+    if (insertError) {
+      console.error("Insert error:", insertError);
+      return null;
     }
+    console.log(`Successfully saved image ${index + 1} for ${category}`);
+    return insertData as Record<string, unknown>;
   } catch (error) {
     console.error(`Error generating image ${index + 1} for ${category}:`, error);
+    return null;
   }
-  
-  return null;
 }
 
 async function generateImagesInBackground(
   categories: string[],
   countPerCategory: number,
-  supabase: SupabaseClient,
-  genAI: GoogleGenerativeAI
+  supabase: SupabaseClient
 ) {
   console.log(`Starting background generation: ${categories.length} categories, ${countPerCategory} images each`);
-  
   for (const category of categories) {
-    console.log(`Generating ${countPerCategory} images for category: ${category}`);
-    
     for (let i = 0; i < countPerCategory; i++) {
       try {
-        await generateSingleImage(category, i, supabase, genAI);
-        // Small delay between images to avoid rate limits
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        await generateSingleImage(category, i, supabase);
+        await new Promise((r) => setTimeout(r, 2000));
       } catch (error) {
         console.error(`Failed to generate image ${i + 1} for ${category}:`, error);
       }
     }
-    
-    console.log(`Completed generating images for category: ${category}`);
   }
-  
-  console.log("Background generation completed for all categories");
+  console.log("Background generation completed");
 }
 
 serve(async (req) => {
@@ -170,31 +136,17 @@ serve(async (req) => {
 
   try {
     const { category, count = 1, bulk = false, categories: bulkCategories, countPerCategory = 4 } = await req.json();
-    
-    // Use your own Gemini API key instead of Lovable AI
-    const GOOGLE_API_KEY = Deno.env.get("GOOGLE_GEMINI_API_KEY");
-    if (!GOOGLE_API_KEY) {
-      throw new Error("GOOGLE_GEMINI_API_KEY is not configured");
-    }
 
     const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
     const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const supabase = createClient(supabaseUrl, supabaseKey);
-    
-    // Initialize Google Generative AI with your API key
-    const genAI = new GoogleGenerativeAI(GOOGLE_API_KEY);
 
-    // Bulk generation mode - runs in background
     if (bulk && bulkCategories && Array.isArray(bulkCategories)) {
-      // Start background task
-      EdgeRuntime.waitUntil(
-        generateImagesInBackground(bulkCategories, countPerCategory, supabase, genAI)
-      );
-      
+      EdgeRuntime.waitUntil(generateImagesInBackground(bulkCategories, countPerCategory, supabase));
       return new Response(
-        JSON.stringify({ 
+        JSON.stringify({
           success: true,
-          message: `Started generating ${countPerCategory} images for ${bulkCategories.length} categories in background (using your Gemini API)`,
+          message: `Started generating ${countPerCategory} images for ${bulkCategories.length} categories in background (WaveSpeed AI)`,
           categories: bulkCategories,
           countPerCategory,
         }),
@@ -202,39 +154,26 @@ serve(async (req) => {
       );
     }
 
-    // Single category mode - synchronous
     const generatedImages: Record<string, unknown>[] = [];
     const maxCount = Math.min(count, 4);
-
     for (let i = 0; i < maxCount; i++) {
-      const image = await generateSingleImage(category, i, supabase, genAI);
-      if (image) {
-        generatedImages.push(image);
-      }
+      const image = await generateSingleImage(category, i, supabase);
+      if (image) generatedImages.push(image);
     }
 
     return new Response(
-      JSON.stringify({ 
-        success: true,
-        generatedCount: generatedImages.length,
-        images: generatedImages,
-      }),
+      JSON.stringify({ success: true, generatedCount: generatedImages.length, images: generatedImages }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
-
   } catch (error) {
     console.error("Error generating gallery images:", error);
-    
     const errorMessage = error instanceof Error ? error.message : "Failed to generate images";
-    
-    // Handle specific error cases
-    if (errorMessage.includes("429") || errorMessage.includes("quota") || errorMessage.includes("rate")) {
+    if (errorMessage.includes("429") || errorMessage.toLowerCase().includes("rate")) {
       return new Response(
         JSON.stringify({ error: "Rate limit exceeded. Please try again in a few moments." }),
         { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
-    
     return new Response(
       JSON.stringify({ error: errorMessage }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
