@@ -1,5 +1,5 @@
-import { useState, useRef } from "react";
-import { Sparkles, Download, RefreshCw, Hand, Loader2, Upload, X, Share2 } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { Sparkles, Download, RefreshCw, Hand, Loader2, Upload, X, Share2, CheckCircle2, Circle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -44,10 +44,28 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
   const [customPrompt, setCustomPrompt] = useState("");
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
+  const [progressStage, setProgressStage] = useState<0 | 1 | 2 | 3>(0);
+  const [elapsed, setElapsed] = useState(0);
   const [referenceImage, setReferenceImage] = useState<string | null>(null);
   const [showShareMenu, setShowShareMenu] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { toast } = useToast();
+
+  // Drive progress stages + elapsed timer while generating
+  useEffect(() => {
+    if (!isGenerating) return;
+    const startedAt = Date.now();
+    setElapsed(0);
+    setProgressStage(0);
+    const tick = setInterval(() => {
+      const s = Math.floor((Date.now() - startedAt) / 1000);
+      setElapsed(s);
+      if (s >= 25) setProgressStage(3);
+      else if (s >= 10) setProgressStage(2);
+      else if (s >= 3) setProgressStage(1);
+    }, 500);
+    return () => clearInterval(tick);
+  }, [isGenerating]);
 
   const toggleStyle = (style: string) => {
     setSelectedStyles((prev) =>
@@ -312,7 +330,9 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
             {isGenerating ? (
               <>
                 <Loader2 className="h-4 w-4 md:h-5 md:w-5 animate-spin" aria-hidden="true" />
-                <span className="ml-2">Generating...</span>
+                <span className="ml-2">
+                  {["Queued...", "Generating...", "Processing...", "Finalizing..."][progressStage]}
+                </span>
               </>
             ) : (
               <>
@@ -356,14 +376,57 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
 
           <div className="flex-1 min-h-[200px] md:min-h-[300px] rounded-lg md:rounded-xl bg-gradient-to-br from-muted to-muted/50 border-2 border-dashed border-border flex items-center justify-center overflow-hidden">
             {isGenerating ? (
-              <div className="text-center p-4 md:p-8">
-                <div className="relative">
+              <div className="w-full text-center p-4 md:p-8">
+                <div className="relative w-fit mx-auto">
                   <div className="h-14 w-14 md:h-20 md:w-20 rounded-full bg-gradient-to-br from-primary via-secondary to-accent animate-pulse mx-auto mb-3 md:mb-4" />
                   <Sparkles className="h-6 w-6 md:h-8 md:w-8 text-secondary absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-spin-slow" aria-hidden="true" />
                 </div>
-                <p className="text-xs md:text-sm text-muted-foreground">
-                  AI आपका डिज़ाइन बना रही है...
+                <p className="text-xs md:text-sm font-medium text-foreground mb-3">
+                  {progressStage === 0 && "Queued — request bheji ja rahi hai..."}
+                  {progressStage === 1 && "Generating — AI mehendi design bana rahi hai..."}
+                  {progressStage === 2 && "Processing — design refine ho raha hai..."}
+                  {progressStage === 3 && "Finalizing — almost done, bas kuch second..."}
                 </p>
+
+                {/* Progress bar */}
+                <div className="max-w-xs mx-auto mb-4">
+                  <div className="h-1.5 w-full rounded-full bg-muted overflow-hidden">
+                    <div
+                      className="h-full bg-gradient-to-r from-primary via-secondary to-accent transition-all duration-500"
+                      style={{ width: `${[15, 45, 75, 92][progressStage]}%` }}
+                    />
+                  </div>
+                  <p className="text-[10px] md:text-xs text-muted-foreground mt-1.5">
+                    {elapsed}s elapsed · usually 15–30 seconds
+                  </p>
+                </div>
+
+                {/* Stage checklist */}
+                <ul className="text-left max-w-xs mx-auto space-y-1.5">
+                  {[
+                    { label: "Request queued", hi: "Request queue mein" },
+                    { label: "Generating design", hi: "Design generate ho raha hai" },
+                    { label: "Processing image", hi: "Image process ho rahi hai" },
+                    { label: "Finalizing output", hi: "Output finalize ho raha hai" },
+                  ].map((step, idx) => {
+                    const done = idx < progressStage;
+                    const active = idx === progressStage;
+                    return (
+                      <li key={step.label} className="flex items-center gap-2 text-xs">
+                        {done ? (
+                          <CheckCircle2 className="h-3.5 w-3.5 text-secondary flex-shrink-0" aria-hidden="true" />
+                        ) : active ? (
+                          <Loader2 className="h-3.5 w-3.5 text-primary animate-spin flex-shrink-0" aria-hidden="true" />
+                        ) : (
+                          <Circle className="h-3.5 w-3.5 text-muted-foreground flex-shrink-0" aria-hidden="true" />
+                        )}
+                        <span className={done || active ? "text-foreground" : "text-muted-foreground"}>
+                          {step.hi}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
             ) : generatedImage ? (
               <img
