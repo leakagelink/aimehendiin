@@ -194,7 +194,7 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
                 <div className="relative rounded-lg border border-border overflow-hidden">
                   <img 
                     src={referenceImage} 
-                    alt="Reference" 
+                    alt="User uploaded reference design" 
                     className="w-full h-24 object-cover"
                   />
                   <Button
