@@ -24,7 +24,8 @@ export interface WaveSpeedOptions {
 async function pollResult(taskId: string, apiKey: string): Promise<string> {
   const url = `${API_BASE}/predictions/${taskId}/result`;
   const start = Date.now();
-  const timeoutMs = 120000;
+  const timeoutMs = 90000;
+  let delay = 500;
   while (Date.now() - start < timeoutMs) {
     const r = await fetch(url, {
       headers: { Authorization: `Bearer ${apiKey}` },
@@ -38,12 +39,13 @@ async function pollResult(taskId: string, apiKey: string): Promise<string> {
     if (status === "completed") {
       const outputs = json?.data?.outputs || [];
       if (!outputs[0]) throw new Error("No output in completed response");
-      return outputs[0]; // URL
+      return outputs[0]; // URL or base64
     }
     if (status === "failed") {
       throw new Error(`Generation failed: ${json?.data?.error || "unknown"}`);
     }
-    await new Promise((r) => setTimeout(r, 1500));
+    await new Promise((r) => setTimeout(r, delay));
+    delay = Math.min(delay + 250, 1500);
   }
   throw new Error("Polling timed out");
 }
