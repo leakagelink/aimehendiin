@@ -1,0 +1,45 @@
+# AIMehendi.in
+
+> Free AI-powered mehendi (henna) design generator. Create bridal, Arabic, mandala, simple, and finger mehendi designs in seconds. Hinglish + Hindi content for Indian users.
+
+AIMehendi.in lets users generate unlimited mehendi designs with AI, browse a curated gallery, and learn techniques through detailed Hinglish tutorials.
+
+## Pages
+
+- [Home](/): AI Mehendi Design Generator landing page with overview, gallery preview, and features.
+- [Generate](/generate): Free AI tool to create custom mehendi designs (bridal, Arabic, mandala, simple, finger, back hand).
+- [Gallery](/gallery): Browse 1000+ AI-generated mehendi designs across categories.
+- [Blog](/blog): Hinglish tutorials, design guides, and festival mehendi inspiration.
+- [About](/about): About AIMehendi.in, the team, and FAQs.
+- [Contact](/contact): Get in touch with the AIMehendi.in team.
+
+## Landing Pages
+
+- [Bridal Mehendi Design 2026](/bridal-mehendi-design-2026): Latest bridal/dulhan mehendi designs for 2026.
+- [Karwa Chauth Mehndi Design](/karwa-chauth-mehndi-design): Special Karwa Chauth mehendi patterns.
+
+## Gallery Categories
+
+- [Bridal Gallery](/gallery/bridal): Bridal mehendi designs.
+- [Arabic Gallery](/gallery/arabic): Arabic mehendi designs.
+- [Mandala Gallery](/gallery/mandala): Mandala mehendi designs.
+- [Simple Gallery](/gallery/simple): Simple/everyday mehendi designs.
+- [Finger Gallery](/gallery/finger): Finger mehendi designs.
+- [Festival Gallery](/gallery/festival): Festival mehendi designs (Diwali, Karwa Chauth, Raksha Bandhan).
+
+## Featured Blog Posts
+
+- [AI Se Mehndi Design Kaise Banaye - Free Tutorial 2026](/blog/ai-se-mehndi-design-kaise-banaye-free-tutorial-2026)
+- [Mehendi Design Generator App 2026 - Top 10 Free AI Tools](/blog/mehendi-design-generator-app-2026-top-10-best-free-ai-tools)
+- [Mehndi Lagane Ka Tarika - Step by Step Complete Guide 2026](/blog/mehndi-lagane-ka-tarika-step-by-step-complete-guide-2026)
+- [Bridal Mehendi Design Back Hand](/blog/bridal-mehendi-design-back-hand)
+- [Arabic Mehendi Design for Beginners](/blog/arabic-mehendi-design-for-beginners)
+- [Karwa Chauth Special Mehndi 2026](/blog/karwa-chauth-special-mehndi-2026-traditional-modern-designs)
+- [Diwali Mehndi Design Simple 2026](/blog/diwali-mehndi-design-simple-2026-diya-rangoli-patterns)
+- [Shaded Mehndi Design Tutorial - 3D Effect 2026](/blog/shaded-mehndi-design-tutorial-3d-effect-technique-2026)
+
+## Optional
+
+- [Privacy Policy](/privacy-policy)
+- [Terms of Service](/terms-of-service)
+- [Sitemap](/sitemap.xml)
