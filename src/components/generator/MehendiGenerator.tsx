@@ -473,6 +473,58 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
               </div>
             )}
           </div>
+
+          {/* Session Gallery - recent generations from this session */}
+          {sessionGallery.length > 0 && (
+            <div className="mt-4 pt-4 border-t border-border">
+              <div className="flex items-center justify-between mb-2">
+                <p className="text-xs md:text-sm font-medium text-foreground">
+                  This session ({sessionGallery.length})
+                  <span className="text-muted-foreground font-normal ml-1">· अभी बनाए हुए</span>
+                </p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSessionGallery([]);
+                    toast({ title: "Cleared", description: "Session gallery clear हो गई" });
+                  }}
+                  className="text-[10px] md:text-xs text-muted-foreground hover:text-destructive transition-colors"
+                >
+                  Clear all
+                </button>
+              </div>
+              <div className="grid grid-cols-4 md:grid-cols-6 gap-1.5 md:gap-2">
+                {sessionGallery.map((item) => {
+                  const isActive = generatedImage === item.image;
+                  return (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => {
+                        setGeneratedImage(item.image);
+                        setShowShareMenu(false);
+                      }}
+                      title={item.label}
+                      aria-label={`View ${item.label}`}
+                      className={`relative aspect-square rounded-md overflow-hidden border-2 transition-all hover:scale-105 ${
+                        isActive ? "border-secondary ring-2 ring-secondary/40" : "border-border hover:border-secondary/60"
+                      }`}
+                    >
+                      <img
+                        src={item.image}
+                        alt={item.label}
+                        loading="lazy"
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  );
+                })}
+              </div>
+              <p className="text-[10px] md:text-xs text-muted-foreground mt-2">
+                Session band karne par ye history clear ho jayegi
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>
