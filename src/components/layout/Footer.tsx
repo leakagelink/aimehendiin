@@ -34,9 +34,15 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="h-10 w-10 rounded-full bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center shadow-gold">
-                <Sparkles className="h-5 w-5 text-primary-foreground" aria-hidden="true" />
+            <Link to="/" className="flex items-center gap-2 mb-4" aria-label="AIMehendi.in - Home">
+              <div className="h-10 w-10 rounded-full bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center shadow-gold overflow-hidden">
+                <img
+                  src="/favicon.png"
+                  alt="AIMehendi.in logo"
+                  width={40}
+                  height={40}
+                  className="h-9 w-9 object-contain"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-serif text-xl font-bold text-foreground">
