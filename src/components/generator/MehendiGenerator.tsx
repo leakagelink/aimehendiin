@@ -187,10 +187,16 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
       if (data?.imageUrl) {
         setGeneratedImage(data.imageUrl);
         const label = `${designType}${selectedStyles.length ? " · " + selectedStyles.slice(0, 2).join(", ") : ""}`;
-        setSessionGallery((prev) => [
-          { id: crypto.randomUUID(), image: data.imageUrl, label, ts: Date.now() },
-          ...prev,
-        ].slice(0, 12));
+        setSessionGallery((prev) => {
+          const next = [
+            { id: crypto.randomUUID(), image: data.imageUrl, label, ts: Date.now(), liked: false },
+            ...prev,
+          ];
+          // Keep all liked + most recent 12 unliked
+          const liked = next.filter((g) => g.liked);
+          const unliked = next.filter((g) => !g.liked).slice(0, 12);
+          return [...liked, ...unliked];
+        });
         toast({
           title: "Success! 🎉",
           description: referenceImage
