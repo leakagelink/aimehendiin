@@ -145,7 +145,6 @@ export type Database = {
           is_public: boolean | null
           likes_count: number | null
           prompt: string
-          session_id: string | null
           style_modifiers: string[] | null
         }
         Insert: {
@@ -158,7 +157,6 @@ export type Database = {
           is_public?: boolean | null
           likes_count?: number | null
           prompt: string
-          session_id?: string | null
           style_modifiers?: string[] | null
         }
         Update: {
@@ -171,7 +169,6 @@ export type Database = {
           is_public?: boolean | null
           likes_count?: number | null
           prompt?: string
-          session_id?: string | null
           style_modifiers?: string[] | null
         }
         Relationships: []
