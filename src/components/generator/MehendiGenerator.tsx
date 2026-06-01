@@ -48,10 +48,10 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
   const [elapsed, setElapsed] = useState(0);
   const [referenceImage, setReferenceImage] = useState<string | null>(null);
   const [showShareMenu, setShowShareMenu] = useState(false);
-  const [sessionGallery, setSessionGallery] = useState<Array<{ id: string; image: string; label: string; ts: number }>>(() => {
+  const [sessionGallery, setSessionGallery] = useState<Array<{ id: string; image: string; label: string; ts: number; liked?: boolean }>>(() => {
     if (typeof window === "undefined") return [];
     try {
-      const raw = sessionStorage.getItem("mehendi_session_gallery");
+      const raw = localStorage.getItem("mehendi_session_gallery");
       return raw ? JSON.parse(raw) : [];
     } catch {
       return [];
