@@ -48,8 +48,31 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
   const [elapsed, setElapsed] = useState(0);
   const [referenceImage, setReferenceImage] = useState<string | null>(null);
   const [showShareMenu, setShowShareMenu] = useState(false);
+  const [sessionGallery, setSessionGallery] = useState<Array<{ id: string; image: string; label: string; ts: number }>>(() => {
+    if (typeof window === "undefined") return [];
+    try {
+      const raw = sessionStorage.getItem("mehendi_session_gallery");
+      return raw ? JSON.parse(raw) : [];
+    } catch {
+      return [];
+    }
+  });
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { toast } = useToast();
+
+  // Persist session gallery
+  useEffect(() => {
+    try {
+      sessionStorage.setItem("mehendi_session_gallery", JSON.stringify(sessionGallery));
+    } catch {
+      // sessionStorage quota — drop oldest and retry once
+      try {
+        sessionStorage.setItem("mehendi_session_gallery", JSON.stringify(sessionGallery.slice(0, 6)));
+      } catch {
+        /* ignore */
+      }
+    }
+  }, [sessionGallery]);
 
   // Drive progress stages + elapsed timer while generating
   useEffect(() => {
