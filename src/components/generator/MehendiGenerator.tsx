@@ -44,10 +44,28 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
   const [customPrompt, setCustomPrompt] = useState("");
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
+  const [progressStage, setProgressStage] = useState<0 | 1 | 2 | 3>(0);
+  const [elapsed, setElapsed] = useState(0);
   const [referenceImage, setReferenceImage] = useState<string | null>(null);
   const [showShareMenu, setShowShareMenu] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { toast } = useToast();
+
+  // Drive progress stages + elapsed timer while generating
+  useEffect(() => {
+    if (!isGenerating) return;
+    const startedAt = Date.now();
+    setElapsed(0);
+    setProgressStage(0);
+    const tick = setInterval(() => {
+      const s = Math.floor((Date.now() - startedAt) / 1000);
+      setElapsed(s);
+      if (s >= 25) setProgressStage(3);
+      else if (s >= 10) setProgressStage(2);
+      else if (s >= 3) setProgressStage(1);
+    }, 500);
+    return () => clearInterval(tick);
+  }, [isGenerating]);
 
   const toggleStyle = (style: string) => {
     setSelectedStyles((prev) =>
