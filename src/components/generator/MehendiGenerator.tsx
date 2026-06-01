@@ -168,9 +168,14 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
 
       if (data?.imageUrl) {
         setGeneratedImage(data.imageUrl);
+        const label = `${designType}${selectedStyles.length ? " · " + selectedStyles.slice(0, 2).join(", ") : ""}`;
+        setSessionGallery((prev) => [
+          { id: crypto.randomUUID(), image: data.imageUrl, label, ts: Date.now() },
+          ...prev,
+        ].slice(0, 12));
         toast({
           title: "Success! 🎉",
-          description: referenceImage 
+          description: referenceImage
             ? "आपका custom मेहंदी डिज़ाइन तैयार है!"
             : "आपका मेहंदी डिज़ाइन तैयार है!",
         });
