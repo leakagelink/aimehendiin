@@ -172,7 +172,7 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
               <Hand className="h-4 w-4 md:h-5 md:w-5 text-primary-foreground" aria-hidden="true" />
             </div>
             <div className="min-w-0">
-              <h3 className="font-serif text-base md:text-lg font-semibold text-foreground leading-tight">Design Options</h3>
+              <h2 className="font-serif text-base md:text-lg font-semibold text-foreground leading-tight">Design Options</h2>
               <p className="text-[10px] md:text-xs text-muted-foreground">अपनी पसंद चुनें</p>
             </div>
           </div>
