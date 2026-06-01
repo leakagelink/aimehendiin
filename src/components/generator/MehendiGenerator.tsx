@@ -60,19 +60,37 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { toast } = useToast();
 
-  // Persist session gallery
+  // Persist gallery (liked items survive across sessions)
   useEffect(() => {
     try {
-      sessionStorage.setItem("mehendi_session_gallery", JSON.stringify(sessionGallery));
+      localStorage.setItem("mehendi_session_gallery", JSON.stringify(sessionGallery));
     } catch {
-      // sessionStorage quota — drop oldest and retry once
       try {
-        sessionStorage.setItem("mehendi_session_gallery", JSON.stringify(sessionGallery.slice(0, 6)));
+        // On quota error, keep only liked + most recent
+        const trimmed = [
+          ...sessionGallery.filter((g) => g.liked),
+          ...sessionGallery.filter((g) => !g.liked).slice(0, 4),
+        ];
+        localStorage.setItem("mehendi_session_gallery", JSON.stringify(trimmed));
       } catch {
         /* ignore */
       }
     }
   }, [sessionGallery]);
+
+  const toggleLike = (id: string) => {
+    setSessionGallery((prev) => prev.map((g) => (g.id === id ? { ...g, liked: !g.liked } : g)));
+  };
+
+  const downloadFromGallery = (image: string, label: string) => {
+    const link = document.createElement("a");
+    link.href = image;
+    link.download = `mehendi-${label.replace(/[^a-z0-9]+/gi, "-").toLowerCase()}-${Date.now()}.png`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    toast({ title: "Downloaded! 📥", description: "डिज़ाइन डाउनलोड हो गया!" });
+  };
 
   // Drive progress stages + elapsed timer while generating
   useEffect(() => {
