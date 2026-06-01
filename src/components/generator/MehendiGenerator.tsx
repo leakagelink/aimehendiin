@@ -330,7 +330,9 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
             {isGenerating ? (
               <>
                 <Loader2 className="h-4 w-4 md:h-5 md:w-5 animate-spin" aria-hidden="true" />
-                <span className="ml-2">Generating...</span>
+                <span className="ml-2">
+                  {["Queued...", "Generating...", "Processing...", "Finalizing..."][progressStage]}
+                </span>
               </>
             ) : (
               <>
