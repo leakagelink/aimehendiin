@@ -1,5 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { GoogleGenerativeAI } from "https://esm.sh/@google/generative-ai@0.21.0";
+import { generateImage } from "../_shared/wavespeed.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -37,13 +37,7 @@ serve(async (req) => {
 
   try {
     const { designType, handType, styles, customPrompt, referenceImage } = await req.json();
-    
-    const GOOGLE_API_KEY = Deno.env.get("GOOGLE_GEMINI_API_KEY");
-    if (!GOOGLE_API_KEY) {
-      throw new Error("GOOGLE_GEMINI_API_KEY is not configured");
-    }
 
-    // Build the prompt
     const designPrompt = designTypePrompts[designType] || designTypePrompts.bridal;
     const handPrompt = handTypePrompts[handType] || handTypePrompts.back;
     const stylePrompts = (styles || [])
@@ -51,51 +45,22 @@ serve(async (req) => {
       .filter(Boolean)
       .join(", ");
 
-    // Initialize Google Generative AI
-    const genAI = new GoogleGenerativeAI(GOOGLE_API_KEY);
-    const model = genAI.getGenerativeModel({ 
-      model: "gemini-2.5-flash-image",
-      generationConfig: {
-        responseModalities: ["image", "text"],
-      } as any,
-    });
+    let prompt: string;
+    let images: string[] | undefined;
 
-    let response;
-
-    // Check if we have a reference image to edit
     if (referenceImage) {
-      // Extract base64 data and mime type from the data URL
-      const matches = referenceImage.match(/^data:([^;]+);base64,(.+)$/);
-      if (!matches) {
-        throw new Error("Invalid reference image format");
-      }
-      const mimeType = matches[1];
-      const base64Data = matches[2];
+      prompt = `Based on the reference image, create a beautiful traditional Indian mehendi (henna) tattoo design. ${designPrompt} ${handPrompt}. ${stylePrompts}. ${customPrompt || ""}
 
-      const editPrompt = `Based on this reference image, create a beautiful traditional Indian mehendi (henna) tattoo design. ${designPrompt} ${handPrompt}. ${stylePrompts}. ${customPrompt || ""}
-      
 Apply mehendi/henna design inspired by this image:
 - Incorporate elements from the reference into the mehendi pattern
 - Brown/henna colored design on light cream/skin-toned background
 - Traditional mehendi art style with authentic Indian patterns
 - Include paisleys, flowers, leaves, and decorative elements
 - Ultra high resolution, detailed illustration`;
-
-      console.log("Editing with reference image, prompt:", editPrompt);
-
-      response = await model.generateContent([
-        { text: editPrompt },
-        {
-          inlineData: {
-            mimeType: mimeType,
-            data: base64Data,
-          },
-        },
-      ]);
+      images = [referenceImage];
     } else {
-      // Standard generation without reference image
-      const basePrompt = `Create a beautiful traditional Indian mehendi (henna) tattoo design illustration. ${designPrompt} ${handPrompt}. ${stylePrompts}. ${customPrompt || ""}
-    
+      prompt = `Create a beautiful traditional Indian mehendi (henna) tattoo design illustration. ${designPrompt} ${handPrompt}. ${stylePrompts}. ${customPrompt || ""}
+
 Style requirements:
 - The design should be a clean, high-quality illustration showing mehendi/henna art
 - Brown/henna colored design on a light cream/skin-toned background
@@ -103,61 +68,39 @@ Style requirements:
 - The design should be detailed and professional-looking
 - Include paisleys, flowers, leaves, and decorative elements typical of mehendi art
 - Ultra high resolution, detailed illustration`;
-
-      console.log("Generating mehendi design with prompt:", basePrompt);
-      response = await model.generateContent(basePrompt);
     }
 
-    const result = response.response;
-    console.log("AI response received successfully");
+    console.log("Generating via WaveSpeed:", { hasReference: !!referenceImage });
 
-    // Extract image from the response
-    let imageUrl: string | null = null;
-    
-    if (result.candidates && result.candidates[0]?.content?.parts) {
-      for (const part of result.candidates[0].content.parts) {
-        if (part.inlineData?.mimeType?.startsWith("image/")) {
-          const base64Data = part.inlineData.data;
-          const mimeType = part.inlineData.mimeType;
-          imageUrl = `data:${mimeType};base64,${base64Data}`;
-          break;
-        }
-      }
-    }
-    
-    if (!imageUrl) {
-      console.error("No image in response:", JSON.stringify(result));
-      throw new Error("No image generated. Please try again.");
-    }
+    const imageUrl = await generateImage({
+      prompt,
+      images,
+      outputFormat: "png",
+    });
 
     return new Response(
-      JSON.stringify({ 
+      JSON.stringify({
         imageUrl,
-        message: referenceImage ? "Design generated from reference" : "Design generated successfully"
+        message: referenceImage ? "Design generated from reference" : "Design generated successfully",
       }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
-
   } catch (error) {
     console.error("Error generating mehendi design:", error);
-    
     const errorMessage = error instanceof Error ? error.message : "Failed to generate design";
-    
-    // Handle specific error cases
-    if (errorMessage.includes("429") || errorMessage.includes("quota") || errorMessage.includes("rate")) {
+
+    if (errorMessage.includes("429") || errorMessage.toLowerCase().includes("rate")) {
       return new Response(
         JSON.stringify({ error: "Rate limit exceeded. Please try again in a few moments." }),
         { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
-    
-    if (errorMessage.includes("API key") || errorMessage.includes("authentication") || errorMessage.includes("401")) {
+    if (errorMessage.includes("401") || errorMessage.includes("402") || errorMessage.toLowerCase().includes("api key")) {
       return new Response(
-        JSON.stringify({ error: "API key issue. Please check your Google API key." }),
+        JSON.stringify({ error: "API key issue. Please check your WaveSpeed API keys." }),
         { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
-    
     return new Response(
       JSON.stringify({ error: errorMessage }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
