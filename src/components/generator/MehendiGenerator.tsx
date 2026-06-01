@@ -498,54 +498,94 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
             )}
           </div>
 
-          {/* Session Gallery - recent generations from this session */}
+          {/* Session Gallery - recent generations + liked favourites */}
           {sessionGallery.length > 0 && (
             <div className="mt-4 pt-4 border-t border-border">
               <div className="flex items-center justify-between mb-2">
                 <p className="text-xs md:text-sm font-medium text-foreground">
-                  This session ({sessionGallery.length})
-                  <span className="text-muted-foreground font-normal ml-1">· अभी बनाए हुए</span>
+                  Recent & Favourites ({sessionGallery.length})
+                  <span className="text-muted-foreground font-normal ml-1">· आपके designs</span>
                 </p>
                 <button
                   type="button"
                   onClick={() => {
-                    setSessionGallery([]);
-                    toast({ title: "Cleared", description: "Session gallery clear हो गई" });
+                    setSessionGallery((prev) => prev.filter((g) => g.liked));
+                    toast({ title: "Cleared", description: "Sirf liked designs rakhe गए" });
                   }}
                   className="text-[10px] md:text-xs text-muted-foreground hover:text-destructive transition-colors"
                 >
-                  Clear all
+                  Clear unliked
                 </button>
               </div>
-              <div className="grid grid-cols-4 md:grid-cols-6 gap-1.5 md:gap-2">
+              <div className="grid grid-cols-3 md:grid-cols-5 gap-2">
                 {sessionGallery.map((item) => {
                   const isActive = generatedImage === item.image;
                   return (
-                    <button
+                    <div
                       key={item.id}
-                      type="button"
-                      onClick={() => {
-                        setGeneratedImage(item.image);
-                        setShowShareMenu(false);
-                      }}
-                      title={item.label}
-                      aria-label={`View ${item.label}`}
-                      className={`relative aspect-square rounded-md overflow-hidden border-2 transition-all hover:scale-105 ${
+                      className={`group relative aspect-square rounded-md overflow-hidden border-2 transition-all ${
                         isActive ? "border-secondary ring-2 ring-secondary/40" : "border-border hover:border-secondary/60"
                       }`}
                     >
-                      <img
-                        src={item.image}
-                        alt={item.label}
-                        loading="lazy"
-                        className="w-full h-full object-cover"
-                      />
-                    </button>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setGeneratedImage(item.image);
+                          setShowShareMenu(false);
+                        }}
+                        title={item.label}
+                        aria-label={`View ${item.label}`}
+                        className="absolute inset-0 w-full h-full"
+                      >
+                        <img
+                          src={item.image}
+                          alt={item.label}
+                          loading="lazy"
+                          className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                        />
+                      </button>
+
+                      {/* Always-visible like badge (top-left) */}
+                      {item.liked && (
+                        <div className="absolute top-1 left-1 h-5 w-5 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center pointer-events-none">
+                          <Heart className="h-3 w-3 fill-destructive text-destructive" aria-hidden="true" />
+                        </div>
+                      )}
+
+                      {/* Action overlay */}
+                      <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between gap-1 p-1 bg-gradient-to-t from-background/90 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleLike(item.id);
+                          }}
+                          aria-label={item.liked ? "Unlike design" : "Like design"}
+                          className="h-7 w-7 rounded-full bg-background/90 hover:bg-background flex items-center justify-center transition-colors"
+                        >
+                          <Heart
+                            className={`h-3.5 w-3.5 ${item.liked ? "fill-destructive text-destructive" : "text-foreground"}`}
+                            aria-hidden="true"
+                          />
+                        </button>
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            downloadFromGallery(item.image, item.label);
+                          }}
+                          aria-label="Download design"
+                          className="h-7 w-7 rounded-full bg-background/90 hover:bg-background flex items-center justify-center transition-colors"
+                        >
+                          <Download className="h-3.5 w-3.5 text-foreground" aria-hidden="true" />
+                        </button>
+                      </div>
+                    </div>
                   );
                 })}
               </div>
               <p className="text-[10px] md:text-xs text-muted-foreground mt-2">
-                Session band karne par ye history clear ho jayegi
+                ❤️ liked designs save रहेंगे · unliked auto-clear हो सकते हैं
               </p>
             </div>
           )}
