@@ -28,7 +28,7 @@
 
     /* Muted - Soft Beige */
     --muted: 35 25% 90%;
-    --muted-foreground: 25 30% 40%;
+    --muted-foreground: 25 35% 30%;
 
     /* Accent - Saffron Orange */
     --accent: 25 85% 50%;
@@ -95,7 +95,7 @@
     --secondary-foreground: 40 30% 92%;
 
     --muted: 20 30% 18%;
-    --muted-foreground: 35 25% 65%;
+    --muted-foreground: 35 30% 78%;
 
     /* Accent - Saffron */
     --accent: 25 85% 55%;
