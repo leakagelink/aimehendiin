@@ -64,7 +64,6 @@ export async function generateImage(opts: WaveSpeedOptions): Promise<string> {
   const body: Record<string, unknown> = {
     prompt: opts.prompt,
     output_format: opts.outputFormat || "png",
-    enable_sync_mode: true,
     enable_base64_output: true,
   };
   if (opts.aspectRatio) body.aspect_ratio = opts.aspectRatio;
