@@ -21,10 +21,16 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 group">
+        <Link to="/" className="flex items-center gap-2 group" aria-label="AIMehendi.in - Home">
           <div className="relative">
-            <div className="h-10 w-10 rounded-full bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center shadow-gold group-hover:shadow-glow transition-all duration-300">
-              <Sparkles className="h-5 w-5 text-primary-foreground" aria-hidden="true" />
+            <div className="h-10 w-10 rounded-full bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center shadow-gold group-hover:shadow-glow transition-all duration-300 overflow-hidden">
+              <img
+                src="/favicon.png"
+                alt="AIMehendi.in logo"
+                width={40}
+                height={40}
+                className="h-9 w-9 object-contain"
+              />
             </div>
             <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary via-secondary to-accent opacity-20 blur-sm group-hover:opacity-40 transition-opacity" />
           </div>
