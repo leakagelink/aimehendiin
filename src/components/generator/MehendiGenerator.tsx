@@ -172,7 +172,7 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
               <Hand className="h-4 w-4 md:h-5 md:w-5 text-primary-foreground" aria-hidden="true" />
             </div>
             <div className="min-w-0">
-              <h3 className="font-serif text-base md:text-lg font-semibold text-foreground leading-tight">Design Options</h3>
+              <h2 className="font-serif text-base md:text-lg font-semibold text-foreground leading-tight">Design Options</h2>
               <p className="text-[10px] md:text-xs text-muted-foreground">अपनी पसंद चुनें</p>
             </div>
           </div>
@@ -194,7 +194,7 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
                 <div className="relative rounded-lg border border-border overflow-hidden">
                   <img 
                     src={referenceImage} 
-                    alt="Reference" 
+                    alt="User uploaded reference design" 
                     className="w-full h-24 object-cover"
                   />
                   <Button
@@ -326,7 +326,7 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
         {/* Preview */}
         <div className="bg-card rounded-xl md:rounded-2xl p-3 md:p-6 shadow-card border border-border flex flex-col">
           <div className="flex items-center justify-between gap-2 mb-3 md:mb-4">
-            <h3 className="font-serif text-base md:text-lg font-semibold text-foreground">Preview</h3>
+            <h2 className="font-serif text-base md:text-lg font-semibold text-foreground">Preview</h2>
             {generatedImage && (
               <div className="flex gap-1.5 md:gap-2">
                 <Button variant="outline" size="sm" onClick={generateDesign} disabled={isGenerating} aria-label="Regenerate" className="h-8 w-8 p-0 md:h-9 md:w-auto md:px-3">
@@ -335,7 +335,7 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
                 <Button variant="outline" size="sm" onClick={() => setShowShareMenu(!showShareMenu)} aria-label="Share" className="h-8 w-8 p-0 md:h-9 md:w-auto md:px-3">
                   <Share2 className="h-3.5 w-3.5 md:h-4 md:w-4" aria-hidden="true" />
                 </Button>
-                <Button variant="gold" size="sm" onClick={downloadImage} className="h-8 px-2 md:h-9 md:px-3">
+                <Button variant="gold" size="sm" onClick={downloadImage} aria-label="Download design" className="h-8 px-2 md:h-9 md:px-3">
                   <Download className="h-3.5 w-3.5 md:h-4 md:w-4" aria-hidden="true" />
                   <span className="hidden md:inline ml-1.5">Download</span>
                 </Button>

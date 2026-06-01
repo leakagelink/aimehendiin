@@ -54,8 +54,8 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>About AIMehendi.in - हमारी कहानी | Free AI Mehendi Generator</title>
-        <meta name="title" content="About AIMehendi.in - हमारी कहानी" />
+        <title>About AIMehendi.in - हमारी कहानी | AI Mehendi Generator</title>
+        <meta name="title" content="About AIMehendi.in - हमारी कहानी | AI Mehendi Generator" />
         <meta name="description" content="AIMehendi.in - AI-powered mehendi design generator. भारतीय परंपरा और आधुनिक तकनीक का मिश्रण। FAQs और हमारी कहानी जानें।" />
         <meta name="author" content="Dheeraj Tagde" />
         <link rel="canonical" href="https://aimehendi.in/about" />
