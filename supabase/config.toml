@@ -5,3 +5,6 @@ verify_jwt = false
 
 [functions.generate-gallery-image]
 verify_jwt = false
+
+[functions.ahrefs-domain-rating]
+verify_jwt = false
