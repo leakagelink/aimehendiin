@@ -1,4 +1,5 @@
 import { corsHeaders } from 'npm:@supabase/supabase-js@2/cors'
+import { createClient } from 'npm:@supabase/supabase-js@2'
 
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
@@ -6,10 +7,25 @@ Deno.serve(async (req) => {
   }
 
   try {
-    const apiKey = Deno.env.get('AHREFS_API_KEY')
+    // 1. Read key from app_settings (admin-managed), fallback to env secret
+    let apiKey: string | null = null
+
+    const supabase = createClient(
+      Deno.env.get('SUPABASE_URL')!,
+      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!,
+    )
+
+    const { data: setting } = await supabase
+      .from('app_settings')
+      .select('value')
+      .eq('key', 'AHREFS_API_KEY')
+      .maybeSingle()
+
+    apiKey = setting?.value ?? Deno.env.get('AHREFS_API_KEY') ?? null
+
     if (!apiKey) {
       return new Response(
-        JSON.stringify({ error: 'AHREFS_API_KEY not configured' }),
+        JSON.stringify({ error: 'AHREFS_API_KEY not configured. Set it in /admin or as a secret.' }),
         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
       )
     }
@@ -38,7 +54,7 @@ Deno.serve(async (req) => {
       )
     }
 
-    return new Response(JSON.stringify({ target, date, data }), {
+    return new Response(JSON.stringify({ target, date, source: setting?.value ? 'app_settings' : 'env', data }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     })
   } catch (e) {
