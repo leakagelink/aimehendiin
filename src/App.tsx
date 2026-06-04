@@ -16,6 +16,8 @@ import NotFound from "./pages/NotFound";
 import BridalMehendi2026 from "./pages/landing/BridalMehendi2026";
 import KarwaChauthMehendi from "./pages/landing/KarwaChauthMehendi";
 import SeoReport from "./pages/SeoReport";
+import Auth from "./pages/Auth";
+import Admin from "./pages/Admin";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +42,8 @@ const App = () => (
           <Route path="/bridal-mehendi-design-2026" element={<BridalMehendi2026 />} />
           <Route path="/karwa-chauth-mehndi-design" element={<KarwaChauthMehendi />} />
           <Route path="/seo-report" element={<SeoReport />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/admin" element={<Admin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
