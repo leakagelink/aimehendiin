@@ -88,14 +88,24 @@ Style requirements:
   } catch (error) {
     console.error("Error generating mehendi design:", error);
     const errorMessage = error instanceof Error ? error.message : "Failed to generate design";
+    const lower = errorMessage.toLowerCase();
 
-    if (errorMessage.includes("429") || errorMessage.toLowerCase().includes("rate")) {
+    if (lower.includes("insufficient credits") || lower.includes("top up") || errorMessage.includes("402")) {
+      return new Response(
+        JSON.stringify({
+          error: "WaveSpeed AI credits ख़त्म हो गए हैं। कृपया WaveSpeed account में credits top-up करें।",
+          code: "INSUFFICIENT_CREDITS",
+        }),
+        { status: 402, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+    if (errorMessage.includes("429") || lower.includes("rate")) {
       return new Response(
         JSON.stringify({ error: "Rate limit exceeded. Please try again in a few moments." }),
         { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
-    if (errorMessage.includes("401") || errorMessage.includes("402") || errorMessage.toLowerCase().includes("api key")) {
+    if (errorMessage.includes("401") || lower.includes("api key")) {
       return new Response(
         JSON.stringify({ error: "API key issue. Please check your WaveSpeed API keys." }),
         { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }

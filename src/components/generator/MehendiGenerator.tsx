@@ -176,9 +176,22 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
 
       if (error) {
         console.error("Error generating design:", error);
+        let description = error.message || "डिज़ाइन बनाने में समस्या हुई। कृपया पुनः प्रयास करें।";
+        try {
+          const ctx = (error as { context?: Response }).context;
+          if (ctx && typeof ctx.text === "function") {
+            const bodyText = await ctx.text();
+            const parsed = JSON.parse(bodyText);
+            if (parsed?.code === "INSUFFICIENT_CREDITS" || parsed?.error) {
+              description = parsed.error || description;
+            }
+          }
+        } catch {
+          /* ignore parse errors */
+        }
         toast({
           title: "Error",
-          description: error.message || "डिज़ाइन बनाने में समस्या हुई। कृपया पुनः प्रयास करें।",
+          description,
           variant: "destructive",
         });
         return;
