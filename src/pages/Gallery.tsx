@@ -77,8 +77,9 @@ const Gallery = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Free Mehndi Download HD | 1000+ Mehendi Design Gallery - AIMehendi.in</title>
-        <meta name="description" content="Free mehndi download HD - Browse 1000+ beautiful mehendi designs. Bridal mehendi design 2026, dulhan mehendi design latest, simple arabic mehndi back hand, mandala mehndi design for beginners। Free download करें!" />
+        <title>Mehendi Design Gallery — Free HD Downloads | AIMehendi.in</title>
+        <meta name="description" content="1000+ free HD mehendi designs — bridal, Arabic, mandala, finger & simple patterns। Browse, download aur inspiration pao ek hi jagah." />
+
         <meta name="keywords" content="free mehndi download hd, bridal mehendi design 2026, dulhan mehendi design latest, simple arabic mehndi back hand, mandala mehndi design for beginners, finger mehndi design easy, karwa chauth mehndi design, raksha bandhan mehndi simple" />
         <meta name="author" content="Dheeraj Tagde" />
         <link rel="canonical" href={`${siteUrl}/gallery`} />

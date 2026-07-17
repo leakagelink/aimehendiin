@@ -104,8 +104,9 @@ const Blog = () => {
     <div className="min-h-screen bg-background">
       {/* SEO Meta Tags */}
       <Helmet>
-        <title>Mehendi Blog - Bridal Design 2026, Karwa Chauth, Raksha Bandhan Tips | AIMehendi.in</title>
-        <meta name="description" content="Explore bridal mehendi design 2026, karwa chauth mehndi design, raksha bandhan mehndi simple, finger mehndi design easy tips। Simple arabic mehndi back hand और mandala mehndi design for beginners tutorials। Expert advice by Dheeraj Tagde." />
+        <title>Mehendi Blog — Bridal, Karwa Chauth & Design Tips</title>
+        <meta name="description" content="Bridal 2026, karwa chauth, raksha bandhan aur simple arabic mehndi tips। Finger aur mandala tutorials by Dheeraj Tagde." />
+
         <meta name="keywords" content="bridal mehendi design 2026, karwa chauth mehndi design, raksha bandhan mehndi simple, finger mehndi design easy, simple arabic mehndi back hand, mandala mehndi design for beginners, dulhan mehendi design latest, mehndi design ai se kaise banaye" />
         <meta name="author" content={AUTHOR.name} />
         <link rel="canonical" href="https://aimehendi.in/blog" />
