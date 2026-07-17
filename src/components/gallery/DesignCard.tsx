@@ -79,6 +79,8 @@ const DesignCard = ({ image, title, category, likes = 0, onView }: DesignCardPro
               size="icon"
               className="h-10 w-10 rounded-full bg-background/90 backdrop-blur-sm hover:bg-background"
               onClick={handleLike}
+              aria-label={isLiked ? `Unlike ${title}` : `Like ${title}`}
+              aria-pressed={isLiked}
             >
               <Heart
                 className={`h-5 w-5 transition-colors ${
@@ -91,6 +93,7 @@ const DesignCard = ({ image, title, category, likes = 0, onView }: DesignCardPro
               size="icon"
               className="h-10 w-10 rounded-full bg-background/90 backdrop-blur-sm hover:bg-background"
               onClick={handleDownload}
+              aria-label={`Download ${title}`}
             >
               <Download className="h-5 w-5 text-foreground" />
             </Button>
@@ -102,9 +105,11 @@ const DesignCard = ({ image, title, category, likes = 0, onView }: DesignCardPro
                 e.stopPropagation();
                 onView?.();
               }}
+              aria-label={`View ${title} in full size`}
             >
               <Eye className="h-5 w-5 text-foreground" />
             </Button>
+
           </div>
         </div>
       </div>

@@ -57,6 +57,7 @@ const ImageViewerModal = ({
             size="icon"
             onClick={onClose}
             className="rounded-full"
+            aria-label="Close image viewer"
           >
             <X className="h-5 w-5" />
           </Button>
@@ -71,6 +72,7 @@ const ImageViewerModal = ({
               size="icon"
               onClick={onPrev}
               className="absolute left-2 z-10 rounded-full bg-background/80 hover:bg-background shadow-md"
+              aria-label="Previous design"
             >
               <ChevronLeft className="h-6 w-6" />
             </Button>
@@ -91,10 +93,12 @@ const ImageViewerModal = ({
               size="icon"
               onClick={onNext}
               className="absolute right-2 z-10 rounded-full bg-background/80 hover:bg-background shadow-md"
+              aria-label="Next design"
             >
               <ChevronRight className="h-6 w-6" />
             </Button>
           )}
+
         </div>
 
         {/* Footer Actions */}

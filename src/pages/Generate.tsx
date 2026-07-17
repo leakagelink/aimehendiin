@@ -8,8 +8,9 @@ const Generate = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="AI Mehendi Design Generator - Free मेहंदी बनाएं | Mehndi Design AI Se Kaise Banaye"
-        description="Free AI Mehendi Design Generator से seconds में beautiful bridal mehendi design 2026, Arabic, mandala, finger mehndi design easy बनाएं। Mehndi design AI se kaise banaye सीखें। No skills needed!"
+        title="AI Mehendi Generator — Free Design Banaye"
+        description="Free AI Mehendi Generator — seconds में bridal, Arabic, mandala aur finger mehndi designs banaye. No skills needed!"
+
         path="/generate"
       />
       <Header />
