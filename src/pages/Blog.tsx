@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Helmet } from "react-helmet-async";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Calendar, Clock, ArrowRight, User, BookOpen, Sparkles } from "lucide-react";
@@ -121,6 +122,8 @@ const Blog = () => {
         <meta name="twitter:image" content="https://aimehendi.in/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(blogSchema)}</script>
       </Helmet>
+
+      <BreadcrumbSchema items={[{ name: "Blog", item: "/blog" }]} />
 
       <Header />
       

@@ -2,6 +2,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import MehendiGenerator from "@/components/generator/MehendiGenerator";
 import PageSEO from "@/components/seo/PageSEO";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 import { Sparkles } from "lucide-react";
 
 const Generate = () => {
@@ -13,6 +14,7 @@ const Generate = () => {
 
         path="/generate"
       />
+      <BreadcrumbSchema items={[{ name: "AI Generator", item: "/generate" }]} />
       <Header />
       
       <main className="py-8 md:py-16">
