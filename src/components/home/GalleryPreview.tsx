@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import GalleryGrid from "@/components/gallery/GalleryGrid";
+import CategoryLinks from "@/components/gallery/CategoryLinks";
 
 const GalleryPreview = () => {
   return (
@@ -27,6 +28,28 @@ const GalleryPreview = () => {
 
         {/* Gallery Grid */}
         <GalleryGrid limit={4} showFilters={false} showGenerateButton={false} />
+
+        {/* Contextual collection links */}
+        <div className="mt-10">
+          <CategoryLinks intro="Style ke hisaab se designs browse karen:" />
+          <p className="text-muted-foreground text-sm mt-5">
+            Shaadi ki taiyari kar rahe hain?{" "}
+            <Link
+              to="/bridal-mehendi-design-2026"
+              className="text-secondary underline underline-offset-4"
+            >
+              Bridal Mehendi Design 2026
+            </Link>{" "}
+            trends dekhen, ya vrat ke liye{" "}
+            <Link
+              to="/karwa-chauth-mehndi-design"
+              className="text-secondary underline underline-offset-4"
+            >
+              Karwa Chauth Mehndi Designs
+            </Link>{" "}
+            se inspiration lein.
+          </p>
+        </div>
       </div>
     </section>
   );
