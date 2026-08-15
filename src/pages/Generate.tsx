@@ -4,6 +4,8 @@ import MehendiGenerator from "@/components/generator/MehendiGenerator";
 import PageSEO from "@/components/seo/PageSEO";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 import { Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
+import CategoryLinks from "@/components/gallery/CategoryLinks";
 
 const Generate = () => {
   return (
@@ -73,6 +75,31 @@ const Generate = () => {
                 </p>
               </div>
             </div>
+          </div>
+
+          {/* Contextual links to design collections */}
+          <div className="mt-16 max-w-4xl mx-auto space-y-4">
+            <CategoryLinks
+              heading="Inspiration chahiye?"
+              intro="Generate karne se pehle in ready collections se ideas lein:"
+            />
+            <p className="text-sm text-muted-foreground">
+              Shaadi ke liye{" "}
+              <Link
+                to="/bridal-mehendi-design-2026"
+                className="text-secondary underline underline-offset-4"
+              >
+                Bridal Mehendi Design Ideas
+              </Link>{" "}
+              aur festival ke liye{" "}
+              <Link
+                to="/karwa-chauth-mehndi-design"
+                className="text-secondary underline underline-offset-4"
+              >
+                Karwa Chauth mehndi patterns
+              </Link>{" "}
+              bhi available hain.
+            </p>
           </div>
         </div>
       </main>
