@@ -95,6 +95,11 @@ const BlogPost = () => {
   if (error || !post) {
     return (
       <div className="min-h-screen bg-background">
+        {/* Not-found state must never be indexed and must not emit a canonical */}
+        <Helmet>
+          <title>Article Not Found (404) | AIMehendi.in</title>
+          <meta name="robots" content="noindex, nofollow" />
+        </Helmet>
         <Header />
         <main className="py-16 md:py-24">
           <div className="container text-center">
