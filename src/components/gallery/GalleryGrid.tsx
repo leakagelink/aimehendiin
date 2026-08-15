@@ -33,12 +33,26 @@ interface GalleryGridProps {
   limit?: number;
   showFilters?: boolean;
   showGenerateButton?: boolean;
+  /** Controlled category (e.g. from the /gallery/:category route) */
+  category?: string;
+  /** When provided, filter clicks are delegated to the parent (route change) */
+  onCategoryChange?: (category: string) => void;
 }
 
-const GalleryGrid = ({ limit, showFilters = true, showGenerateButton = true }: GalleryGridProps) => {
-  const [activeCategory, setActiveCategory] = useState("all");
+const GalleryGrid = ({
+  limit,
+  showFilters = true,
+  showGenerateButton = true,
+  category,
+  onCategoryChange,
+}: GalleryGridProps) => {
+  const [internalCategory, setInternalCategory] = useState("all");
+  const activeCategory = category ?? internalCategory;
+  const setActiveCategory = (value: string) =>
+    onCategoryChange ? onCategoryChange(value) : setInternalCategory(value);
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
   const queryClient = useQueryClient();
+
 
   // Fetch gallery images from Supabase
   const { data: galleryImages = [], isLoading, error } = useQuery({
