@@ -57,7 +57,7 @@ const COLLECTIONS: CollectionLink[] = [
     to: "/bridal-mehendi-design-2026",
     anchor: "Bridal Mehendi Design 2026 trends",
     blurb: "Is saal ke latest dulhan mehendi trends ek jagah.",
-    match: ["bridal", "dulhan", "shaadi", "wedding", "2026 trends"],
+    match: ["bridal", "dulhan", "shaadi", "wedding"],
   },
   {
     to: "/karwa-chauth-mehndi-design",
