@@ -92,6 +92,7 @@ const BridalMehendi2026 = () => {
         <meta name="description" content="Bridal mehendi design 2026 की latest collection देखें। Dulhan mehendi design latest trends, traditional और modern bridal henna patterns। Free download करें!" />
         <meta name="keywords" content="bridal mehendi design 2026, dulhan mehendi design latest, bridal mehndi 2026, wedding mehendi design, दुल्हन मेहंदी डिज़ाइन, शादी की मेहंदी" />
         <meta name="author" content="Dheeraj Tagde" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href={pageUrl} />
         
         <meta property="og:type" content="website" />

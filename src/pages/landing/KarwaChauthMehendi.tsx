@@ -80,6 +80,7 @@ const KarwaChauthMehendi = () => {
         <meta name="description" content="Karwa Chauth mehndi design की beautiful collection। Simple करवा चौथ मेहंदी patterns, moon designs, और couple motifs। Free download करें!" />
         <meta name="keywords" content="karwa chauth mehndi design, karwa chauth mehendi, करवा चौथ मेहंदी, karva chauth mehndi, simple karwa chauth mehndi, karwa chauth 2026 mehendi" />
         <meta name="author" content="Dheeraj Tagde" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href={pageUrl} />
         
         <meta property="og:type" content="website" />
