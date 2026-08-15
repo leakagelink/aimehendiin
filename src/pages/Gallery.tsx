@@ -212,6 +212,51 @@ const Gallery = () => {
             category={activeCategory}
             onCategoryChange={handleCategoryChange}
           />
+
+          {/* Contextual internal links */}
+          <div className="mt-14 max-w-4xl mx-auto space-y-6">
+            <CategoryLinks
+              exclude={category?.slug}
+              heading={category ? "Aur collections dekhen" : "Browse by style"}
+              intro={
+                category
+                  ? "Dusre mehndi styles bhi explore karen:"
+                  : "Apne occasion ke hisaab se collection chunen:"
+              }
+            />
+
+            <p className="text-muted-foreground">
+              Wedding season ke liye{" "}
+              <Link
+                to="/bridal-mehendi-design-2026"
+                className="text-secondary underline underline-offset-4"
+              >
+                Bridal Mehendi Design 2026
+              </Link>{" "}
+              trends aur vrat ke liye{" "}
+              <Link
+                to="/karwa-chauth-mehndi-design"
+                className="text-secondary underline underline-offset-4"
+              >
+                Karwa Chauth Mehndi Designs
+              </Link>{" "}
+              bhi dekh sakte hain.
+            </p>
+
+            <div className="rounded-2xl border border-border bg-card p-6 text-center">
+              <p className="text-muted-foreground mb-4">
+                Gallery mein exact design nahi mila? Apni pasand ka pattern AI se
+                banaye.
+              </p>
+              <Link
+                to="/generate"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-secondary text-secondary-foreground font-medium"
+              >
+                <Sparkles className="h-4 w-4" aria-hidden="true" />
+                Create Your Own AI Mehndi Design
+              </Link>
+            </div>
+          </div>
         </div>
       </main>
 
