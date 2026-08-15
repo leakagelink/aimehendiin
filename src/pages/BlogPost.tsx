@@ -13,6 +13,8 @@ import RelatedPosts from "@/components/blog/RelatedPosts";
 import SocialShareButtons from "@/components/blog/SocialShareButtons";
 import FloatingShareBar from "@/components/blog/FloatingShareBar";
 import { useEffect, useRef } from "react";
+import { Helmet } from "react-helmet-async";
+import RelatedCollections from "@/components/blog/RelatedCollections";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -95,6 +97,11 @@ const BlogPost = () => {
   if (error || !post) {
     return (
       <div className="min-h-screen bg-background">
+        {/* Not-found state must never be indexed and must not emit a canonical */}
+        <Helmet>
+          <title>Article Not Found (404) | AIMehendi.in</title>
+          <meta name="robots" content="noindex, nofollow" />
+        </Helmet>
         <Header />
         <main className="py-16 md:py-24">
           <div className="container text-center">
@@ -311,6 +318,13 @@ const BlogPost = () => {
               </Link>
             </div>
           </section>
+
+          {/* Contextual gallery / landing page links relevant to this topic */}
+          <RelatedCollections
+            category={post.category}
+            tags={post.tags}
+            title={post.title}
+          />
 
           {/* Related Posts */}
           <RelatedPosts currentSlug={post.slug} category={post.category} />
