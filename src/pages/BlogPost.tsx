@@ -13,6 +13,8 @@ import RelatedPosts from "@/components/blog/RelatedPosts";
 import SocialShareButtons from "@/components/blog/SocialShareButtons";
 import FloatingShareBar from "@/components/blog/FloatingShareBar";
 import { useEffect, useRef } from "react";
+import { Helmet } from "react-helmet-async";
+import RelatedCollections from "@/components/blog/RelatedCollections";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
