@@ -319,6 +319,13 @@ const BlogPost = () => {
             </div>
           </section>
 
+          {/* Contextual gallery / landing page links relevant to this topic */}
+          <RelatedCollections
+            category={post.category}
+            tags={post.tags}
+            title={post.title}
+          />
+
           {/* Related Posts */}
           <RelatedPosts currentSlug={post.slug} category={post.category} />
 
