@@ -18,6 +18,7 @@ import KarwaChauthMehendi from "./pages/landing/KarwaChauthMehendi";
 import SeoReport from "./pages/SeoReport";
 import Auth from "./pages/Auth";
 import Admin from "./pages/Admin";
+import PageSEO from "./components/seo/PageSEO";
 
 const queryClient = new QueryClient();
 
@@ -41,9 +42,33 @@ const App = () => (
           {/* SEO Landing Pages */}
           <Route path="/bridal-mehendi-design-2026" element={<BridalMehendi2026 />} />
           <Route path="/karwa-chauth-mehndi-design" element={<KarwaChauthMehendi />} />
-          <Route path="/seo-report" element={<SeoReport />} />
-          <Route path="/auth" element={<Auth />} />
-          <Route path="/admin" element={<Admin />} />
+          <Route
+            path="/seo-report"
+            element={
+              <>
+                <PageSEO title="SEO Report" description="Internal SEO reporting dashboard." path="/seo-report" noindex />
+                <SeoReport />
+              </>
+            }
+          />
+          <Route
+            path="/auth"
+            element={
+              <>
+                <PageSEO title="Sign In" description="Sign in to the AIMehendi.in admin area." path="/auth" noindex />
+                <Auth />
+              </>
+            }
+          />
+          <Route
+            path="/admin"
+            element={
+              <>
+                <PageSEO title="Admin" description="Internal admin dashboard." path="/admin" noindex />
+                <Admin />
+              </>
+            }
+          />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
