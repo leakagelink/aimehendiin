@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Helmet } from "react-helmet-async";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Link } from "react-router-dom";
@@ -91,6 +92,7 @@ const BridalMehendi2026 = () => {
         <meta name="description" content="Bridal mehendi design 2026 की latest collection देखें। Dulhan mehendi design latest trends, traditional और modern bridal henna patterns। Free download करें!" />
         <meta name="keywords" content="bridal mehendi design 2026, dulhan mehendi design latest, bridal mehndi 2026, wedding mehendi design, दुल्हन मेहंदी डिज़ाइन, शादी की मेहंदी" />
         <meta name="author" content="Dheeraj Tagde" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href={pageUrl} />
         
         <meta property="og:type" content="website" />
@@ -106,6 +108,8 @@ const BridalMehendi2026 = () => {
         <script type="application/ld+json">{JSON.stringify(pageSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
+
+      <BreadcrumbSchema items={[{ name: "Bridal Mehendi Design 2026", item: "/bridal-mehendi-design-2026" }]} />
 
       <Header />
 

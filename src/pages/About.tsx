@@ -58,6 +58,7 @@ const About = () => {
         <meta name="title" content="About AIMehendi.in - हमारी कहानी | AI Mehendi Generator" />
         <meta name="description" content="AIMehendi.in - AI-powered mehendi design generator. भारतीय परंपरा और आधुनिक तकनीक का मिश्रण। FAQs और हमारी कहानी जानें।" />
         <meta name="author" content="Dheeraj Tagde" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://aimehendi.in/about" />
         
         <meta property="og:type" content="website" />

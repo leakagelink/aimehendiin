@@ -82,6 +82,24 @@ const HomeSEO = () => {
     <Helmet>
       {/* Homepage canonical + hreflang (moved out of index.html so it is not
           injected globally on every route) */}
+      {/* Identical to index.html values — homepage meta is unchanged, but they
+          must be Helmet-managed so other routes can replace them cleanly. */}
+      <title>AI Mehendi Design Generator | Free मेहंदी | AIMehendi.in</title>
+      <meta name="title" content="AI Mehendi Design Generator | Free मेहंदी | AIMehendi.in" />
+      <meta name="description" content="AI से बनाएं खूबसूरत मेहंदी डिज़ाइन। Free AI Generator for bridal, Arabic, mandala & simple mehendi designs। 1000+ designs gallery।" />
+      <meta name="robots" content="index, follow" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={`${siteUrl}/`} />
+      <meta property="og:title" content="AI Mehendi Design Generator | Free मेहंदी Patterns" />
+      <meta property="og:description" content="AI से बनाएं खूबसूरत मेहंदी डिज़ाइन। Free AI Generator for bridal, Arabic, mandala designs." />
+      <meta property="og:image" content={`${siteUrl}/og-image.jpg`} />
+      <meta property="og:site_name" content="AIMehendi.in" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content={`${siteUrl}/`} />
+      <meta name="twitter:title" content="AI Mehendi Design Generator | Free मेहंदी Patterns" />
+      <meta name="twitter:description" content="AI से बनाएं खूबसूरत मेहंदी डिज़ाइन। Free AI Generator for bridal, Arabic, mandala designs." />
+      <meta name="twitter:image" content={`${siteUrl}/og-image.jpg`} />
+
       <link rel="canonical" href={`${siteUrl}/`} />
       <link rel="alternate" hrefLang="hi" href={`${siteUrl}/`} />
       <link rel="alternate" hrefLang="en" href={`${siteUrl}/`} />

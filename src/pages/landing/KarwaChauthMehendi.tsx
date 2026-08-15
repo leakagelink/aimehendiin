@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Helmet } from "react-helmet-async";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Link } from "react-router-dom";
@@ -79,6 +80,7 @@ const KarwaChauthMehendi = () => {
         <meta name="description" content="Karwa Chauth mehndi design की beautiful collection। Simple करवा चौथ मेहंदी patterns, moon designs, और couple motifs। Free download करें!" />
         <meta name="keywords" content="karwa chauth mehndi design, karwa chauth mehendi, करवा चौथ मेहंदी, karva chauth mehndi, simple karwa chauth mehndi, karwa chauth 2026 mehendi" />
         <meta name="author" content="Dheeraj Tagde" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href={pageUrl} />
         
         <meta property="og:type" content="website" />
@@ -94,6 +96,8 @@ const KarwaChauthMehendi = () => {
         <script type="application/ld+json">{JSON.stringify(pageSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
+
+      <BreadcrumbSchema items={[{ name: "Karwa Chauth Mehndi Design", item: "/karwa-chauth-mehndi-design" }]} />
 
       <Header />
 

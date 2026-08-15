@@ -141,7 +141,8 @@ const BlogPostSEO = ({
       <meta name="title" content={metaTitle} />
       <meta name="description" content={metaDescription} />
       <meta name="author" content={authorName} />
-      <link rel="canonical" href={articleUrl} />
+      <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={articleUrl} />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="article" />
