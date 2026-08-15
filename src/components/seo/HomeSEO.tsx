@@ -3,10 +3,11 @@ import { Helmet } from "react-helmet-async";
 const HomeSEO = () => {
   const siteUrl = "https://aimehendi.in";
 
-  // Organization Schema
+  // Organization Schema (canonical entity, referenced by @id everywhere else)
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${siteUrl}/#organization`,
     name: "AIMehendi.in",
     url: siteUrl,
     logo: `${siteUrl}/logo.png`,
@@ -20,45 +21,43 @@ const HomeSEO = () => {
     ]
   };
 
-  // WebSite Schema with SearchAction
+  // WebSite Schema (no SearchAction — the site has no site-search endpoint)
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${siteUrl}/#website`,
     name: "AIMehendi.in",
     url: siteUrl,
+    inLanguage: ["hi-IN", "en-IN"],
     description: "AI से बनाएं खूबसूरत मेहंदी डिज़ाइन। Free AI Mehendi Design Generator for bridal, Arabic, mandala designs.",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${siteUrl}/gallery?search={search_term_string}`,
-      "query-input": "required name=search_term_string"
-    }
+    publisher: { "@id": `${siteUrl}/#organization` }
   };
 
-  // SoftwareApplication Schema for AI Generator
+  // SoftwareApplication Schema for AI Generator (no unverified aggregateRating)
   const appSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
+    "@id": `${siteUrl}/#webapp`,
     name: "AI Mehendi Design Generator",
+    url: `${siteUrl}/generate`,
     applicationCategory: "DesignApplication",
     operatingSystem: "Web",
+    isPartOf: { "@id": `${siteUrl}/#website` },
+    publisher: { "@id": `${siteUrl}/#organization` },
     offers: {
       "@type": "Offer",
       price: "0",
       priceCurrency: "INR"
     },
     description: "Free AI Mehendi Design Generator - Create bridal mehendi design 2026, dulhan mehendi design latest, simple arabic mehndi back hand, finger mehndi design easy, mandala mehndi design for beginners। Mehndi design AI se kaise banaye सीखें।",
-    keywords: "ai mehendi design generator, bridal mehendi design 2026, simple arabic mehndi back hand, finger mehndi design easy, dulhan mehendi design latest, karwa chauth mehndi design, raksha bandhan mehndi simple, mandala mehndi design for beginners, mehndi design ai se kaise banaye, free mehndi download hd",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      ratingCount: "1250"
-    }
+    keywords: "ai mehendi design generator, bridal mehendi design 2026, simple arabic mehndi back hand, finger mehndi design easy, dulhan mehendi design latest, karwa chauth mehndi design, raksha bandhan mehndi simple, mandala mehndi design for beginners, mehndi design ai se kaise banaye, free mehndi download hd"
   };
 
-  // OnlineBusiness Schema (instead of LocalBusiness since no physical address)
+  // OnlineBusiness Schema (same entity as Organization — linked, not duplicated)
   const onlineBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "OnlineBusiness",
+    "@id": `${siteUrl}/#organization`,
     name: "AIMehendi.in",
     url: siteUrl,
     logo: `${siteUrl}/logo.png`,
@@ -81,6 +80,13 @@ const HomeSEO = () => {
 
   return (
     <Helmet>
+      {/* Homepage canonical + hreflang (moved out of index.html so it is not
+          injected globally on every route) */}
+      <link rel="canonical" href={`${siteUrl}/`} />
+      <link rel="alternate" hrefLang="hi" href={`${siteUrl}/`} />
+      <link rel="alternate" hrefLang="en" href={`${siteUrl}/`} />
+      <link rel="alternate" hrefLang="x-default" href={`${siteUrl}/`} />
+
       <script type="application/ld+json">
         {JSON.stringify(organizationSchema)}
       </script>
