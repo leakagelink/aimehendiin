@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  
-  <!-- Homepage with hero image -->
   <url>
     <loc>https://aimehendi.in/</loc>
     <image:image>
@@ -16,206 +14,1647 @@
       <image:caption>Official logo of AIMehendi.in - AI powered mehendi design platform.</image:caption>
     </image:image>
   </url>
-
-  <!-- Gallery Page -->
   <url>
     <loc>https://aimehendi.in/gallery</loc>
     <image:image>
-      <image:loc>https://aimehendi.in/og-image.jpg</image:loc>
-      <image:title>Mehendi Design Gallery - 1000+ Free Patterns</image:title>
-      <image:caption>Browse beautiful mehendi designs including bridal, Arabic, mandala, simple patterns.</image:caption>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769940163309-3.png</image:loc>
+      <image:title>Finger Mehendi Design 1769940163703</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
     </image:image>
-  </url>
-
-  <!-- Generate Page -->
-  <url>
-    <loc>https://aimehendi.in/generate</loc>
     <image:image>
-      <image:loc>https://aimehendi.in/og-image.jpg</image:loc>
-      <image:title>AI Mehendi Design Generator - Create Free Patterns</image:title>
-      <image:caption>Generate custom mehendi designs with AI. Free tool for bridal, Arabic, mandala patterns.</image:caption>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940161671-3.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940162108</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
     </image:image>
-  </url>
-
-  <!-- About Page -->
-  <url>
-    <loc>https://aimehendi.in/about</loc>
     <image:image>
-      <image:loc>https://aimehendi.in/og-image.jpg</image:loc>
-      <image:title>About AIMehendi.in - AI Mehendi Design Platform</image:title>
-      <image:caption>Learn about AIMehendi.in - the AI-powered mehendi design generator by Dheeraj Tagde.</image:caption>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769940156516-2.png</image:loc>
+      <image:title>Finger Mehendi Design 1769940157334</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
     </image:image>
-  </url>
-
-  <!-- Blog Posts with Thumbnails -->
-  
-  <!-- 1. Simple Mehendi Design 2026 -->
-  <url>
-    <loc>https://aimehendi.in/blog/simple-mehendi-design-2026</loc>
     <image:image>
-      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/simple-mehendi-thumbnail.jpg</image:loc>
-      <image:title>Simple Mehendi Design 2026 - Easy Patterns for Beginners</image:title>
-      <image:caption>आसान मेहंदी डिज़ाइन जो beginners भी बना सकते हैं। Simple mehendi for everyday occasions.</image:caption>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769940155821-2.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769940156114</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
     </image:image>
-  </url>
-
-  <!-- 2. Arabic Mehendi Design for Beginners -->
-  <url>
-    <loc>https://aimehendi.in/blog/arabic-mehendi-design-for-beginners</loc>
     <image:image>
-      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/arabic-mehendi-thumbnail.jpg</image:loc>
-      <image:title>Arabic Mehendi Design for Beginners - Step by Step Guide</image:title>
-      <image:caption>Elegant Arabic mehendi patterns with bold floral motifs. अरबी मेहंदी की खूबसूरत डिज़ाइन।</image:caption>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940155479-2.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940155762</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
     </image:image>
-  </url>
-
-  <!-- 3. Karwa Chauth Mehendi Design 2026 -->
-  <url>
-    <loc>https://aimehendi.in/blog/karwa-chauth-mehendi-design-2026</loc>
     <image:image>
-      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/karwa-chauth-mehendi-thumbnail.jpg</image:loc>
-      <image:title>Karwa Chauth Mehendi Design 2026 - Festival Special</image:title>
-      <image:caption>Special Karwa Chauth mehendi designs. करवा चौथ के लिए खास मेहंदी डिज़ाइन।</image:caption>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940154415-2.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940154687</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
     </image:image>
-  </url>
-
-  <!-- 4. Finger Mehendi Design Simple -->
-  <url>
-    <loc>https://aimehendi.in/blog/finger-mehendi-design-simple</loc>
     <image:image>
-      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/finger-mehendi-thumbnail.jpg</image:loc>
-      <image:title>Finger Mehendi Design Simple - Trendy Patterns 2026</image:title>
-      <image:caption>Stylish finger mehendi designs for modern look. उंगलियों के लिए trendy मेहंदी patterns।</image:caption>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769940150072-1.png</image:loc>
+      <image:title>Finger Mehendi Design 1769940150674</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
     </image:image>
-  </url>
-
-  <!-- 5. Bridal Mehendi Design Back Hand -->
-  <url>
-    <loc>https://aimehendi.in/blog/bridal-mehendi-design-back-hand</loc>
     <image:image>
-      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/bridal-mehendi-thumbnail.jpg</image:loc>
-      <image:title>Bridal Mehendi Design Back Hand - Wedding Patterns 2026</image:title>
-      <image:caption>Beautiful bridal mehendi designs for your special day. दुल्हन के लिए खास मेहंदी डिज़ाइन।</image:caption>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940148542-1.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940149125</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
     </image:image>
-  </url>
-
-  <!-- 6. AI se Mehndi Design Kaise Banaye -->
-  <url>
-    <loc>https://aimehendi.in/blog/ai-se-mehndi-design-kaise-banaye-free-tutorial-2026</loc>
     <image:image>
-      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/ai-mehndi-tutorial-thumbnail.jpg</image:loc>
-      <image:title>AI se Mehndi Design Kaise Banaye Free - Complete Tutorial 2026</image:title>
-      <image:caption>AI से मेहंदी डिज़ाइन बनाना सीखें। Step by step free tutorial with AIMehendi.in।</image:caption>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769940147972-1.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769940148237</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
     </image:image>
-  </url>
-
-  <!-- 7. Gol Tikki Mehndi Design Easy -->
-  <url>
-    <loc>https://aimehendi.in/blog/gol-tikki-mehndi-design-easy-round-mehndi-2026</loc>
     <image:image>
-      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/gol-tikki-mehndi-easy-thumbnail.jpg</image:loc>
-      <image:title>Gol Tikki Mehndi Design Easy - Round Mehndi Patterns 2026</image:title>
-      <image:caption>गोल टिक्की मेहंदी डिज़ाइन - easy round patterns for all occasions।</image:caption>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940147880-1.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940148245</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
     </image:image>
-  </url>
-
-  <!-- 8. Finger Mehndi Design Easy for Beginners -->
-  <url>
-    <loc>https://aimehendi.in/blog/finger-mehndi-design-easy-for-beginners-2026</loc>
     <image:image>
-      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/finger-mehndi-beginners-thumbnail.jpg</image:loc>
-      <image:title>Finger Mehndi Design Easy for Beginners - 5 Minute Patterns 2026</image:title>
-      <image:caption>5 minute finger mehndi designs for beginners। आसान उंगली मेहंदी पैटर्न।</image:caption>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769940143033-0.png</image:loc>
+      <image:title>Finger Mehendi Design 1769940143651</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
     </image:image>
-  </url>
-
-  <!-- 9. Arabic Mehndi Left Hand Simple -->
-  <url>
-    <loc>https://aimehendi.in/blog/arabic-mehndi-left-hand-simple-designs-2026</loc>
     <image:image>
-      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/arabic-mehndi-left-hand-thumbnail.jpg</image:loc>
-      <image:title>Arabic Mehndi Left Hand Simple - Elegant Designs 2026</image:title>
-      <image:caption>Left hand Arabic mehndi designs - simple yet elegant patterns।</image:caption>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940142316-0.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940142695</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
     </image:image>
-  </url>
-
-  <!-- 10. Diwali Mehndi Design Simple 2026 -->
-  <url>
-    <loc>https://aimehendi.in/blog/diwali-mehndi-design-simple-2026</loc>
     <image:image>
-      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/diwali-mehndi-simple-2026-thumbnail.jpg</image:loc>
-      <image:title>Diwali Mehndi Design Simple 2026 - Festival Special</image:title>
-      <image:caption>दिवाली के लिए simple mehndi designs। Festive patterns with diya motifs।</image:caption>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769940141425-0.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769940141816</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
     </image:image>
-  </url>
-
-  <!-- 11. Karwa Chauth Mehndi Design 2026 Special -->
-  <url>
-    <loc>https://aimehendi.in/blog/karwa-chauth-mehndi-design-2026-special</loc>
     <image:image>
-      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/karwa-chauth-mehndi-2026-thumbnail.jpg</image:loc>
-      <image:title>Karwa Chauth Mehndi Design 2026 Special - Moon Patterns</image:title>
-      <image:caption>करवा चौथ 2026 के लिए special mehndi - चाँद और छलनी designs।</image:caption>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940141535-0.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940141752</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
     </image:image>
-  </url>
-
-  <!-- 12. Best Mehndi Apps Comparison 2026 -->
-  <url>
-    <loc>https://aimehendi.in/blog/best-mehndi-apps-comparison-2026</loc>
     <image:image>
-      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/mehndi-apps-comparison-thumbnail.jpg</image:loc>
-      <image:title>Best Mehndi Apps Comparison 2026 - Top 10 Apps Review</image:title>
-      <image:caption>10 best mehndi design apps comparison। Which app is best for you?</image:caption>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940128225-3.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940128669</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
     </image:image>
-  </url>
-
-  <!-- 13. Shaded Mehndi Design Tutorial -->
-  <url>
-    <loc>https://aimehendi.in/blog/shaded-mehndi-design-tutorial-3d-effect-technique-2026</loc>
     <image:image>
-      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/shaded-mehndi-tutorial-thumbnail.jpg</image:loc>
-      <image:title>Shaded Mehndi Design Tutorial - 3D Effect Technique 2026</image:title>
-      <image:caption>Shaded mehndi 3D effect tutorial। Professional shading techniques सीखें।</image:caption>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940127661-3.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940128196</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
     </image:image>
-  </url>
-
-  <!-- 14. Mehndi Lagane Ka Tarika Step by Step -->
-  <url>
-    <loc>https://aimehendi.in/blog/mehndi-lagane-ka-tarika-step-by-step-complete-guide-2026</loc>
     <image:image>
-      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/mehndi-lagane-ka-tarika-thumbnail.jpg</image:loc>
-      <image:title>Mehndi Lagane Ka Tarika Step by Step - Complete Guide 2026</image:title>
-      <image:caption>मेहंदी लगाने का तरीका - complete beginner's guide with cone grip techniques।</image:caption>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940127374-3.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940127614</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940121651-2.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940122204</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940121652-2.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940121941</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940120770-2.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940121219</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940115236-1.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940115493</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940115056-1.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940115320</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940114673-1.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940115141</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940108430-0.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940108695</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940107566-0.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940108002</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940107471-0.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940107703</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940100771-3.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940101303</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769940094784-2.png</image:loc>
+      <image:title>Finger Mehendi Design 1769940095239</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940094872-2.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940095095</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940093677-3.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940093923</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940087286-1.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940088673</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769940087862-1.png</image:loc>
+      <image:title>Finger Mehendi Design 1769940088165</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940086262-2.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940086551</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769940080988-0.png</image:loc>
+      <image:title>Finger Mehendi Design 1769940081528</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940079689-1.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940080047</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940072963-0.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940073248</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940072990-0.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940073241</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940063623-3.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940063967</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769940059323-3.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769940060279</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940059669-3.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940060145</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940057033-2.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940057337</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769940053157-2.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769940053411</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940052958-2.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940053193</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940048241-1.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940049533</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769940046587-1.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769940046965</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940045053-1.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940045376</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940039478-0.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940040097</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769940039334-0.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769940039601</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940038428-0.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940038949</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940034561-3.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940034842</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940032695-3.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940032972</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940027954-2.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940028495</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769940027465-3.png</image:loc>
+      <image:title>Finger Mehendi Design 1769940027798</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940025226-2.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940027304</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940023079-3.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940023435</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940020501-1.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940021840</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769940018465-2.png</image:loc>
+      <image:title>Finger Mehendi Design 1769940019018</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940017120-2.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940017410</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769940012115-1.png</image:loc>
+      <image:title>Finger Mehendi Design 1769940012493</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940010924-1.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940011288</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769940009610-1.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769940010078</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940009136-1.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940009635</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769940004535-0.png</image:loc>
+      <image:title>Finger Mehendi Design 1769940005174</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940004213-0.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940004713</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940002979-0.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940003875</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769940002798-0.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769940003383</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940002125-0.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940002931</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769939941929-3.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769939942323</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769939935714-2.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769939936190</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769939928903-1.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769939929345</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769939922330-0.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769939922856</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769939912745-3.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769939913268</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769939909290-3.png</image:loc>
+      <image:title>Finger Mehendi Design 1769939909536</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769939906370-2.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769939906864</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769939901117-2.png</image:loc>
+      <image:title>Finger Mehendi Design 1769939901588</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769939897792-1.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769939898039</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769939894771-1.png</image:loc>
+      <image:title>Finger Mehendi Design 1769939895139</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769939891013-0.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769939891303</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769939888178-0.png</image:loc>
+      <image:title>Finger Mehendi Design 1769939888442</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769939876520-3.png</image:loc>
+      <image:title>Finger Mehendi Design 1769939876787</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769939875580-3.png</image:loc>
+      <image:title>Festival Mehendi Design 1769939875831</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769939875511-3.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769939875789</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769939869858-3.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769939870106</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769939869414-3.png</image:loc>
+      <image:title>Simple Mehendi Design 1769939869695</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769939867752-2.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769939868063</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769939867081-2.png</image:loc>
+      <image:title>Festival Mehendi Design 1769939867532</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769939866462-2.png</image:loc>
+      <image:title>Finger Mehendi Design 1769939866947</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769939863712-2.png</image:loc>
+      <image:title>Simple Mehendi Design 1769939863921</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769939863617-2.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769939863861</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769939861148-1.png</image:loc>
+      <image:title>Festival Mehendi Design 1769939861425</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769939859838-1.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769939860394</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769939858771-1.png</image:loc>
+      <image:title>Finger Mehendi Design 1769939859053</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769939857574-1.png</image:loc>
+      <image:title>Simple Mehendi Design 1769939857842</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769939857365-1.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769939857818</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769939853755-0.png</image:loc>
+      <image:title>Festival Mehendi Design 1769939854282</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769939853382-0.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769939853913</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769939852073-0.png</image:loc>
+      <image:title>Finger Mehendi Design 1769939852538</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769939851207-0.png</image:loc>
+      <image:title>Simple Mehendi Design 1769939851454</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769939850363-0.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769939850979</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769939090241-12.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769939090493</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769939081510-11.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769939081957</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769939072286-10.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769939072814</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769939063317-9.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769939063810</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769939052798-8.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769939053310</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769939039527-7.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769939039758</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769939026076-5.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769939026336</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769939017651-4.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769939017979</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769939008854-3.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769939009380</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769939000577-2.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769939000907</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938991833-1.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938992059</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938982328-0.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938982754</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938848519-0.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938849009</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938427231-3.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938427501</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938419392-2.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938420222</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938409993-1.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938410217</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938401060-0.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938401640</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769938393369-3.png</image:loc>
+      <image:title>Finger Mehendi Design 1769938393664</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769938390433-3.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769938391142</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769938388431-3.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769938388827</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769938387779-3.png</image:loc>
+      <image:title>Festival Mehendi Design 1769938388331</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938386092-3.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938386733</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769938384784-3.png</image:loc>
+      <image:title>Simple Mehendi Design 1769938385292</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769938383746-2.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769938384028</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769938382010-2.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769938382385</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769938381026-2.png</image:loc>
+      <image:title>Festival Mehendi Design 1769938381568</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769938379977-2.png</image:loc>
+      <image:title>Finger Mehendi Design 1769938380260</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938378844-2.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938379316</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769938378400-2.png</image:loc>
+      <image:title>Simple Mehendi Design 1769938378640</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769938374143-1.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769938374538</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769938374082-1.png</image:loc>
+      <image:title>Festival Mehendi Design 1769938374314</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769938373325-1.png</image:loc>
+      <image:title>Finger Mehendi Design 1769938373596</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769938372376-1.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769938372689</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938371064-1.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938371291</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769938369194-1.png</image:loc>
+      <image:title>Simple Mehendi Design 1769938369432</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769938366344-0.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769938366731</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769938366048-0.png</image:loc>
+      <image:title>Finger Mehendi Design 1769938366463</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769938364953-0.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769938365452</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769938364337-0.png</image:loc>
+      <image:title>Festival Mehendi Design 1769938364745</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769938362979-0.png</image:loc>
+      <image:title>Simple Mehendi Design 1769938363232</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938361785-0.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938362343</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769938273028-1.png</image:loc>
+      <image:title>Festival Mehendi Design 1769938273369</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769938264907-0.png</image:loc>
+      <image:title>Festival Mehendi Design 1769938265507</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769938261383-1.png</image:loc>
+      <image:title>Simple Mehendi Design 1769938261731</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769938261026-1.png</image:loc>
+      <image:title>Finger Mehendi Design 1769938261276</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769938252251-0.png</image:loc>
+      <image:title>Finger Mehendi Design 1769938252699</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769938250987-0.png</image:loc>
+      <image:title>Simple Mehendi Design 1769938251220</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938241062-1.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938241294</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769938240964-1.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769938241223</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769938233902-0.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769938234228</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938231919-0.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938232325</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769938231594-0.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769938232277</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
     </image:image>
   </url>
-
-  <!-- 15. Hatheli Pe Simple Mehndi -->
+  <url>
+    <loc>https://aimehendi.in/gallery/finger</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769940163309-3.png</image:loc>
+      <image:title>Finger Mehendi Design 1769940163703</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769940156516-2.png</image:loc>
+      <image:title>Finger Mehendi Design 1769940157334</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769940150072-1.png</image:loc>
+      <image:title>Finger Mehendi Design 1769940150674</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769940143033-0.png</image:loc>
+      <image:title>Finger Mehendi Design 1769940143651</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769940094784-2.png</image:loc>
+      <image:title>Finger Mehendi Design 1769940095239</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769940087862-1.png</image:loc>
+      <image:title>Finger Mehendi Design 1769940088165</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769940080988-0.png</image:loc>
+      <image:title>Finger Mehendi Design 1769940081528</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769940027465-3.png</image:loc>
+      <image:title>Finger Mehendi Design 1769940027798</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769940018465-2.png</image:loc>
+      <image:title>Finger Mehendi Design 1769940019018</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769940012115-1.png</image:loc>
+      <image:title>Finger Mehendi Design 1769940012493</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769940004535-0.png</image:loc>
+      <image:title>Finger Mehendi Design 1769940005174</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769939909290-3.png</image:loc>
+      <image:title>Finger Mehendi Design 1769939909536</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769939901117-2.png</image:loc>
+      <image:title>Finger Mehendi Design 1769939901588</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769939894771-1.png</image:loc>
+      <image:title>Finger Mehendi Design 1769939895139</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769939888178-0.png</image:loc>
+      <image:title>Finger Mehendi Design 1769939888442</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769939876520-3.png</image:loc>
+      <image:title>Finger Mehendi Design 1769939876787</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769939866462-2.png</image:loc>
+      <image:title>Finger Mehendi Design 1769939866947</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769939858771-1.png</image:loc>
+      <image:title>Finger Mehendi Design 1769939859053</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769939852073-0.png</image:loc>
+      <image:title>Finger Mehendi Design 1769939852538</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769938393369-3.png</image:loc>
+      <image:title>Finger Mehendi Design 1769938393664</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769938379977-2.png</image:loc>
+      <image:title>Finger Mehendi Design 1769938380260</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769938373325-1.png</image:loc>
+      <image:title>Finger Mehendi Design 1769938373596</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769938366048-0.png</image:loc>
+      <image:title>Finger Mehendi Design 1769938366463</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769938261026-1.png</image:loc>
+      <image:title>Finger Mehendi Design 1769938261276</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-finger-1769938252251-0.png</image:loc>
+      <image:title>Finger Mehendi Design 1769938252699</image:title>
+      <image:caption>Beautiful AI-generated finger mehendi design pattern</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aimehendi.in/gallery/arabic</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940161671-3.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940162108</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940155479-2.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940155762</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940148542-1.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940149125</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940142316-0.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940142695</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940127661-3.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940128196</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940121651-2.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940122204</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940115056-1.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940115320</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940107471-0.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940107703</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940059669-3.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940060145</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940052958-2.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940053193</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940045053-1.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940045376</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940038428-0.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940038949</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940032695-3.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940032972</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940025226-2.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940027304</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940009136-1.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940009635</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769940002125-0.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769940002931</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769939869858-3.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769939870106</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769939863617-2.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769939863861</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769939857365-1.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769939857818</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769939850363-0.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769939850979</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769938388431-3.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769938388827</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769938382010-2.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769938382385</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769938372376-1.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769938372689</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769938366344-0.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769938366731</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-arabic-1769938233902-0.png</image:loc>
+      <image:title>Arabic Mehendi Design 1769938234228</image:title>
+      <image:caption>Beautiful AI-generated arabic mehendi design pattern</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aimehendi.in/gallery/mandala</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769940155821-2.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769940156114</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769940147972-1.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769940148237</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769940141425-0.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769940141816</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769940059323-3.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769940060279</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769940053157-2.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769940053411</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769940046587-1.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769940046965</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769940039334-0.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769940039601</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769939941929-3.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769939942323</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769939935714-2.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769939936190</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769939928903-1.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769939929345</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769939922330-0.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769939922856</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769939912745-3.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769939913268</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769939906370-2.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769939906864</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769939897792-1.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769939898039</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769939891013-0.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769939891303</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769939875511-3.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769939875789</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769939867752-2.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769939868063</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769939859838-1.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769939860394</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769939853382-0.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769939853913</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769938390433-3.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769938391142</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769938383746-2.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769938384028</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769938374143-1.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769938374538</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769938364953-0.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769938365452</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769938240964-1.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769938241223</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-mandala-1769938231594-0.png</image:loc>
+      <image:title>Mandala Mehendi Design 1769938232277</image:title>
+      <image:caption>Beautiful AI-generated mandala mehendi design pattern</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aimehendi.in/gallery/simple</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940154415-2.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940154687</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940147880-1.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940148245</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940141535-0.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940141752</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940127374-3.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940127614</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940120770-2.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940121219</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940114673-1.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940115141</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940107566-0.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940108002</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940100771-3.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940101303</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940094872-2.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940095095</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940087286-1.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940088673</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940072990-0.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940073241</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940023079-3.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940023435</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940017120-2.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940017410</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940010924-1.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940011288</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769940002979-0.png</image:loc>
+      <image:title>Simple Mehendi Design 1769940003875</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769939869414-3.png</image:loc>
+      <image:title>Simple Mehendi Design 1769939869695</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769939863712-2.png</image:loc>
+      <image:title>Simple Mehendi Design 1769939863921</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769939857574-1.png</image:loc>
+      <image:title>Simple Mehendi Design 1769939857842</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769939851207-0.png</image:loc>
+      <image:title>Simple Mehendi Design 1769939851454</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769938384784-3.png</image:loc>
+      <image:title>Simple Mehendi Design 1769938385292</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769938378400-2.png</image:loc>
+      <image:title>Simple Mehendi Design 1769938378640</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769938369194-1.png</image:loc>
+      <image:title>Simple Mehendi Design 1769938369432</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769938362979-0.png</image:loc>
+      <image:title>Simple Mehendi Design 1769938363232</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769938261383-1.png</image:loc>
+      <image:title>Simple Mehendi Design 1769938261731</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-simple-1769938250987-0.png</image:loc>
+      <image:title>Simple Mehendi Design 1769938251220</image:title>
+      <image:caption>Beautiful AI-generated simple mehendi design pattern</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aimehendi.in/gallery/festival</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940128225-3.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940128669</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940121652-2.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940121941</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940115236-1.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940115493</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940108430-0.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940108695</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940093677-3.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940093923</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940086262-2.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940086551</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940079689-1.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940080047</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940072963-0.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940073248</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940063623-3.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940063967</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940057033-2.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940057337</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940048241-1.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940049533</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940039478-0.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940040097</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940034561-3.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940034842</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940027954-2.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940028495</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940020501-1.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940021840</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769940004213-0.png</image:loc>
+      <image:title>Festival Mehendi Design 1769940004713</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769939875580-3.png</image:loc>
+      <image:title>Festival Mehendi Design 1769939875831</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769939867081-2.png</image:loc>
+      <image:title>Festival Mehendi Design 1769939867532</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769939861148-1.png</image:loc>
+      <image:title>Festival Mehendi Design 1769939861425</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769939853755-0.png</image:loc>
+      <image:title>Festival Mehendi Design 1769939854282</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769938387779-3.png</image:loc>
+      <image:title>Festival Mehendi Design 1769938388331</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769938381026-2.png</image:loc>
+      <image:title>Festival Mehendi Design 1769938381568</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769938374082-1.png</image:loc>
+      <image:title>Festival Mehendi Design 1769938374314</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769938364337-0.png</image:loc>
+      <image:title>Festival Mehendi Design 1769938364745</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769938273028-1.png</image:loc>
+      <image:title>Festival Mehendi Design 1769938273369</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-festival-1769938264907-0.png</image:loc>
+      <image:title>Festival Mehendi Design 1769938265507</image:title>
+      <image:caption>Beautiful AI-generated festival mehendi design pattern</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aimehendi.in/gallery/bridal</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769940009610-1.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769940010078</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769940002798-0.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769940003383</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769939090241-12.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769939090493</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769939081510-11.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769939081957</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769939072286-10.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769939072814</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769939063317-9.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769939063810</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769939052798-8.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769939053310</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769939039527-7.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769939039758</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769939026076-5.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769939026336</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769939017651-4.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769939017979</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769939008854-3.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769939009380</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769939000577-2.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769939000907</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938991833-1.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938992059</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938982328-0.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938982754</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938848519-0.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938849009</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938427231-3.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938427501</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938419392-2.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938420222</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938409993-1.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938410217</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938401060-0.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938401640</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938386092-3.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938386733</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938378844-2.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938379316</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938371064-1.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938371291</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938361785-0.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938362343</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938241062-1.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938241294</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/mehendi-bridal-1769938231919-0.png</image:loc>
+      <image:title>Bridal Mehendi Design 1769938232325</image:title>
+      <image:caption>Beautiful AI-generated bridal mehendi design pattern</image:caption>
+    </image:image>
+  </url>
   <url>
     <loc>https://aimehendi.in/blog/hatheli-pe-simple-mehndi-palm-designs-2026</loc>
     <image:image>
       <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/hatheli-simple-mehndi-thumbnail.jpg</image:loc>
       <image:title>Hatheli Pe Simple Mehndi - Palm Designs for All Occasions 2026</image:title>
-      <image:caption>हथेली पर simple mehndi designs - 15+ palm patterns for daily to weddings।</image:caption>
+      <image:caption>Hatheli mehndi ka ultimate guide! 15+ simple palm designs jo 5 minute se 35 minute tak complete hoti hain. Daily wear se weddings tak - har occasion ke liye perfect palm mehndi ideas.</image:caption>
     </image:image>
   </url>
-
-  <!-- SEO Landing Pages -->
   <url>
-    <loc>https://aimehendi.in/bridal-mehendi-design-2026</loc>
+    <loc>https://aimehendi.in/blog/shaded-mehndi-design-tutorial-3d-effect-technique-2026</loc>
     <image:image>
-      <image:loc>https://aimehendi.in/og-image.jpg</image:loc>
-      <image:title>Bridal Mehendi Design 2026 - Latest Wedding Patterns</image:title>
-      <image:caption>Latest bridal mehendi designs for 2026 weddings. दुल्हन मेहंदी।</image:caption>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/shaded-mehndi-tutorial-thumbnail.jpg</image:loc>
+      <image:title>Shaded Mehndi Design Tutorial - 3D Effect Technique 2026</image:title>
+      <image:caption>Want your mehndi to pop with 3D depth? Shaded mehndi design wo technique hai jo flat patterns ko lifelike banati hai. Complete shading techniques - basics se advanced tak.</image:caption>
     </image:image>
   </url>
-
   <url>
-    <loc>https://aimehendi.in/karwa-chauth-mehndi-design</loc>
+    <loc>https://aimehendi.in/blog/gol-tikki-mehndi-design-easy-circle-pattern-tutorial-2026</loc>
     <image:image>
-      <image:loc>https://aimehendi.in/og-image.jpg</image:loc>
-      <image:title>Karwa Chauth Mehndi Design - Festival Special Patterns</image:title>
-      <image:caption>Beautiful Karwa Chauth mehndi designs। करवा चौथ मेहंदी।</image:caption>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/gol-tikki-mehndi-easy-thumbnail.jpg</image:loc>
+      <image:title>Gol Tikki Mehndi Design Easy - Circle Pattern Tutorial 2026</image:title>
+      <image:caption>Circles are magical! Gol tikki mehndi design sabse versatile aur beginner-friendly pattern hai. Is article mein 10 best tikki designs with detailed tutorials.</image:caption>
     </image:image>
   </url>
-
+  <url>
+    <loc>https://aimehendi.in/blog/diwali-mehndi-design-simple-2026-diya-rangoli-patterns</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog%2Fdiwali-mehndi-simple-2026-thumbnail.jpg</image:loc>
+      <image:title>Diwali Mehndi Design Simple 2026 - Diya, Rangoli &amp; Festival Patterns</image:title>
+      <image:caption>Diwali 2026 ke liye 12 simple mehndi designs - diya, rangoli, lotus patterns! Quick 5-minute se 30-minute tak har age group ke liye perfect designs.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aimehendi.in/blog/easy-arabic-mehndi-left-hand-simple-stylish-2026</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog%2Farabic-mehndi-left-hand-thumbnail.jpg</image:loc>
+      <image:title>Easy Arabic Mehndi for Left Hand - Simple &amp; Stylish Designs 2026</image:title>
+      <image:caption>Arabic mehndi left hand ke liye 10 easy designs! Bold flowers, flowing trails, aur step-by-step tutorial. Right-handed logon ke liye special tips included.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aimehendi.in/blog/karwa-chauth-special-mehndi-2026-traditional-modern-designs</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog%2Fkarwa-chauth-mehndi-2026-thumbnail.jpg</image:loc>
+      <image:title>Karwa Chauth Special Mehndi 2026 - Traditional &amp; Modern Designs</image:title>
+      <image:caption>Karwa Chauth 2026 ke liye 15 best mehndi designs - traditional moon, kalash se lekar modern minimalist tak! Dark mehndi tips aur step-by-step guide included.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aimehendi.in/blog/5-minute-finger-mehndi-beginners-easy-tutorial</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog%2Ffinger-mehndi-beginners-thumbnail.jpg</image:loc>
+      <image:title>5 Minute Finger Mehndi for Beginners - Easy Step by Step Tutorial</image:title>
+      <image:caption>Sirf 5 minute mein beautiful finger mehndi banao! 10 easy designs with step-by-step tutorial for complete beginners. Pro tips aur common mistakes bhi cover kiye.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aimehendi.in/blog/mehendi-design-generator-app-2026-top-10-best-free-ai-tools</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog%2Fmehndi-apps-comparison-thumbnail.jpg</image:loc>
+      <image:title>Mehendi Design Generator App 2026 - Top 10 Best Free AI Tools</image:title>
+      <image:caption>Shaadi season ke liye best AI mehndi apps ki complete list! 50+ apps test karke top 10 select kiye - free aur paid dono options with honest reviews.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aimehendi.in/blog/ai-se-mehndi-design-kaise-banaye-free-guide-2026</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog%2Fai-mehndi-tutorial-thumbnail.jpg</image:loc>
+      <image:title>AI se Mehndi Design Kaise Banaye Free - Complete Guide 2026</image:title>
+      <image:caption>AI technology ne mehndi design banana bilkul easy kar diya hai! Sirf 2 minute mein phone se unique designs banao - wo bhi FREE. Complete step-by-step guide with best prompts.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aimehendi.in/blog/simple-mehendi-design-2026</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/simple-mehendi-thumbnail.jpg</image:loc>
+      <image:title>50+ Simple Mehendi Design 2026: आसान और खूबसूरत मेहंदी डिज़ाइन</image:title>
+      <image:caption>Mehendi lagana seekhna itna mushkil nahi hai jitna log sochte hain। Is article mein aapko milenge 50+ simple mehendi designs jo beginners ke liye perfect hain।</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aimehendi.in/blog/bridal-mehendi-design-back-hand</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/bridal-mehendi-thumbnail.jpg</image:loc>
+      <image:title>Bridal Mehendi Design Back Hand 2026: 80+ Stunning दुल्हन मेहंदी</image:title>
+      <image:caption>Shaadi ka sabse special moment - jab dulhan ki mehendi lagti hai। Back hand bridal mehendi equally important hai for that complete bridal look।</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aimehendi.in/blog/finger-mehendi-design-simple</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/finger-mehendi-thumbnail.jpg</image:loc>
+      <image:title>Finger Mehendi Design Simple 2026: 75+ आसान और Stylish डिज़ाइन</image:title>
+      <image:caption>Full hand mehendi ka time nahi? Finger mehendi perfect solution hai - quick, stylish, aur office-friendly।</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aimehendi.in/blog/karwa-chauth-mehendi-design-2026</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/karwa-chauth-mehendi-thumbnail.jpg</image:loc>
+      <image:title>Karwa Chauth Mehendi Design 2026: 100+ Beautiful और Trending डिज़ाइन</image:title>
+      <image:caption>Karwa Chauth ka matlab sirf vrat nahi, balki pati-patni ke pyaar ka celebration hai। Is special din ke liye special mehendi designs यहाँ मिलेंगे।</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aimehendi.in/blog/arabic-mehendi-design-for-beginners</loc>
+    <image:image>
+      <image:loc>https://ybpzprgmfdbalbyaelxi.supabase.co/storage/v1/object/public/gallery-images/blog/arabic-mehendi-thumbnail.jpg</image:loc>
+      <image:title>Arabic Mehendi Design for Beginners 2026: Step-by-Step सीखें</image:title>
+      <image:caption>Bridal mehendi ki complexity dekh kar dar lagta hai? Arabic mehendi aapka solution hai - simple, elegant, aur beginners ke liye perfect।</image:caption>
+    </image:image>
+  </url>
 </urlset>

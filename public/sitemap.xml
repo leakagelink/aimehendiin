@@ -1,138 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Main Pages -->
   <url>
     <loc>https://aimehendi.in/</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://aimehendi.in/generate</loc>
-    <lastmod>2026-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aimehendi.in/gallery</loc>
-    <lastmod>2026-02-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://aimehendi.in/blog</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aimehendi.in/blog</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://aimehendi.in/bridal-mehendi-design-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aimehendi.in/karwa-chauth-mehndi-design</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aimehendi.in/about</loc>
-    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aimehendi.in/contact</loc>
-    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aimehendi.in/privacy-policy</loc>
-    <lastmod>2026-02-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aimehendi.in/terms-of-service</loc>
-    <lastmod>2026-02-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-  
-  <!-- SEO Landing Pages -->
   <url>
-    <loc>https://aimehendi.in/bridal-mehendi-design-2026</loc>
-    <lastmod>2026-02-01</lastmod>
+    <loc>https://aimehendi.in/gallery/bridal</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aimehendi.in/karwa-chauth-mehndi-design</loc>
-    <lastmod>2026-02-01</lastmod>
+    <loc>https://aimehendi.in/gallery/arabic</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Blog Posts -->
-  <url>
-    <loc>https://aimehendi.in/blog/simple-mehendi-design-2026</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aimehendi.in/blog/arabic-mehendi-design-for-beginners</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://aimehendi.in/gallery/mandala</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aimehendi.in/blog/karwa-chauth-mehendi-design-2026</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://aimehendi.in/gallery/simple</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aimehendi.in/blog/finger-mehendi-design-simple</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://aimehendi.in/gallery/finger</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aimehendi.in/blog/bridal-mehendi-design-back-hand</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://aimehendi.in/gallery/festival</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aimehendi.in/blog/ai-se-mehndi-design-kaise-banaye-free-tutorial-2026</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aimehendi.in/blog/gol-tikki-mehndi-design-easy-round-mehndi-2026</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aimehendi.in/blog/finger-mehndi-design-easy-for-beginners-2026</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aimehendi.in/blog/arabic-mehndi-left-hand-simple-designs-2026</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aimehendi.in/blog/diwali-mehndi-design-simple-2026</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aimehendi.in/blog/karwa-chauth-mehndi-design-2026-special</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aimehendi.in/blog/best-mehndi-apps-comparison-2026</loc>
+    <loc>https://aimehendi.in/blog/hatheli-pe-simple-mehndi-palm-designs-2026</loc>
     <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -144,31 +93,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aimehendi.in/blog/mehndi-lagane-ka-tarika-step-by-step-complete-guide-2026</loc>
+    <loc>https://aimehendi.in/blog/gol-tikki-mehndi-design-easy-circle-pattern-tutorial-2026</loc>
     <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aimehendi.in/blog/hatheli-pe-simple-mehndi-palm-designs-2026</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aimehendi.in/blog/mehendi-design-generator-app-2026-top-10-best-free-ai-tools</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aimehendi.in/blog/5-minute-finger-mehndi-beginners-easy-tutorial</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aimehendi.in/blog/karwa-chauth-special-mehndi-2026-traditional-modern-designs</loc>
+    <loc>https://aimehendi.in/blog/diwali-mehndi-design-simple-2026-diya-rangoli-patterns</loc>
     <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -180,47 +111,57 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aimehendi.in/blog/diwali-mehndi-design-simple-2026-diya-rangoli-patterns</loc>
+    <loc>https://aimehendi.in/blog/karwa-chauth-special-mehndi-2026-traditional-modern-designs</loc>
     <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
-  <!-- Gallery Categories -->
   <url>
-    <loc>https://aimehendi.in/gallery/bridal</loc>
+    <loc>https://aimehendi.in/blog/5-minute-finger-mehndi-beginners-easy-tutorial</loc>
     <lastmod>2026-02-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aimehendi.in/gallery/arabic</loc>
+    <loc>https://aimehendi.in/blog/mehendi-design-generator-app-2026-top-10-best-free-ai-tools</loc>
     <lastmod>2026-02-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aimehendi.in/gallery/mandala</loc>
+    <loc>https://aimehendi.in/blog/ai-se-mehndi-design-kaise-banaye-free-guide-2026</loc>
     <lastmod>2026-02-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aimehendi.in/gallery/simple</loc>
+    <loc>https://aimehendi.in/blog/simple-mehendi-design-2026</loc>
     <lastmod>2026-02-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aimehendi.in/gallery/finger</loc>
+    <loc>https://aimehendi.in/blog/bridal-mehendi-design-back-hand</loc>
     <lastmod>2026-02-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aimehendi.in/gallery/festival</loc>
+    <loc>https://aimehendi.in/blog/finger-mehendi-design-simple</loc>
     <lastmod>2026-02-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aimehendi.in/blog/karwa-chauth-mehendi-design-2026</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aimehendi.in/blog/arabic-mehendi-design-for-beginners</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
