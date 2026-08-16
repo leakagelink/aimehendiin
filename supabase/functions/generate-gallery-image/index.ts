@@ -1,6 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient, SupabaseClient } from "https://esm.sh/@supabase/supabase-js@2.93.0";
-import { generateImage } from "../_shared/wavespeed.ts";
+import { generateImage } from "../_shared/cloudflare-image.ts";
 
 declare const EdgeRuntime: {
   waitUntil(promise: Promise<unknown>): void;
@@ -59,10 +59,10 @@ Style requirements:
   console.log(`Generating image ${index + 1} for category: ${category}`);
 
   try {
-    const dataUrl = await generateImage({ prompt: uniquePrompt, outputFormat: "png" });
+    const dataUrl = await generateImage({ prompt: uniquePrompt });
     const match = dataUrl.match(/^data:([^;]+);base64,(.+)$/);
     if (!match) {
-      console.error("Invalid data URL from WaveSpeed");
+      console.error("Invalid data URL from image provider");
       return null;
     }
     const mimeType = match[1];
@@ -146,7 +146,7 @@ serve(async (req) => {
       return new Response(
         JSON.stringify({
           success: true,
-          message: `Started generating ${countPerCategory} images for ${bulkCategories.length} categories in background (WaveSpeed AI)`,
+          message: `Started generating ${countPerCategory} images for ${bulkCategories.length} categories in background`,
           categories: bulkCategories,
           countPerCategory,
         }),

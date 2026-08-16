@@ -159,6 +159,7 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
   };
 
   const generateDesign = async () => {
+    if (isGenerating) return; // prevent duplicate/simultaneous requests
     setIsGenerating(true);
     setGeneratedImage(null);
     setShowShareMenu(false);
