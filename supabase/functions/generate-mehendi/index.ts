@@ -46,7 +46,6 @@ serve(async (req) => {
       .join(", ");
 
     let prompt: string;
-    let images: string[] | undefined;
 
     if (referenceImage) {
       prompt = `Based on the reference image, create a beautiful traditional Indian mehendi (henna) tattoo design. ${designPrompt} ${handPrompt}. ${stylePrompts}. ${customPrompt || ""}
@@ -57,7 +56,6 @@ Apply mehendi/henna design inspired by this image:
 - Traditional mehendi art style with authentic Indian patterns
 - Include paisleys, flowers, leaves, and decorative elements
 - Ultra high resolution, detailed illustration`;
-      images = [referenceImage];
     } else {
       prompt = `Create a beautiful traditional Indian mehendi (henna) tattoo design illustration. ${designPrompt} ${handPrompt}. ${stylePrompts}. ${customPrompt || ""}
 
@@ -70,13 +68,16 @@ Style requirements:
 - Ultra high resolution, detailed illustration`;
     }
 
-    console.log("Generating via WaveSpeed:", { hasReference: !!referenceImage });
+    if (!prompt || !prompt.trim()) {
+      return new Response(
+        JSON.stringify({ error: "Prompt is required" }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
 
-    const imageUrl = await generateImage({
-      prompt,
-      images,
-      outputFormat: "png",
-    });
+    console.log("Generating via Cloudflare Workers AI:", { hasReference: !!referenceImage });
+
+    const imageUrl = await generateImage({ prompt });
 
     return new Response(
       JSON.stringify({
@@ -90,13 +91,10 @@ Style requirements:
     const errorMessage = error instanceof Error ? error.message : "Failed to generate design";
     const lower = errorMessage.toLowerCase();
 
-    if (lower.includes("insufficient credits") || lower.includes("top up") || errorMessage.includes("402")) {
+    if (errorMessage.includes("400")) {
       return new Response(
-        JSON.stringify({
-          error: "WaveSpeed AI credits ख़त्म हो गए हैं। कृपया WaveSpeed account में credits top-up करें।",
-          code: "INSUFFICIENT_CREDITS",
-        }),
-        { status: 402, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        JSON.stringify({ error: "Invalid request. कृपया options बदल कर दोबारा try करें।" }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
     if (errorMessage.includes("429") || lower.includes("rate")) {
@@ -105,14 +103,14 @@ Style requirements:
         { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
-    if (errorMessage.includes("401") || lower.includes("api key")) {
+    if (errorMessage.includes("401") || errorMessage.includes("403") || lower.includes("not configured")) {
       return new Response(
-        JSON.stringify({ error: "API key issue. Please check your WaveSpeed API keys." }),
+        JSON.stringify({ error: "Image service authentication failed. कृपया बाद में try करें।" }),
         { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
     return new Response(
-      JSON.stringify({ error: errorMessage }),
+      JSON.stringify({ error: "डिज़ाइन generate नहीं हो पाया। कृपया दोबारा try करें।" }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   }
