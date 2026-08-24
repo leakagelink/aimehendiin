@@ -97,6 +97,10 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
   const [designType, setDesignType] = useState("bridal");
   const [handType, setHandType] = useState("back");
   const [look, setLook] = useState<LookMode>("illustration");
+  const [bodyPart, setBodyPart] = useState("hands");
+  const [occasion, setOccasion] = useState("wedding");
+  const [region, setRegion] = useState("indian");
+  const [selectedMotifs, setSelectedMotifs] = useState<string[]>([]);
 
   const [selectedStyles, setSelectedStyles] = useState<string[]>(["intricate", "floral"]);
   const [customPrompt, setCustomPrompt] = useState("");
