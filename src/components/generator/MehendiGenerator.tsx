@@ -46,6 +46,49 @@ const styleModifiers = [
   { value: "modern", label: "Modern (आधुनिक)" },
 ];
 
+const bodyParts = [
+  { value: "hands", label: "Hands (हाथ)" },
+  { value: "feet", label: "Feet (पैर)" },
+  { value: "arms", label: "Arms (बांह)" },
+  { value: "wrist", label: "Wrist (कलाई)" },
+  { value: "full_leg", label: "Full Leg (पैर पूरा)" },
+];
+
+const occasions = [
+  { value: "wedding", label: "Wedding (शादी)" },
+  { value: "engagement", label: "Engagement (सगाई)" },
+  { value: "sangeet", label: "Sangeet (संगीत)" },
+  { value: "karva_chauth", label: "Karva Chauth" },
+  { value: "eid", label: "Eid" },
+  { value: "rakhi", label: "Rakhi (रक्षाबंधन)" },
+  { value: "teej", label: "Teej (तीज)" },
+  { value: "festival", label: "Festival (त्योहार)" },
+  { value: "everyday", label: "Everyday (रोज़मर्रा)" },
+];
+
+const regions = [
+  { value: "indian", label: "Indian (भारतीय)" },
+  { value: "rajasthani", label: "Rajasthani (राजस्थानी)" },
+  { value: "arabic", label: "Arabic (अरेबिक)" },
+  { value: "pakistani", label: "Pakistani (पाकिस्तानी)" },
+  { value: "indo_arabic", label: "Indo-Arabic (इंडो-अरेबिक)" },
+  { value: "moroccan", label: "Moroccan (मोरक्कन)" },
+  { value: "indo_western", label: "Indo-Western (इंडो-वेस्टर्न)" },
+];
+
+const motifs = [
+  { value: "peacock", label: "Peacock (मोर)" },
+  { value: "elephant", label: "Elephant (हाथी)" },
+  { value: "lotus", label: "Lotus (कमल)" },
+  { value: "bride_groom", label: "Bride-Groom (दुल्हा-दुल्हन)" },
+  { value: "paisley", label: "Paisley (कैरी)" },
+  { value: "mandala", label: "Mandala (मंडला)" },
+  { value: "kalash", label: "Kalash (कलश)" },
+  { value: "mango", label: "Mango Leaf (केरी)" },
+  { value: "heart", label: "Heart (दिल)" },
+  { value: "name", label: "Hidden Name (नाम)" },
+];
+
 interface MehendiGeneratorProps {
   compact?: boolean;
 }
