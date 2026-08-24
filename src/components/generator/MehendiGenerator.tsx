@@ -522,6 +522,32 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
             </div>
           </div>
 
+          {/* Motif Selector */}
+          <div className="space-y-2">
+            <Label className="text-xs md:text-sm font-medium">Motifs (मोटिफ़)</Label>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-x-2 gap-y-1.5 md:gap-2">
+              {motifs.map((motif) => (
+                <div
+                  key={motif.value}
+                  className="flex items-center space-x-1.5 md:space-x-2"
+                >
+                  <Checkbox
+                    id={`motif-${motif.value}`}
+                    checked={selectedMotifs.includes(motif.value)}
+                    onCheckedChange={() => toggleMotif(motif.value)}
+                    className="h-4 w-4"
+                  />
+                  <label
+                    htmlFor={`motif-${motif.value}`}
+                    className="text-xs md:text-sm text-foreground cursor-pointer leading-tight"
+                  >
+                    {motif.label}
+                  </label>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Custom Prompt */}
           {!compact && (
             <div className="space-y-2">
