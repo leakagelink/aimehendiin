@@ -41,6 +41,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
           {/* SEO Landing Pages */}
           <Route path="/bridal-mehendi-design-2026" element={<BridalMehendi2026 />} />
           <Route path="/karwa-chauth-mehndi-design" element={<KarwaChauthMehendi />} />
