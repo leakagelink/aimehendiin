@@ -79,7 +79,7 @@ Requirements:
 - Realistic henna colour: rich reddish-brown to maroon stain, slightly darker on the palms, softer near the edges
 - Optional subtle detail: delicate gold bangle or ring, plain warm background fabric
 - Ultra high resolution, tack-sharp detail on the henna patterns and skin
-${NEGATIVE_HINTS}`.trim();
+${NEGATIVE_HINTS} Avoid cartoon, anime, 3D render, painted or illustrated look, plastic or mannequin skin, unnatural colours.`.trim();
   }
 
 
