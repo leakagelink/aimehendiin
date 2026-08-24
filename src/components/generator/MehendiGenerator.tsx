@@ -46,6 +46,8 @@ interface MehendiGeneratorProps {
 const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
   const [designType, setDesignType] = useState("bridal");
   const [handType, setHandType] = useState("back");
+  const [look, setLook] = useState<LookMode>("illustration");
+
   const [selectedStyles, setSelectedStyles] = useState<string[]>(["intricate", "floral"]);
   const [customPrompt, setCustomPrompt] = useState("");
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
@@ -179,6 +181,7 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
         handType,
         styles: selectedStyles,
         customPrompt,
+        look,
       });
 
       const { data, error } = await supabase.functions.invoke("generate-mehndi-image", {
