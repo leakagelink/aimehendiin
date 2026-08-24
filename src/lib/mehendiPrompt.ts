@@ -25,11 +25,35 @@ export const handTypePrompts: Record<string, string> = {
 };
 
 export const bodyPartPrompts: Record<string, string> = {
-  hands: "on hands",
-  feet: "on feet, soles and toes of a woman",
-  arms: "on forearms and arms of a woman",
-  wrist: "on the wrist as a bracelet-style band",
-  full_leg: "on legs from ankle to knee as full leg mehendi",
+  hands: "on the hands of a woman",
+  feet: "on the FEET of a woman — the tops of both feet, ankles and toes, feet resting together, no hands anywhere in the frame",
+  arms: "on the FOREARMS of a woman — from wrist up along the forearm towards the elbow, arms as the main subject",
+  wrist: "on the WRIST only, as a bracelet-style band wrapped around the wrist",
+  full_leg: "on the LEGS of a woman from ankle up to the knee, full leg mehendi, no hands in the frame",
+};
+
+// Body-part-neutral versions of each design type, used when the selected
+// body part is not hands (so the design type never forces hands into the image).
+export const designTypeCorePrompts: Record<string, string> = {
+  bridal:
+    "elaborate bridal wedding mehendi henna work with intricate patterns, peacocks, elephants, paisleys and traditional Indian wedding symbols",
+  arabic:
+    "elegant Arabic mehendi henna work with bold floral patterns, vine motifs and flowing curved lines with open spaces",
+  mandala:
+    "circular mandala mehendi henna work with geometric symmetrical patterns and zentangle-inspired detail",
+  simple:
+    "minimalist simple mehendi henna work with clean lines and elegant basic floral patterns",
+  finger:
+    "delicate fine-line mehendi henna work with thin lines and small floral patterns",
+  back_hand:
+    "mehendi henna work with a bold central motif and patterns extending outwards",
+};
+
+export const bodyPartNegatives: Record<string, string> = {
+  feet: "Do NOT show hands, fingers, palms or arms — only feet and toes.",
+  arms: "Do NOT make hands or palms the focus — the forearm is the main subject.",
+  wrist: "Do NOT cover the whole hand or fingers — only the wrist band area is decorated.",
+  full_leg: "Do NOT show hands, fingers or arms — only legs and feet.",
 };
 
 export const occasionPrompts: Record<string, string> = {
@@ -111,7 +135,10 @@ export function buildMehendiPrompt({
   customPrompt = "",
   look = "illustration",
 }: BuildPromptInput): string {
-  const designPrompt = designTypePrompts[designType] || designTypePrompts.bridal;
+  const isHands = bodyPart === "hands";
+  const designPrompt = isHands
+    ? designTypePrompts[designType] || designTypePrompts.bridal
+    : designTypeCorePrompts[designType] || designTypeCorePrompts.bridal;
   const handPrompt = handTypePrompts[handType] || handTypePrompts.back;
   const bodyPrompt = bodyPartPrompts[bodyPart] || bodyPartPrompts.hands;
   const occasionPrompt = occasionPrompts[occasion] || "";
@@ -125,12 +152,12 @@ export function buildMehendiPrompt({
     .filter(Boolean)
     .join(", ");
 
-  const locationClause =
-    bodyPart === "hands" ? handPrompt : bodyPrompt;
+  const locationClause = isHands ? handPrompt : bodyPrompt;
+  const bodyNegative = isHands ? "" : bodyPartNegatives[bodyPart] || "";
 
   const baseDetails = [
-    designPrompt,
     locationClause,
+    designPrompt,
     regionPrompt,
     occasionPrompt,
     motifPromptsText,
@@ -147,10 +174,11 @@ Requirements:
 - Looks like a real photograph taken by a mehendi artist for Instagram, NOT a drawing, painting, 3D render or illustration
 - Henna stain follows the natural curves of the skin, wrapping realistically over creases and contours
 - Authentic Indian mehendi artwork: paisleys, mandalas, florals, jaali net fill, fine dotted and checkered bands
+- The mehendi is applied ${locationClause}
 - Realistic henna colour: rich reddish-brown to maroon stain, slightly darker in the center, softer near the edges
 - Optional subtle detail: delicate gold bangle, ring, anklet or toe ring, plain warm background fabric
 - Ultra high resolution, tack-sharp detail on the henna patterns and skin
-${NEGATIVE_HINTS} Avoid cartoon, anime, 3D render, painted or illustrated look, plastic or mannequin skin, unnatural colours.`.trim();
+${bodyNegative} ${NEGATIVE_HINTS} Avoid cartoon, anime, 3D render, painted or illustrated look, plastic or mannequin skin, unnatural colours.`.trim();
   }
 
   return `Create a beautiful traditional Indian mehendi (henna) tattoo design illustration. ${baseDetails}.
@@ -162,5 +190,5 @@ Style requirements:
 - Detailed and professional-looking
 - Include paisleys, flowers, leaves and decorative elements typical of mehendi art
 - Ultra high resolution, detailed illustration
-${NEGATIVE_HINTS}`.trim();
+${bodyNegative} ${NEGATIVE_HINTS}`.trim();
 }
