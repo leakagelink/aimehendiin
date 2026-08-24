@@ -67,10 +67,13 @@ const ZoomableImage = ({ src, alt }: ZoomableImageProps) => {
   const dragRef = useRef<{ id: number; x: number; y: number } | null>(null);
 
   const onPointerDown = (e: React.PointerEvent) => {
+    // Don't hijack clicks on the zoom controls
+    if ((e.target as HTMLElement).closest("button")) return;
     if (stateRef.current.zoom <= MIN_ZOOM) return;
     dragRef.current = { id: e.pointerId, x: e.clientX, y: e.clientY };
     (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
   };
+
 
   const onPointerMove = (e: React.PointerEvent) => {
     const d = dragRef.current;
