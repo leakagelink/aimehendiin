@@ -50,7 +50,8 @@ export const designTypeCorePrompts: Record<string, string> = {
 };
 
 export const bodyPartNegatives: Record<string, string> = {
-  feet: "Do NOT show hands, fingers, palms or arms — only feet and toes.",
+  feet:
+    "Do NOT show hands, fingers, palms or arms — only feet and toes. Do NOT produce deformed, fused, extra, missing or unnaturally long toes, doll-like or plastic feet, wrong foot orientation, or two left feet — feet must be a correctly mirrored left and right pair with realistic proportions.",
   arms: "Do NOT make hands or palms the focus — the forearm is the main subject.",
   wrist: "Do NOT cover the whole hand or fingers — only the wrist band area is decorated.",
   full_leg: "Do NOT show hands, fingers or arms — only legs and feet.",
@@ -106,7 +107,7 @@ export const realisticScenePrompts: Record<string, string> = {
   hands:
     "Real female hands photographed from above, relaxed natural finger posture, correct human anatomy with five fingers, natural nails with a neutral or light manicure, thin gold bangles and a ring, hands resting on a soft red or beige fabric.",
   feet:
-    "Real bare female FEET photographed from above, both feet resting side by side on a soft red or beige fabric, correct human anatomy with five natural toes on each foot, natural toenails with a neutral or light polish, realistic heel, arch and ankle shape, visible ankle bone, natural skin tone variation between the top of the foot and the toes, delicate gold anklet (payal) and a toe ring.",
+    "Real bare female FEET photographed from a natural high angle looking down at the tops of both feet placed flat and side by side on the ground (wooden floor, marble, or a soft fabric), toes pointing towards the lower edge of the frame. Anatomically perfect human feet: exactly five well-formed toes on each foot with correct decreasing size, natural toenails with clean French or nude polish, realistic toe knuckle creases, visible tendons and bone structure on the top of the foot, natural arch, ankle bone and heel shape, slight natural skin tone variation and soft veins. Delicate gold anklet (payal) with small ghungroo bells around each ankle and a silver/gold toe ring. Henna covers the top of the foot, spreads over the toes in banded tips and ends in a decorated band around the ankle, exactly like a real Indian bridal foot mehendi photo. Soft natural daylight, shallow depth of field, background softly blurred.",
   arms:
     "Real female FOREARM photographed close-up, natural arm contour from wrist to elbow, soft downy skin texture, subtle muscle and vein definition, gold bangles near the wrist, arm resting on a soft fabric.",
   wrist:
