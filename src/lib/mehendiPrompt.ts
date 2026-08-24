@@ -26,7 +26,7 @@ export const handTypePrompts: Record<string, string> = {
 
 export const bodyPartPrompts: Record<string, string> = {
   hands: "on the hands of a woman",
-  feet: "on the FEET of a woman — the tops of both feet, ankles and toes, feet resting together, no hands anywhere in the frame",
+  feet: "on a real woman's bare FEET — the tops of a natural left and right foot, ankles and toes, feet resting comfortably together, no hands anywhere in the frame",
   arms: "on the FOREARMS of a woman — from wrist up along the forearm towards the elbow, arms as the main subject",
   wrist: "on the WRIST only, as a bracelet-style band wrapped around the wrist",
   full_leg: "on the LEGS of a woman from ankle up to the knee, full leg mehendi, no hands in the frame",
@@ -51,7 +51,7 @@ export const designTypeCorePrompts: Record<string, string> = {
 
 export const bodyPartNegatives: Record<string, string> = {
   feet:
-    "Do NOT show hands, fingers, palms or arms — only feet and toes. Do NOT produce deformed, fused, extra, missing or unnaturally long toes, doll-like or plastic feet, wrong foot orientation, or two left feet — feet must be a correctly mirrored left and right pair with realistic proportions.",
+    "Do NOT show hands, fingers, palms or arms — only real feet and toes. Do NOT produce line art, vector art, a drawing, a diagram, a digital illustration, a symmetrical clip-art template, flat cream background, outlined skin, deformed, fused, extra, missing or unnaturally long toes, doll-like or plastic feet, wrong foot orientation, or two left feet — feet must be a natural left and right pair with realistic proportions.",
   arms: "Do NOT make hands or palms the focus — the forearm is the main subject.",
   wrist: "Do NOT cover the whole hand or fingers — only the wrist band area is decorated.",
   full_leg: "Do NOT show hands, fingers or arms — only legs and feet.",
@@ -107,7 +107,7 @@ export const realisticScenePrompts: Record<string, string> = {
   hands:
     "Real female hands photographed from above, relaxed natural finger posture, correct human anatomy with five fingers, natural nails with a neutral or light manicure, thin gold bangles and a ring, hands resting on a soft red or beige fabric.",
   feet:
-    "Real bare female FEET photographed from a natural high angle looking down at the tops of both feet placed flat and side by side on the ground (wooden floor, marble, or a soft fabric), toes pointing towards the lower edge of the frame. Anatomically perfect human feet: exactly five well-formed toes on each foot with correct decreasing size, natural toenails with clean French or nude polish, realistic toe knuckle creases, visible tendons and bone structure on the top of the foot, natural arch, ankle bone and heel shape, slight natural skin tone variation and soft veins. Delicate gold anklet (payal) with small ghungroo bells around each ankle and a silver/gold toe ring. Henna covers the top of the foot, spreads over the toes in banded tips and ends in a decorated band around the ankle, exactly like a real Indian bridal foot mehendi photo. Soft natural daylight, shallow depth of field, background softly blurred.",
+    "A candid editorial DSLR PHOTO of a real Indian woman's bare FEET, photographed from a slightly angled overhead camera position. A natural left foot and right foot rest comfortably side by side on textured red bridal fabric or real stone flooring; the pose has subtle human asymmetry and is not a mirrored graphic. Both feet are visibly three-dimensional living anatomy with exactly five well-formed toes per foot, correctly decreasing toe lengths, natural toenails with clean nude polish, toe-knuckle creases, pores, tiny skin lines, tendons, soft veins, ankle bones, realistic highlights and contact shadows beneath the feet. Delicate metal payal anklets and toe rings cast small physical shadows. Deep reddish-brown real henna stain follows the curved top surfaces of the feet, continues naturally over the toes and ends with an ornamental ankle band. The skin, jewellery, fabric weave and floor texture must all look captured by a camera, with slight lens depth-of-field and photographic background blur — absolutely no blank cream studio background and no drawn outlines.",
   arms:
     "Real female FOREARM photographed close-up, natural arm contour from wrist to elbow, soft downy skin texture, subtle muscle and vein definition, gold bangles near the wrist, arm resting on a soft fabric.",
   wrist:
