@@ -98,13 +98,15 @@ const TryOn = () => {
             </div>
 
             <h1 className="mb-4 font-serif text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
-              AI Virtual <span className="text-secondary">मेहंदी</span> Try-On
+              अपनी Hand Photo पर <span className="text-secondary">मेहंदी</span> Design लगाएं
             </h1>
             <p className="mx-auto max-w-2xl text-muted-foreground">
-              अपने हाथ की photo upload करें और देखें कि bridal, Arabic या mandala mehendi आपके haath
-              par असल में कैसी लगेगी — before/after और zoom के साथ, बिलकुल free.
+              AI Virtual Mehndi Try-On — अपने हाथ की photo upload करें और देखें कि bridal, Arabic,
+              simple या mandala mehndi design आपके haath par असल में कैसा लगेगा। Before/after और zoom
+              के साथ, बिलकुल free.
             </p>
           </div>
+
 
           <MehndiTryOn />
 
