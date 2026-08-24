@@ -1,12 +1,16 @@
 import { useRef, useState } from "react";
-import { Upload, Sparkles, Download, RotateCcw, ShieldCheck, Loader2 } from "lucide-react";
+import { Upload, Sparkles, Download, RotateCcw, ShieldCheck, Loader2, Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import ZoomableImage from "@/components/generator/ZoomableImage";
+import SocialShareButtons from "@/components/generator/SocialShareButtons";
 import BeforeAfterSlider from "./BeforeAfterSlider";
+import CameraCapture from "./CameraCapture";
+import BookDesignDialog from "./BookDesignDialog";
+
 
 const DAILY_LIMIT = 3;
 const QUOTA_KEY = "aimehendi_tryon_quota";
