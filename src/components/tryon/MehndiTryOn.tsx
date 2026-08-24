@@ -1,12 +1,16 @@
 import { useRef, useState } from "react";
-import { Upload, Sparkles, Download, RotateCcw, ShieldCheck, Loader2 } from "lucide-react";
+import { Upload, Sparkles, Download, RotateCcw, ShieldCheck, Loader2, Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import ZoomableImage from "@/components/generator/ZoomableImage";
+import SocialShareButtons from "@/components/generator/SocialShareButtons";
 import BeforeAfterSlider from "./BeforeAfterSlider";
+import CameraCapture from "./CameraCapture";
+import BookDesignDialog from "./BookDesignDialog";
+
 
 const DAILY_LIMIT = 3;
 const QUOTA_KEY = "aimehendi_tryon_quota";
@@ -128,6 +132,8 @@ const MehndiTryOn = () => {
   const [result, setResult] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [used, setUsed] = useState(() => readQuota());
+  const [cameraOpen, setCameraOpen] = useState(false);
+
 
   const [style, setStyle] = useState("arabic");
   const [coverage, setCoverage] = useState("full_hand");
@@ -232,27 +238,45 @@ const MehndiTryOn = () => {
           {photo ? (
             <div className="relative overflow-hidden rounded-xl border border-border">
               <img src={photo} alt="आपकी upload की हुई hand photo" className="w-full" />
-              <Button
-                variant="secondary"
-                size="sm"
-                className="absolute right-3 top-3"
-                onClick={() => fileRef.current?.click()}
-              >
-                बदलें
-              </Button>
+              <div className="absolute right-3 top-3 flex gap-2">
+                <Button variant="secondary" size="sm" onClick={() => setCameraOpen(true)}>
+                  <Camera className="h-4 w-4" aria-hidden="true" />
+                  Camera
+                </Button>
+                <Button variant="secondary" size="sm" onClick={() => fileRef.current?.click()}>
+                  बदलें
+                </Button>
+              </div>
             </div>
           ) : (
-            <button
-              type="button"
-              onClick={() => fileRef.current?.click()}
-              className="flex w-full flex-col items-center justify-center gap-3 rounded-xl border-2 border-dashed border-border py-12 text-muted-foreground transition-colors hover:border-secondary hover:text-foreground"
-            >
-              <Upload className="h-7 w-7" aria-hidden="true" />
-              <span className="text-sm font-medium">Photo choose करें या camera खोलें</span>
-              <span className="text-xs">साफ़ रोशनी में खुली हथेली की photo best result देती है</span>
-            </button>
+            <div className="space-y-3">
+              <button
+                type="button"
+                onClick={() => fileRef.current?.click()}
+                className="flex w-full flex-col items-center justify-center gap-3 rounded-xl border-2 border-dashed border-border py-12 text-muted-foreground transition-colors hover:border-secondary hover:text-foreground"
+              >
+                <Upload className="h-7 w-7" aria-hidden="true" />
+                <span className="text-sm font-medium">Gallery से photo choose करें</span>
+                <span className="text-xs">साफ़ रोशनी में खुली हथेली की photo best result देती है</span>
+              </button>
+              <Button variant="outline" className="w-full" onClick={() => setCameraOpen(true)}>
+                <Camera className="h-4 w-4" aria-hidden="true" />
+                Live camera से photo लें
+              </Button>
+            </div>
           )}
         </div>
+
+        <CameraCapture
+          open={cameraOpen}
+          onOpenChange={setCameraOpen}
+          onCapture={(dataUrl) => {
+            setPhoto(dataUrl);
+            setResult(null);
+          }}
+        />
+
+
 
         <div className="space-y-5">
           <OptionRow label="2. Design style" options={styles} value={style} onChange={setStyle} />
@@ -308,11 +332,22 @@ const MehndiTryOn = () => {
                 <Download className="h-4 w-4" aria-hidden="true" />
                 Download
               </Button>
+              <BookDesignDialog style={style} designImageUrl={result} source="try-on" />
               <Button variant="outline" onClick={reset}>
                 <RotateCcw className="h-4 w-4" aria-hidden="true" />
                 नई photo
               </Button>
             </div>
+
+            <div className="space-y-2">
+              <Label className="text-sm font-medium">Share करें</Label>
+              <SocialShareButtons
+                imageUrl={result}
+                title="देखिए मेरा AI Virtual Mehndi Try-On — AIMehendi.in par free try karein!"
+                pageUrl="https://aimehendi.in/try-on"
+              />
+            </div>
+
           </div>
         ) : (
           <div className="flex min-h-[320px] flex-col items-center justify-center gap-3 rounded-xl border border-dashed border-border text-center text-muted-foreground">
