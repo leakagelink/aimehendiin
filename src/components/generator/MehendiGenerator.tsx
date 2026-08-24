@@ -241,6 +241,10 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
       const prompt = buildMehendiPrompt({
         designType,
         handType,
+        bodyPart,
+        occasion,
+        region,
+        motifs: selectedMotifs,
         styles: selectedStyles,
         customPrompt,
         look,
