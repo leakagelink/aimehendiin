@@ -80,7 +80,12 @@ const TryOn = () => {
         path="/try-on"
       />
       <BreadcrumbSchema items={[{ name: "Virtual Try-On", item: "/try-on" }]} />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(howToSchema)}</script>
+      </Helmet>
       <Header />
+
 
       <main className="py-8 md:py-16">
         <div className="container">
