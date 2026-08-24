@@ -8,6 +8,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import SocialShareButtons from "./SocialShareButtons";
+import { buildMehendiPrompt } from "@/lib/mehendiPrompt";
+
 
 const designTypes = [
   { value: "bridal", label: "Bridal (दुल्हन)", labelHi: "दुल्हन मेहंदी" },
@@ -44,6 +46,8 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
   const [customPrompt, setCustomPrompt] = useState("");
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
+  const [generationError, setGenerationError] = useState<string | null>(null);
+
   const [progressStage, setProgressStage] = useState<0 | 1 | 2 | 3>(0);
   const [elapsed, setElapsed] = useState(0);
   const [referenceImage, setReferenceImage] = useState<string | null>(null);
@@ -162,17 +166,19 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
     if (isGenerating) return; // prevent duplicate/simultaneous requests
     setIsGenerating(true);
     setGeneratedImage(null);
+    setGenerationError(null);
     setShowShareMenu(false);
 
     try {
-      const { data, error } = await supabase.functions.invoke("generate-mehendi", {
-        body: {
-          designType,
-          handType,
-          styles: selectedStyles,
-          customPrompt,
-          referenceImage,
-        },
+      const prompt = buildMehendiPrompt({
+        designType,
+        handType,
+        styles: selectedStyles,
+        customPrompt,
+      });
+
+      const { data, error } = await supabase.functions.invoke("generate-mehndi-image", {
+        body: { prompt },
       });
 
       if (error) {
@@ -183,13 +189,12 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
           if (ctx && typeof ctx.text === "function") {
             const bodyText = await ctx.text();
             const parsed = JSON.parse(bodyText);
-            if (parsed?.code === "INSUFFICIENT_CREDITS" || parsed?.error) {
-              description = parsed.error || description;
-            }
+            if (parsed?.error) description = parsed.error;
           }
         } catch {
           /* ignore parse errors */
         }
+        setGenerationError(description);
         toast({
           title: "Error",
           description,
@@ -213,13 +218,14 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
         });
         toast({
           title: "Success! 🎉",
-          description: referenceImage
-            ? "आपका custom मेहंदी डिज़ाइन तैयार है!"
-            : "आपका मेहंदी डिज़ाइन तैयार है!",
+          description: "आपका मेहंदी डिज़ाइन तैयार है!",
         });
+      } else {
+        setGenerationError("कोई image नहीं मिली। कृपया दोबारा try करें।");
       }
     } catch (err) {
       console.error("Error:", err);
+      setGenerationError("कुछ गलत हो गया। कृपया पुनः प्रयास करें।");
       toast({
         title: "Error",
         description: "कुछ गलत हो गया। कृपया पुनः प्रयास करें।",
@@ -229,6 +235,7 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
       setIsGenerating(false);
     }
   };
+
 
   const downloadImage = () => {
     if (generatedImage) {
@@ -500,7 +507,19 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
                 alt="Generated Mehendi Design"
                 className="w-full h-full object-contain rounded-lg"
               />
+            ) : generationError ? (
+              <div className="text-center p-4 md:p-8">
+                <div className="h-14 w-14 md:h-20 md:w-20 rounded-full bg-destructive/10 flex items-center justify-center mx-auto mb-3 md:mb-4">
+                  <RefreshCw className="h-7 w-7 md:h-9 md:w-9 text-destructive" aria-hidden="true" />
+                </div>
+                <p className="text-xs md:text-sm text-destructive mb-3">{generationError}</p>
+                <Button variant="gold" size="sm" onClick={generateDesign} disabled={isGenerating}>
+                  <RefreshCw className="h-4 w-4 mr-1.5" aria-hidden="true" />
+                  Retry / दोबारा कोशिश करें
+                </Button>
+              </div>
             ) : (
+
               <div className="text-center p-4 md:p-8">
                 <div className="h-14 w-14 md:h-20 md:w-20 rounded-full bg-muted flex items-center justify-center mx-auto mb-3 md:mb-4">
                   <Hand className="h-7 w-7 md:h-10 md:w-10 text-muted-foreground" aria-hidden="true" />

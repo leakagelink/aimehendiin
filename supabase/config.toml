@@ -8,3 +8,6 @@ verify_jwt = false
 
 [functions.ahrefs-domain-rating]
 verify_jwt = false
+
+[functions.generate-mehndi-image]
+verify_jwt = false
