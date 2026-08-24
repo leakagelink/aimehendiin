@@ -100,6 +100,21 @@ export const lookPrompts: Record<LookMode, string> = {
     "Ultra photorealistic close-up photograph of real human female skin with natural Indian skin tone, visible realistic skin texture, fine pores and natural creases. The henna is a real dried stain on the skin in authentic deep reddish-brown, maroon and burnt-orange henna tones only — no coloured ink, no blue, no purple, no paint. Soft warm natural window light, gentle shadows, resting on soft fabric or a plain warm beige surface, shallow depth of field with a softly blurred background, professional DSLR photograph, 85mm lens, top-down close-up crop.",
 };
 
+// Photographic scene details per body part, used only in realistic mode so that
+// feet / arms / legs get the same photo-real treatment as hands.
+export const realisticScenePrompts: Record<string, string> = {
+  hands:
+    "Real female hands photographed from above, relaxed natural finger posture, correct human anatomy with five fingers, natural nails with a neutral or light manicure, thin gold bangles and a ring, hands resting on a soft red or beige fabric.",
+  feet:
+    "Real bare female FEET photographed from above, both feet resting side by side on a soft red or beige fabric, correct human anatomy with five natural toes on each foot, natural toenails with a neutral or light polish, realistic heel, arch and ankle shape, visible ankle bone, natural skin tone variation between the top of the foot and the toes, delicate gold anklet (payal) and a toe ring.",
+  arms:
+    "Real female FOREARM photographed close-up, natural arm contour from wrist to elbow, soft downy skin texture, subtle muscle and vein definition, gold bangles near the wrist, arm resting on a soft fabric.",
+  wrist:
+    "Real female WRIST photographed close-up, natural wrist crease lines and bone contour, slim gold bangles beside the henna band, soft fabric background.",
+  full_leg:
+    "Real female LEGS photographed from ankle to knee, both legs resting together on a soft fabric, natural calf and shin contour, realistic ankle and foot with five natural toes, gold anklet, smooth realistic skin texture.",
+};
+
 export const styleModifierPrompts: Record<string, string> = {
   intricate: "with highly intricate and detailed fine line work",
   minimal: "with minimal elegant design and open spaces",
@@ -168,17 +183,20 @@ export function buildMehendiPrompt({
     .join(". ");
 
   if (look === "realistic") {
-    return `${lookPrompts.realistic} The mehendi is ${baseDetails}. 
+    const scene =
+      realisticScenePrompts[bodyPart] || realisticScenePrompts.hands;
+    return `${lookPrompts.realistic} ${scene} The mehendi is ${baseDetails}. 
 
 Requirements:
 - Looks like a real photograph taken by a mehendi artist for Instagram, NOT a drawing, painting, 3D render or illustration
+- Real living human body part with anatomically correct proportions, natural joints, nails and skin folds
 - Henna stain follows the natural curves of the skin, wrapping realistically over creases and contours
 - Authentic Indian mehendi artwork: paisleys, mandalas, florals, jaali net fill, fine dotted and checkered bands
 - The mehendi is applied ${locationClause}
 - Realistic henna colour: rich reddish-brown to maroon stain, slightly darker in the center, softer near the edges
-- Optional subtle detail: delicate gold bangle, ring, anklet or toe ring, plain warm background fabric
+- Natural skin imperfections: pores, fine lines, subtle tan variation, soft highlights and realistic shadows
 - Ultra high resolution, tack-sharp detail on the henna patterns and skin
-${bodyNegative} ${NEGATIVE_HINTS} Avoid cartoon, anime, 3D render, painted or illustrated look, plastic or mannequin skin, unnatural colours.`.trim();
+${bodyNegative} ${NEGATIVE_HINTS} Avoid cartoon, anime, 3D render, CGI, painted or illustrated look, plastic, wax or mannequin skin, doll-like limbs, deformed toes or extra toes, flat sticker-like henna, unnatural colours.`.trim();
   }
 
   return `Create a beautiful traditional Indian mehendi (henna) tattoo design illustration. ${baseDetails}.
