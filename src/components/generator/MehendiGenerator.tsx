@@ -180,6 +180,14 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
     );
   };
 
+  const toggleMotif = (motif: string) => {
+    setSelectedMotifs((prev) =>
+      prev.includes(motif)
+        ? prev.filter((m) => m !== motif)
+        : [...prev, motif]
+    );
+  };
+
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
