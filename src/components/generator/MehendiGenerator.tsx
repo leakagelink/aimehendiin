@@ -8,7 +8,9 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import SocialShareButtons from "./SocialShareButtons";
-import { buildMehendiPrompt } from "@/lib/mehendiPrompt";
+import { buildMehendiPrompt, type LookMode } from "@/lib/mehendiPrompt";
+import ZoomableImage from "./ZoomableImage";
+
 
 
 const designTypes = [
@@ -24,6 +26,8 @@ const handTypes = [
   { value: "back", label: "Back Hand (हाथ का पीछे)" },
   { value: "front", label: "Palm (हथेली)" },
   { value: "full", label: "Full Hand (पूरा हाथ)" },
+  { value: "both", label: "Both Hands (दोनों हाथ)" },
+
 ];
 
 const styleModifiers = [
@@ -42,6 +46,8 @@ interface MehendiGeneratorProps {
 const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
   const [designType, setDesignType] = useState("bridal");
   const [handType, setHandType] = useState("back");
+  const [look, setLook] = useState<LookMode>("illustration");
+
   const [selectedStyles, setSelectedStyles] = useState<string[]>(["intricate", "floral"]);
   const [customPrompt, setCustomPrompt] = useState("");
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
@@ -175,6 +181,7 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
         handType,
         styles: selectedStyles,
         customPrompt,
+        look,
       });
 
       const { data, error } = await supabase.functions.invoke("generate-mehndi-image", {
@@ -351,7 +358,30 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
                 </SelectContent>
               </Select>
             </div>
+
+            <div className="space-y-1 md:space-y-2 col-span-2 md:col-span-1">
+              <Label className="text-xs md:text-sm font-medium">
+                Look (लुक) — Real Hand Photo?
+              </Label>
+              <Select value={look} onValueChange={(v) => setLook(v as LookMode)}>
+                <SelectTrigger className="w-full h-9 md:h-10 text-xs md:text-sm">
+                  <SelectValue placeholder="Select" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="illustration" className="text-xs md:text-sm">
+                    Illustration (ड्रॉइंग स्टाइल)
+                  </SelectItem>
+                  <SelectItem value="realistic" className="text-xs md:text-sm">
+                    Real Hands Photo (असली हाथ)
+                  </SelectItem>
+                </SelectContent>
+              </Select>
+              <p className="text-[10px] md:text-xs text-muted-foreground">
+                Real photo look ke liye "Both Hands" + Real Hands Photo चुनें।
+              </p>
+            </div>
           </div>
+
 
           {/* Style Modifiers - Compact grid */}
           <div className="space-y-2">
@@ -502,11 +532,8 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
                 </ul>
               </div>
             ) : generatedImage ? (
-              <img
-                src={generatedImage}
-                alt="Generated Mehendi Design"
-                className="w-full h-full object-contain rounded-lg"
-              />
+              <ZoomableImage src={generatedImage} alt="Generated Mehendi Design" />
+
             ) : generationError ? (
               <div className="text-center p-4 md:p-8">
                 <div className="h-14 w-14 md:h-20 md:w-20 rounded-full bg-destructive/10 flex items-center justify-center mx-auto mb-3 md:mb-4">

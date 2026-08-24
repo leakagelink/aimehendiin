@@ -21,7 +21,18 @@ export const handTypePrompts: Record<string, string> = {
   back: "on the back of a woman's hand",
   front: "on the palm of a woman's hand",
   full: "covering the full hand from wrist to fingertips, both palm and back visible",
+  both: "applied symmetrically on both hands of a woman, two hands placed side by side, matching patterns on left and right hand",
 };
+
+export type LookMode = "illustration" | "realistic";
+
+export const lookPrompts: Record<LookMode, string> = {
+  illustration:
+    "Clean high-quality hand-drawn illustration style, brown/henna colored design on a light cream background, flat artistic line art.",
+  realistic:
+    "Ultra photorealistic photograph of real human hands with natural Indian skin tone, realistic skin texture, fine pores and natural nails, freshly applied dark reddish-brown henna paste with authentic glossy relief and subtle stain, soft natural daylight, shallow depth of field, professional DSLR photo, 85mm lens, anatomically correct hands with exactly five fingers each.",
+};
+
 
 export const styleModifierPrompts: Record<string, string> = {
   intricate: "with highly intricate and detailed fine line work",
@@ -40,6 +51,7 @@ export interface BuildPromptInput {
   handType: string;
   styles?: string[];
   customPrompt?: string;
+  look?: LookMode;
 }
 
 export function buildMehendiPrompt({
@@ -47,6 +59,7 @@ export function buildMehendiPrompt({
   handType,
   styles = [],
   customPrompt = "",
+  look = "illustration",
 }: BuildPromptInput): string {
   const designPrompt = designTypePrompts[designType] || designTypePrompts.bridal;
   const handPrompt = handTypePrompts[handType] || handTypePrompts.back;
@@ -54,6 +67,17 @@ export function buildMehendiPrompt({
     .map((s) => styleModifierPrompts[s])
     .filter(Boolean)
     .join(", ");
+
+  if (look === "realistic") {
+    return `${lookPrompts.realistic} The hands are decorated with ${designPrompt} ${handPrompt}. ${stylePrompts}. ${customPrompt.trim()}
+
+Requirements:
+- Real human hands photographed, not a drawing or illustration
+- Authentic Indian mehendi/henna artwork with paisleys, flowers, leaves and traditional motifs
+- Natural background, softly blurred, warm tones
+- Ultra high resolution, sharp detail on the henna patterns
+${NEGATIVE_HINTS}`.trim();
+  }
 
   return `Create a beautiful traditional Indian mehendi (henna) tattoo design illustration. ${designPrompt} ${handPrompt}. ${stylePrompts}. ${customPrompt.trim()}
 
@@ -66,3 +90,4 @@ Style requirements:
 - Ultra high resolution, detailed illustration
 ${NEGATIVE_HINTS}`.trim();
 }
+
