@@ -4,11 +4,14 @@ import { useToast } from "@/hooks/use-toast";
 interface SocialShareButtonsProps {
   imageUrl: string;
   title: string;
+  /** Absolute page URL to share. Defaults to the generator page. */
+  pageUrl?: string;
 }
 
-const SocialShareButtons = ({ imageUrl, title }: SocialShareButtonsProps) => {
+const SocialShareButtons = ({ imageUrl, title, pageUrl }: SocialShareButtonsProps) => {
   const { toast } = useToast();
-  const shareUrl = "https://aimehendi.in/generate";
+  const shareUrl = pageUrl || "https://aimehendi.in/generate";
+
   const encodedTitle = encodeURIComponent(title);
   const encodedUrl = encodeURIComponent(shareUrl);
 
