@@ -132,6 +132,8 @@ const MehndiTryOn = () => {
   const [result, setResult] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [used, setUsed] = useState(() => readQuota());
+  const [cameraOpen, setCameraOpen] = useState(false);
+
 
   const [style, setStyle] = useState("arabic");
   const [coverage, setCoverage] = useState("full_hand");
