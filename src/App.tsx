@@ -12,6 +12,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
+import Disclaimer from "./pages/Disclaimer";
+import CookieConsent from "./components/layout/CookieConsent";
 import NotFound from "./pages/NotFound";
 import BridalMehendi2026 from "./pages/landing/BridalMehendi2026";
 import KarwaChauthMehendi from "./pages/landing/KarwaChauthMehendi";
@@ -39,6 +41,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
           {/* SEO Landing Pages */}
           <Route path="/bridal-mehendi-design-2026" element={<BridalMehendi2026 />} />
           <Route path="/karwa-chauth-mehndi-design" element={<KarwaChauthMehendi />} />
@@ -72,6 +75,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <CookieConsent />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

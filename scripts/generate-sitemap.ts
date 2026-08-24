@@ -29,6 +29,7 @@ const STATIC_ROUTES: { path: string; changefreq?: string; priority?: string }[] 
   { path: "/contact", changefreq: "monthly", priority: "0.5" },
   { path: "/privacy-policy", changefreq: "yearly", priority: "0.3" },
   { path: "/terms-of-service", changefreq: "yearly", priority: "0.3" },
+  { path: "/disclaimer", changefreq: "yearly", priority: "0.3" },
 ];
 
 /** Gallery category slugs (mirrors src/data/galleryCategories.ts). */
