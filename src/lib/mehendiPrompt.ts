@@ -183,17 +183,20 @@ export function buildMehendiPrompt({
     .join(". ");
 
   if (look === "realistic") {
-    return `${lookPrompts.realistic} The mehendi is ${baseDetails}. 
+    const scene =
+      realisticScenePrompts[bodyPart] || realisticScenePrompts.hands;
+    return `${lookPrompts.realistic} ${scene} The mehendi is ${baseDetails}. 
 
 Requirements:
 - Looks like a real photograph taken by a mehendi artist for Instagram, NOT a drawing, painting, 3D render or illustration
+- Real living human body part with anatomically correct proportions, natural joints, nails and skin folds
 - Henna stain follows the natural curves of the skin, wrapping realistically over creases and contours
 - Authentic Indian mehendi artwork: paisleys, mandalas, florals, jaali net fill, fine dotted and checkered bands
 - The mehendi is applied ${locationClause}
 - Realistic henna colour: rich reddish-brown to maroon stain, slightly darker in the center, softer near the edges
-- Optional subtle detail: delicate gold bangle, ring, anklet or toe ring, plain warm background fabric
+- Natural skin imperfections: pores, fine lines, subtle tan variation, soft highlights and realistic shadows
 - Ultra high resolution, tack-sharp detail on the henna patterns and skin
-${bodyNegative} ${NEGATIVE_HINTS} Avoid cartoon, anime, 3D render, painted or illustrated look, plastic or mannequin skin, unnatural colours.`.trim();
+${bodyNegative} ${NEGATIVE_HINTS} Avoid cartoon, anime, 3D render, CGI, painted or illustrated look, plastic, wax or mannequin skin, doll-like limbs, deformed toes or extra toes, flat sticker-like henna, unnatural colours.`.trim();
   }
 
   return `Create a beautiful traditional Indian mehendi (henna) tattoo design illustration. ${baseDetails}.
