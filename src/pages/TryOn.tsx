@@ -111,15 +111,15 @@ const TryOn = () => {
               Try-On कैसे काम करता है?
             </h2>
             <ol className="grid gap-4 text-sm text-muted-foreground md:grid-cols-3">
-              <li>
+              <li id="step-photo">
                 <strong className="text-foreground">1. Photo लें</strong> — साफ़ रोशनी में खुली हथेली या
                 back hand की सीधी photo सबसे अच्छा result देती है।
               </li>
-              <li>
+              <li id="step-style">
                 <strong className="text-foreground">2. Style चुनें</strong> — design style, coverage,
                 henna shade और density अपने हिसाब से set करें।
               </li>
-              <li>
+              <li id="step-result">
                 <strong className="text-foreground">3. Result देखें</strong> — before/after slider से
                 compare करें, zoom करें और design download करें।
               </li>
