@@ -507,7 +507,19 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
                 alt="Generated Mehendi Design"
                 className="w-full h-full object-contain rounded-lg"
               />
+            ) : generationError ? (
+              <div className="text-center p-4 md:p-8">
+                <div className="h-14 w-14 md:h-20 md:w-20 rounded-full bg-destructive/10 flex items-center justify-center mx-auto mb-3 md:mb-4">
+                  <RefreshCw className="h-7 w-7 md:h-9 md:w-9 text-destructive" aria-hidden="true" />
+                </div>
+                <p className="text-xs md:text-sm text-destructive mb-3">{generationError}</p>
+                <Button variant="gold" size="sm" onClick={generateDesign} disabled={isGenerating}>
+                  <RefreshCw className="h-4 w-4 mr-1.5" aria-hidden="true" />
+                  Retry / दोबारा कोशिश करें
+                </Button>
+              </div>
             ) : (
+
               <div className="text-center p-4 md:p-8">
                 <div className="h-14 w-14 md:h-20 md:w-20 rounded-full bg-muted flex items-center justify-center mx-auto mb-3 md:mb-4">
                   <Hand className="h-7 w-7 md:h-10 md:w-10 text-muted-foreground" aria-hidden="true" />
