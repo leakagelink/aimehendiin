@@ -107,6 +107,51 @@ export type Database = {
         }
         Relationships: []
       }
+      design_bookings: {
+        Row: {
+          city: string | null
+          created_at: string
+          design_image_url: string | null
+          event_date: string | null
+          id: string
+          message: string | null
+          name: string
+          occasion: string | null
+          phone: string
+          source: string
+          status: string
+          style: string | null
+        }
+        Insert: {
+          city?: string | null
+          created_at?: string
+          design_image_url?: string | null
+          event_date?: string | null
+          id?: string
+          message?: string | null
+          name: string
+          occasion?: string | null
+          phone: string
+          source?: string
+          status?: string
+          style?: string | null
+        }
+        Update: {
+          city?: string | null
+          created_at?: string
+          design_image_url?: string | null
+          event_date?: string | null
+          id?: string
+          message?: string | null
+          name?: string
+          occasion?: string | null
+          phone?: string
+          source?: string
+          status?: string
+          style?: string | null
+        }
+        Relationships: []
+      }
       gallery_images: {
         Row: {
           category: string
