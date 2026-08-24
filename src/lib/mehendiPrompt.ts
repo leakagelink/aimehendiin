@@ -21,7 +21,18 @@ export const handTypePrompts: Record<string, string> = {
   back: "on the back of a woman's hand",
   front: "on the palm of a woman's hand",
   full: "covering the full hand from wrist to fingertips, both palm and back visible",
+  both: "applied symmetrically on both hands of a woman, two hands placed side by side, matching patterns on left and right hand",
 };
+
+export type LookMode = "illustration" | "realistic";
+
+export const lookPrompts: Record<LookMode, string> = {
+  illustration:
+    "Clean high-quality hand-drawn illustration style, brown/henna colored design on a light cream background, flat artistic line art.",
+  realistic:
+    "Ultra photorealistic photograph of real human hands with natural Indian skin tone, realistic skin texture, fine pores and natural nails, freshly applied dark reddish-brown henna paste with authentic glossy relief and subtle stain, soft natural daylight, shallow depth of field, professional DSLR photo, 85mm lens, anatomically correct hands with exactly five fingers each.",
+};
+
 
 export const styleModifierPrompts: Record<string, string> = {
   intricate: "with highly intricate and detailed fine line work",
