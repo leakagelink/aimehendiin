@@ -278,13 +278,14 @@ const Contact = () => {
                         disabled={isSubmitting}
                       >
                         {isSubmitting ? (
-                          "Sending..."
+                          "Opening email app..."
                         ) : (
                           <>
-                            <Send className="h-4 w-4 mr-2" />
-                            Send Message
+                            <Send className="h-4 w-4 mr-2" aria-hidden="true" />
+                            Send via Email App
                           </>
                         )}
+
                       </Button>
                     </form>
                   </>
