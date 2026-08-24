@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Generate from "./pages/Generate";
+import TryOn from "./pages/TryOn";
 import Gallery from "./pages/Gallery";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -33,6 +34,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/generate" element={<Generate />} />
+          <Route path="/try-on" element={<TryOn />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/gallery/:category" element={<Gallery />} />
           <Route path="/blog" element={<Blog />} />
