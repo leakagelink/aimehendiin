@@ -34,7 +34,7 @@ const Generate = () => {
               AI <span className="text-secondary">मेहंदी</span> Design Generator
             </h1>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              अपनी पसंद के अनुसार कस्टम मेहंदी डिज़ाइन बनाएं। Choose your style, hand type, and let AI create beautiful mehendi patterns for you.
+              अपनी पसंद के अनुसार कस्टम मेहंदी डिज़ाइन बनाएं। Choose design type, body part, occasion, region, motifs & style — AI will create beautiful mehendi patterns for you.
             </p>
           </div>
 

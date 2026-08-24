@@ -24,16 +24,57 @@ export const handTypePrompts: Record<string, string> = {
   both: "applied symmetrically on both hands of a woman, two hands placed side by side, matching patterns on left and right hand",
 };
 
+export const bodyPartPrompts: Record<string, string> = {
+  hands: "on hands",
+  feet: "on feet, soles and toes of a woman",
+  arms: "on forearms and arms of a woman",
+  wrist: "on the wrist as a bracelet-style band",
+  full_leg: "on legs from ankle to knee as full leg mehendi",
+};
+
+export const occasionPrompts: Record<string, string> = {
+  wedding: "perfect for an Indian bride's wedding day",
+  engagement: "delicate engagement ceremony mehendi",
+  sangeet: "sangeet night mehendi with musical elements and celebratory patterns",
+  karva_chauth: "elegant Karva Chauth mehendi with moon, stars and sieve motifs",
+  eid: "festive Eid mehendi with crescent moon and floral patterns",
+  rakhi: "Raksha Bandhan mehendi with rakhi, beads and traditional motifs",
+  teej: "Teej festival mehendi with swings, peacocks and monsoon florals",
+  festival: "general festive Indian celebration mehendi",
+  everyday: "simple everyday wearable mehendi design",
+};
+
+export const regionStylePrompts: Record<string, string> = {
+  indian: "authentic Indian mehendi style",
+  rajasthani: "Rajasthani/Marwari style with dense filling and traditional motifs",
+  arabic: "Arabic style with bold florals, flowing vines and open spaces",
+  pakistani: "Pakistani style with intricate details and delicate florals",
+  indo_arabic: "Indo-Arabic fusion with bold outlines and Indian filling",
+  moroccan: "Moroccan henna with geometric tribal patterns",
+  indo_western: "Indo-Western fusion mehendi",
+};
+
+export const motifPrompts: Record<string, string> = {
+  peacock: "peacock motifs",
+  elephant: "elephant motifs",
+  lotus: "lotus flower motifs",
+  bride_groom: "bride and groom figures",
+  paisley: "paisley/kairi motifs",
+  mandala: "mandala motifs",
+  kalash: "kalash/pot motifs",
+  mango: "mango leaf/keri motifs",
+  heart: "heart motifs",
+  name: "hidden name/initials woven into design",
+};
+
 export type LookMode = "illustration" | "realistic";
 
 export const lookPrompts: Record<LookMode, string> = {
   illustration:
     "Clean high-quality hand-drawn illustration style, brown/henna colored design on a light cream background, flat artistic line art.",
   realistic:
-    "Ultra photorealistic close-up photograph of real human female hands with natural Indian skin tone, visible realistic skin texture, knuckle creases, fine pores, veins and neatly manicured glossy nails. The henna is a real dried stain on the skin in authentic deep reddish-brown, maroon and burnt-orange henna tones only — no coloured ink, no blue, no purple, no paint. Soft warm natural window light, gentle shadows, hands resting on soft fabric or a plain warm beige surface, shallow depth of field with a softly blurred background, professional DSLR photograph, 85mm lens, top-down close-up crop, anatomically correct hands with exactly five fingers each.",
+    "Ultra photorealistic close-up photograph of real human female skin with natural Indian skin tone, visible realistic skin texture, fine pores and natural creases. The henna is a real dried stain on the skin in authentic deep reddish-brown, maroon and burnt-orange henna tones only — no coloured ink, no blue, no purple, no paint. Soft warm natural window light, gentle shadows, resting on soft fabric or a plain warm beige surface, shallow depth of field with a softly blurred background, professional DSLR photograph, 85mm lens, top-down close-up crop.",
 };
-
-
 
 export const styleModifierPrompts: Record<string, string> = {
   intricate: "with highly intricate and detailed fine line work",
@@ -50,6 +91,10 @@ export const NEGATIVE_HINTS =
 export interface BuildPromptInput {
   designType: string;
   handType: string;
+  bodyPart: string;
+  occasion: string;
+  region: string;
+  motifs?: string[];
   styles?: string[];
   customPrompt?: string;
   look?: LookMode;
@@ -58,32 +103,57 @@ export interface BuildPromptInput {
 export function buildMehendiPrompt({
   designType,
   handType,
+  bodyPart,
+  occasion,
+  region,
+  motifs = [],
   styles = [],
   customPrompt = "",
   look = "illustration",
 }: BuildPromptInput): string {
   const designPrompt = designTypePrompts[designType] || designTypePrompts.bridal;
   const handPrompt = handTypePrompts[handType] || handTypePrompts.back;
+  const bodyPrompt = bodyPartPrompts[bodyPart] || bodyPartPrompts.hands;
+  const occasionPrompt = occasionPrompts[occasion] || "";
+  const regionPrompt = regionStylePrompts[region] || regionStylePrompts.indian;
+  const motifPromptsText = motifs
+    .map((m) => motifPrompts[m])
+    .filter(Boolean)
+    .join(", ");
   const stylePrompts = styles
     .map((s) => styleModifierPrompts[s])
     .filter(Boolean)
     .join(", ");
 
+  const locationClause =
+    bodyPart === "hands" ? handPrompt : bodyPrompt;
+
+  const baseDetails = [
+    designPrompt,
+    locationClause,
+    regionPrompt,
+    occasionPrompt,
+    motifPromptsText,
+    stylePrompts,
+    customPrompt.trim(),
+  ]
+    .filter(Boolean)
+    .join(". ");
+
   if (look === "realistic") {
-    return `${lookPrompts.realistic} The hands are decorated with ${designPrompt} ${handPrompt}. ${stylePrompts}. ${customPrompt.trim()}
+    return `${lookPrompts.realistic} The mehendi is ${baseDetails}. 
 
 Requirements:
 - Looks like a real photograph taken by a mehendi artist for Instagram, NOT a drawing, painting, 3D render or illustration
-- Henna stain follows the natural curves of the fingers and hand, wrapping realistically over knuckles and finger sides
-- Authentic Indian mehendi artwork: paisleys, mandalas, florals, jaali net fill, fine dotted and checkered bands on the fingers
-- Realistic henna colour: rich reddish-brown to maroon stain, slightly darker on the palms, softer near the edges
-- Optional subtle detail: delicate gold bangle or ring, plain warm background fabric
+- Henna stain follows the natural curves of the skin, wrapping realistically over creases and contours
+- Authentic Indian mehendi artwork: paisleys, mandalas, florals, jaali net fill, fine dotted and checkered bands
+- Realistic henna colour: rich reddish-brown to maroon stain, slightly darker in the center, softer near the edges
+- Optional subtle detail: delicate gold bangle, ring, anklet or toe ring, plain warm background fabric
 - Ultra high resolution, tack-sharp detail on the henna patterns and skin
 ${NEGATIVE_HINTS} Avoid cartoon, anime, 3D render, painted or illustrated look, plastic or mannequin skin, unnatural colours.`.trim();
   }
 
-
-  return `Create a beautiful traditional Indian mehendi (henna) tattoo design illustration. ${designPrompt} ${handPrompt}. ${stylePrompts}. ${customPrompt.trim()}
+  return `Create a beautiful traditional Indian mehendi (henna) tattoo design illustration. ${baseDetails}.
 
 Style requirements:
 - Clean, high-quality illustration showing mehendi/henna art
@@ -94,4 +164,3 @@ Style requirements:
 - Ultra high resolution, detailed illustration
 ${NEGATIVE_HINTS}`.trim();
 }
-

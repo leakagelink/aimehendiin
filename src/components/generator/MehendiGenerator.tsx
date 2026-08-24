@@ -39,6 +39,49 @@ const styleModifiers = [
   { value: "modern", label: "Modern (आधुनिक)" },
 ];
 
+const bodyParts = [
+  { value: "hands", label: "Hands (हाथ)" },
+  { value: "feet", label: "Feet (पैर)" },
+  { value: "arms", label: "Arms (बांह)" },
+  { value: "wrist", label: "Wrist (कलाई)" },
+  { value: "full_leg", label: "Full Leg (पैर पूरा)" },
+];
+
+const occasions = [
+  { value: "wedding", label: "Wedding (शादी)" },
+  { value: "engagement", label: "Engagement (सगाई)" },
+  { value: "sangeet", label: "Sangeet (संगीत)" },
+  { value: "karva_chauth", label: "Karva Chauth" },
+  { value: "eid", label: "Eid" },
+  { value: "rakhi", label: "Rakhi (रक्षाबंधन)" },
+  { value: "teej", label: "Teej (तीज)" },
+  { value: "festival", label: "Festival (त्योहार)" },
+  { value: "everyday", label: "Everyday (रोज़मर्रा)" },
+];
+
+const regions = [
+  { value: "indian", label: "Indian (भारतीय)" },
+  { value: "rajasthani", label: "Rajasthani (राजस्थानी)" },
+  { value: "arabic", label: "Arabic (अरेबिक)" },
+  { value: "pakistani", label: "Pakistani (पाकिस्तानी)" },
+  { value: "indo_arabic", label: "Indo-Arabic (इंडो-अरेबिक)" },
+  { value: "moroccan", label: "Moroccan (मोरक्कन)" },
+  { value: "indo_western", label: "Indo-Western (इंडो-वेस्टर्न)" },
+];
+
+const motifs = [
+  { value: "peacock", label: "Peacock (मोर)" },
+  { value: "elephant", label: "Elephant (हाथी)" },
+  { value: "lotus", label: "Lotus (कमल)" },
+  { value: "bride_groom", label: "Bride-Groom (दुल्हा-दुल्हन)" },
+  { value: "paisley", label: "Paisley (कैरी)" },
+  { value: "mandala", label: "Mandala (मंडला)" },
+  { value: "kalash", label: "Kalash (कलश)" },
+  { value: "mango", label: "Mango Leaf (केरी)" },
+  { value: "heart", label: "Heart (दिल)" },
+  { value: "name", label: "Hidden Name (नाम)" },
+];
+
 interface MehendiGeneratorProps {
   compact?: boolean;
 }
@@ -47,6 +90,10 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
   const [designType, setDesignType] = useState("bridal");
   const [handType, setHandType] = useState("back");
   const [look, setLook] = useState<LookMode>("illustration");
+  const [bodyPart, setBodyPart] = useState("hands");
+  const [occasion, setOccasion] = useState("wedding");
+  const [region, setRegion] = useState("indian");
+  const [selectedMotifs, setSelectedMotifs] = useState<string[]>([]);
 
   const [selectedStyles, setSelectedStyles] = useState<string[]>(["intricate", "floral"]);
   const [customPrompt, setCustomPrompt] = useState("");
@@ -126,6 +173,14 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
     );
   };
 
+  const toggleMotif = (motif: string) => {
+    setSelectedMotifs((prev) =>
+      prev.includes(motif)
+        ? prev.filter((m) => m !== motif)
+        : [...prev, motif]
+    );
+  };
+
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
@@ -179,6 +234,10 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
       const prompt = buildMehendiPrompt({
         designType,
         handType,
+        bodyPart,
+        occasion,
+        region,
+        motifs: selectedMotifs,
         styles: selectedStyles,
         customPrompt,
         look,
@@ -212,7 +271,7 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
 
       if (data?.imageUrl) {
         setGeneratedImage(data.imageUrl);
-        const label = `${designType}${selectedStyles.length ? " · " + selectedStyles.slice(0, 2).join(", ") : ""}`;
+        const label = `${designType}${bodyPart !== "hands" ? " · " + bodyPart : ""}${selectedMotifs.length ? " · " + selectedMotifs.slice(0, 2).join(",") : ""}${selectedStyles.length ? " · " + selectedStyles.slice(0, 2).join(",") : ""}`;
         setSessionGallery((prev) => {
           const next = [
             { id: crypto.randomUUID(), image: data.imageUrl, label, ts: Date.now(), liked: false },
@@ -325,8 +384,8 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
             </div>
           )}
 
-          {/* Design Type & Hand Type - Side by side on mobile */}
-          <div className="grid grid-cols-2 gap-2 md:grid-cols-1 md:gap-4">
+          {/* Design Options Grid */}
+          <div className="grid grid-cols-2 gap-2 md:gap-4">
             <div className="space-y-1 md:space-y-2">
               <Label className="text-xs md:text-sm font-medium">Design Type</Label>
               <Select value={designType} onValueChange={setDesignType}>
@@ -344,24 +403,42 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
             </div>
 
             <div className="space-y-1 md:space-y-2">
-              <Label className="text-xs md:text-sm font-medium">Hand Type</Label>
-              <Select value={handType} onValueChange={setHandType}>
+              <Label className="text-xs md:text-sm font-medium">Body Part (हिस्सा)</Label>
+              <Select value={bodyPart} onValueChange={setBodyPart}>
                 <SelectTrigger className="w-full h-9 md:h-10 text-xs md:text-sm">
                   <SelectValue placeholder="Select" />
                 </SelectTrigger>
                 <SelectContent>
-                  {handTypes.map((type) => (
-                    <SelectItem key={type.value} value={type.value} className="text-xs md:text-sm">
-                      {type.label}
+                  {bodyParts.map((part) => (
+                    <SelectItem key={part.value} value={part.value} className="text-xs md:text-sm">
+                      {part.label}
                     </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
             </div>
 
-            <div className="space-y-1 md:space-y-2 col-span-2 md:col-span-1">
+            {bodyPart === "hands" && (
+              <div className="space-y-1 md:space-y-2">
+                <Label className="text-xs md:text-sm font-medium">Hand Type</Label>
+                <Select value={handType} onValueChange={setHandType}>
+                  <SelectTrigger className="w-full h-9 md:h-10 text-xs md:text-sm">
+                    <SelectValue placeholder="Select" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {handTypes.map((type) => (
+                      <SelectItem key={type.value} value={type.value} className="text-xs md:text-sm">
+                        {type.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            )}
+
+            <div className={`space-y-1 md:space-y-2 ${bodyPart !== "hands" ? "col-span-2 md:col-span-1" : ""}`}>
               <Label className="text-xs md:text-sm font-medium">
-                Look (लुक) — Real Hand Photo?
+                Look (लुक) — Real Photo?
               </Label>
               <Select value={look} onValueChange={(v) => setLook(v as LookMode)}>
                 <SelectTrigger className="w-full h-9 md:h-10 text-xs md:text-sm">
@@ -369,16 +446,45 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="illustration" className="text-xs md:text-sm">
-                    Illustration (ड्रॉइंग स्टाइल)
+                    Illustration (ड्रॉइंग)
                   </SelectItem>
                   <SelectItem value="realistic" className="text-xs md:text-sm">
-                    Real Hands Photo (असली हाथ)
+                    Real Photo (असली)
                   </SelectItem>
                 </SelectContent>
               </Select>
-              <p className="text-[10px] md:text-xs text-muted-foreground">
-                Real photo look ke liye "Both Hands" + Real Hands Photo चुनें।
-              </p>
+            </div>
+
+            <div className="space-y-1 md:space-y-2">
+              <Label className="text-xs md:text-sm font-medium">Occasion (मौका)</Label>
+              <Select value={occasion} onValueChange={setOccasion}>
+                <SelectTrigger className="w-full h-9 md:h-10 text-xs md:text-sm">
+                  <SelectValue placeholder="Select" />
+                </SelectTrigger>
+                <SelectContent>
+                  {occasions.map((occ) => (
+                    <SelectItem key={occ.value} value={occ.value} className="text-xs md:text-sm">
+                      {occ.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="space-y-1 md:space-y-2">
+              <Label className="text-xs md:text-sm font-medium">Region/Style (रीजन)</Label>
+              <Select value={region} onValueChange={setRegion}>
+                <SelectTrigger className="w-full h-9 md:h-10 text-xs md:text-sm">
+                  <SelectValue placeholder="Select" />
+                </SelectTrigger>
+                <SelectContent>
+                  {regions.map((reg) => (
+                    <SelectItem key={reg.value} value={reg.value} className="text-xs md:text-sm">
+                      {reg.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
           </div>
 
@@ -403,6 +509,32 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
                     className="text-xs md:text-sm text-foreground cursor-pointer leading-tight"
                   >
                     {style.label}
+                  </label>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Motif Selector */}
+          <div className="space-y-2">
+            <Label className="text-xs md:text-sm font-medium">Motifs (मोटिफ़)</Label>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-x-2 gap-y-1.5 md:gap-2">
+              {motifs.map((motif) => (
+                <div
+                  key={motif.value}
+                  className="flex items-center space-x-1.5 md:space-x-2"
+                >
+                  <Checkbox
+                    id={`motif-${motif.value}`}
+                    checked={selectedMotifs.includes(motif.value)}
+                    onCheckedChange={() => toggleMotif(motif.value)}
+                    className="h-4 w-4"
+                  />
+                  <label
+                    htmlFor={`motif-${motif.value}`}
+                    className="text-xs md:text-sm text-foreground cursor-pointer leading-tight"
+                  >
+                    {motif.label}
                   </label>
                 </div>
               ))}
