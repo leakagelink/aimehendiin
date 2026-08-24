@@ -38,17 +38,7 @@ const ZoomableImage = ({ src, alt }: ZoomableImageProps) => {
     );
   }, []);
 
-  const handleWheelRef = useRef((e: WheelEvent) => {
-    const el = containerRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const dy = e.deltaY * (e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? 100 : 1);
-    zoomAt(
-      stateRef.current.zoom * Math.exp(-dy * 0.0018),
-      e.clientX - rect.left,
-      e.clientY - rect.top,
-    );
-  });
+  const handleWheelRef = useRef<(e: WheelEvent) => void>(() => {});
   handleWheelRef.current = (e: WheelEvent) => {
     const el = containerRef.current;
     if (!el) return;
@@ -60,6 +50,7 @@ const ZoomableImage = ({ src, alt }: ZoomableImageProps) => {
       e.clientY - rect.top,
     );
   };
+
 
   useEffect(() => {
     const el = containerRef.current;
