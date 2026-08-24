@@ -14,3 +14,6 @@ verify_jwt = false
 
 [functions.mehndi-tryon]
 verify_jwt = false
+
+[functions.submit-booking]
+verify_jwt = false
