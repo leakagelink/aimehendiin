@@ -278,7 +278,7 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
 
       if (data?.imageUrl) {
         setGeneratedImage(data.imageUrl);
-        const label = `${designType}${selectedStyles.length ? " · " + selectedStyles.slice(0, 2).join(", ") : ""}`;
+        const label = `${designType}${bodyPart !== "hands" ? " · " + bodyPart : ""}${selectedMotifs.length ? " · " + selectedMotifs.slice(0, 2).join(",") : ""}${selectedStyles.length ? " · " + selectedStyles.slice(0, 2).join(",") : ""}`;
         setSessionGallery((prev) => {
           const next = [
             { id: crypto.randomUUID(), image: data.imageUrl, label, ts: Date.now(), liked: false },
