@@ -21,6 +21,7 @@ const MAX_IMAGE_URLS = 5000;
 const STATIC_ROUTES: { path: string; changefreq?: string; priority?: string }[] = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
   { path: "/generate", changefreq: "weekly", priority: "0.9" },
+  { path: "/try-on", changefreq: "weekly", priority: "0.9" },
   { path: "/gallery", changefreq: "daily", priority: "0.9" },
   { path: "/blog", changefreq: "daily", priority: "0.8" },
   { path: "/bridal-mehendi-design-2026", changefreq: "monthly", priority: "0.8" },
