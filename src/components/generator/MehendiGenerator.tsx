@@ -391,8 +391,8 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
             </div>
           )}
 
-          {/* Design Type & Hand Type - Side by side on mobile */}
-          <div className="grid grid-cols-2 gap-2 md:grid-cols-1 md:gap-4">
+          {/* Design Options Grid */}
+          <div className="grid grid-cols-2 gap-2 md:gap-4">
             <div className="space-y-1 md:space-y-2">
               <Label className="text-xs md:text-sm font-medium">Design Type</Label>
               <Select value={designType} onValueChange={setDesignType}>
@@ -410,24 +410,42 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
             </div>
 
             <div className="space-y-1 md:space-y-2">
-              <Label className="text-xs md:text-sm font-medium">Hand Type</Label>
-              <Select value={handType} onValueChange={setHandType}>
+              <Label className="text-xs md:text-sm font-medium">Body Part (हिस्सा)</Label>
+              <Select value={bodyPart} onValueChange={setBodyPart}>
                 <SelectTrigger className="w-full h-9 md:h-10 text-xs md:text-sm">
                   <SelectValue placeholder="Select" />
                 </SelectTrigger>
                 <SelectContent>
-                  {handTypes.map((type) => (
-                    <SelectItem key={type.value} value={type.value} className="text-xs md:text-sm">
-                      {type.label}
+                  {bodyParts.map((part) => (
+                    <SelectItem key={part.value} value={part.value} className="text-xs md:text-sm">
+                      {part.label}
                     </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
             </div>
 
-            <div className="space-y-1 md:space-y-2 col-span-2 md:col-span-1">
+            {bodyPart === "hands" && (
+              <div className="space-y-1 md:space-y-2">
+                <Label className="text-xs md:text-sm font-medium">Hand Type</Label>
+                <Select value={handType} onValueChange={setHandType}>
+                  <SelectTrigger className="w-full h-9 md:h-10 text-xs md:text-sm">
+                    <SelectValue placeholder="Select" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {handTypes.map((type) => (
+                      <SelectItem key={type.value} value={type.value} className="text-xs md:text-sm">
+                        {type.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            )}
+
+            <div className={`space-y-1 md:space-y-2 ${bodyPart !== "hands" ? "col-span-2 md:col-span-1" : ""}`}>
               <Label className="text-xs md:text-sm font-medium">
-                Look (लुक) — Real Hand Photo?
+                Look (लुक) — Real Photo?
               </Label>
               <Select value={look} onValueChange={(v) => setLook(v as LookMode)}>
                 <SelectTrigger className="w-full h-9 md:h-10 text-xs md:text-sm">
@@ -435,16 +453,45 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="illustration" className="text-xs md:text-sm">
-                    Illustration (ड्रॉइंग स्टाइल)
+                    Illustration (ड्रॉइंग)
                   </SelectItem>
                   <SelectItem value="realistic" className="text-xs md:text-sm">
-                    Real Hands Photo (असली हाथ)
+                    Real Photo (असली)
                   </SelectItem>
                 </SelectContent>
               </Select>
-              <p className="text-[10px] md:text-xs text-muted-foreground">
-                Real photo look ke liye "Both Hands" + Real Hands Photo चुनें।
-              </p>
+            </div>
+
+            <div className="space-y-1 md:space-y-2">
+              <Label className="text-xs md:text-sm font-medium">Occasion (मौका)</Label>
+              <Select value={occasion} onValueChange={setOccasion}>
+                <SelectTrigger className="w-full h-9 md:h-10 text-xs md:text-sm">
+                  <SelectValue placeholder="Select" />
+                </SelectTrigger>
+                <SelectContent>
+                  {occasions.map((occ) => (
+                    <SelectItem key={occ.value} value={occ.value} className="text-xs md:text-sm">
+                      {occ.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="space-y-1 md:space-y-2">
+              <Label className="text-xs md:text-sm font-medium">Region/Style (रीजन)</Label>
+              <Select value={region} onValueChange={setRegion}>
+                <SelectTrigger className="w-full h-9 md:h-10 text-xs md:text-sm">
+                  <SelectValue placeholder="Select" />
+                </SelectTrigger>
+                <SelectContent>
+                  {regions.map((reg) => (
+                    <SelectItem key={reg.value} value={reg.value} className="text-xs md:text-sm">
+                      {reg.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
           </div>
 
