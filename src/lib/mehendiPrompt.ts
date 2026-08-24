@@ -30,8 +30,9 @@ export const lookPrompts: Record<LookMode, string> = {
   illustration:
     "Clean high-quality hand-drawn illustration style, brown/henna colored design on a light cream background, flat artistic line art.",
   realistic:
-    "Ultra photorealistic photograph of real human hands with natural Indian skin tone, realistic skin texture, fine pores and natural nails, freshly applied dark reddish-brown henna paste with authentic glossy relief and subtle stain, soft natural daylight, shallow depth of field, professional DSLR photo, 85mm lens, anatomically correct hands with exactly five fingers each.",
+    "Ultra photorealistic close-up photograph of real human female hands with natural Indian skin tone, visible realistic skin texture, knuckle creases, fine pores, veins and neatly manicured glossy nails. The henna is a real dried stain on the skin in authentic deep reddish-brown, maroon and burnt-orange henna tones only — no coloured ink, no blue, no purple, no paint. Soft warm natural window light, gentle shadows, hands resting on soft fabric or a plain warm beige surface, shallow depth of field with a softly blurred background, professional DSLR photograph, 85mm lens, top-down close-up crop, anatomically correct hands with exactly five fingers each.",
 };
+
 
 
 export const styleModifierPrompts: Record<string, string> = {
