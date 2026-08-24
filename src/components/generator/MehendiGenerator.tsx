@@ -8,7 +8,9 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import SocialShareButtons from "./SocialShareButtons";
-import { buildMehendiPrompt } from "@/lib/mehendiPrompt";
+import { buildMehendiPrompt, type LookMode } from "@/lib/mehendiPrompt";
+import ZoomableImage from "./ZoomableImage";
+
 
 
 const designTypes = [
@@ -24,6 +26,8 @@ const handTypes = [
   { value: "back", label: "Back Hand (हाथ का पीछे)" },
   { value: "front", label: "Palm (हथेली)" },
   { value: "full", label: "Full Hand (पूरा हाथ)" },
+  { value: "both", label: "Both Hands (दोनों हाथ)" },
+
 ];
 
 const styleModifiers = [
