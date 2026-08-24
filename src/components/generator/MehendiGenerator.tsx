@@ -506,11 +506,8 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
                 </ul>
               </div>
             ) : generatedImage ? (
-              <img
-                src={generatedImage}
-                alt="Generated Mehendi Design"
-                className="w-full h-full object-contain rounded-lg"
-              />
+              <ZoomableImage src={generatedImage} alt="Generated Mehendi Design" />
+
             ) : generationError ? (
               <div className="text-center p-4 md:p-8">
                 <div className="h-14 w-14 md:h-20 md:w-20 rounded-full bg-destructive/10 flex items-center justify-center mx-auto mb-3 md:mb-4">
