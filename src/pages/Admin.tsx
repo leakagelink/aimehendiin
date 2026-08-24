@@ -170,7 +170,10 @@ const Admin = () => {
               </Button>
             </div>
           </Card>
+
+          <BookingsPanel />
         </div>
+
       </main>
       <Footer />
     </div>
