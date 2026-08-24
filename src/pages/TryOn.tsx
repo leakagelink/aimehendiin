@@ -75,10 +75,12 @@ const TryOn = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="AI Virtual Mehndi Try-On — Apne Haath Par Dekhe"
-        description="Apni hand photo upload karke AI se dekhe mehendi design aapke haath par kaisa lagega. Free virtual mehndi try-on with before/after preview."
+        title="Mehndi Design Hand Photo Par Lagayein — AI Try-On"
+        description="Apni hand photo par AI se mehndi design lagayein — bridal, Arabic, simple mehndi design image try karein aur before/after dekhein. Free, 3 try daily."
         path="/try-on"
+        keywords="mehndi design hand photo, mehndi design image, photo par mehndi design, mehndi design try on, virtual mehndi try on, ai mehndi design hand, mehndi ki photo, simple mehndi design hand, bridal mehndi design photo"
       />
+
       <BreadcrumbSchema items={[{ name: "Virtual Try-On", item: "/try-on" }]} />
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
