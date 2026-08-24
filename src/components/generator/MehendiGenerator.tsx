@@ -89,7 +89,7 @@ interface MehendiGeneratorProps {
 const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
   const [designType, setDesignType] = useState("bridal");
   const [handType, setHandType] = useState("back");
-  const [look, setLook] = useState<LookMode>("illustration");
+  const [look, setLook] = useState<LookMode>("realistic");
   const [bodyPart, setBodyPart] = useState("hands");
   const [occasion, setOccasion] = useState("wedding");
   const [region, setRegion] = useState("indian");
@@ -179,6 +179,12 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
         ? prev.filter((m) => m !== motif)
         : [...prev, motif]
     );
+  };
+
+  const handleBodyPartChange = (part: string) => {
+    setBodyPart(part);
+    // Body-part generations should start as real photos, not anatomy illustrations.
+    setLook("realistic");
   };
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -404,7 +410,7 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
 
             <div className="space-y-1 md:space-y-2">
               <Label className="text-xs md:text-sm font-medium">Body Part (हिस्सा)</Label>
-              <Select value={bodyPart} onValueChange={setBodyPart}>
+              <Select value={bodyPart} onValueChange={handleBodyPartChange}>
                 <SelectTrigger className="w-full h-9 md:h-10 text-xs md:text-sm">
                   <SelectValue placeholder="Select" />
                 </SelectTrigger>
