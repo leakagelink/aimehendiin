@@ -34,6 +34,7 @@ const BookDesignDialog = ({ style, designImageUrl, source = "try-on" }: BookDesi
     occasion: "",
     event_date: "",
     message: "",
+    company: "",
   });
 
   const set = (key: keyof typeof form, value: string) =>
@@ -48,26 +49,39 @@ const BookDesignDialog = ({ style, designImageUrl, source = "try-on" }: BookDesi
 
     setSubmitting(true);
     try {
-      const { error } = await supabase.from("design_bookings").insert({
-        name: form.name.trim(),
-        phone: form.phone.trim(),
-        city: form.city.trim() || null,
-        occasion: form.occasion.trim() || null,
-        event_date: form.event_date || null,
-        style: style ?? null,
-        message: form.message.trim() || null,
-        design_image_url:
-          designImageUrl && designImageUrl.startsWith("http") ? designImageUrl : null,
-        source,
+      const { data, error } = await supabase.functions.invoke("submit-booking", {
+        body: {
+          name: form.name.trim(),
+          phone: form.phone.trim(),
+          city: form.city.trim() || null,
+          occasion: form.occasion.trim() || null,
+          event_date: form.event_date || null,
+          style: style ?? null,
+          message: form.message.trim() || null,
+          design_image_url:
+            designImageUrl && designImageUrl.startsWith("https://") ? designImageUrl : null,
+          source,
+          company: form.company,
+        },
       });
-      if (error) throw error;
+      if (error || (data && (data as { error?: string }).error)) {
+        throw new Error("submission failed");
+      }
 
       toast({
         title: "Booking request भेज दी गई!",
         description: "हमारी team जल्द ही आपसे संपर्क करेगी।",
       });
       setOpen(false);
-      setForm({ name: "", phone: "", city: "", occasion: "", event_date: "", message: "" });
+      setForm({
+        name: "",
+        phone: "",
+        city: "",
+        occasion: "",
+        event_date: "",
+        message: "",
+        company: "",
+      });
     } catch {
       toast({
         title: "Request भेजी नहीं जा सकी",
@@ -158,6 +172,18 @@ const BookDesignDialog = ({ style, designImageUrl, source = "try-on" }: BookDesi
               value={form.message}
               onChange={(e) => set("message", e.target.value)}
               maxLength={1000}
+            />
+          </div>
+
+          <div className="hidden" aria-hidden="true">
+            <label htmlFor="booking-company">Company</label>
+            <input
+              id="booking-company"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              value={form.company}
+              onChange={(e) => set("company", e.target.value)}
             />
           </div>
 
