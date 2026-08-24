@@ -43,8 +43,17 @@ Deno.serve(async (req) => {
     return json({ error: "Invalid JSON body" }, 400);
   }
 
-  if (typeof prompt !== "string" || prompt.trim().length < 3 || prompt.length > 4000) {
-    return json({ error: "A valid `prompt` (3-4000 chars) is required." }, 400);
+  if (typeof prompt !== "string" || prompt.trim().length < 3 || prompt.length > 8000) {
+    return json({ error: "A valid `prompt` (3-8000 chars) is required." }, 400);
+  }
+
+  // OVH rejects prompts longer than 2000 characters (422 string_too_long)
+  const MAX_PROMPT = 1990;
+  let finalPrompt = prompt.trim();
+  if (finalPrompt.length > MAX_PROMPT) {
+    const cut = finalPrompt.slice(0, MAX_PROMPT);
+    const lastBreak = Math.max(cut.lastIndexOf(". "), cut.lastIndexOf(", "), cut.lastIndexOf(" "));
+    finalPrompt = (lastBreak > 1200 ? cut.slice(0, lastBreak) : cut).trim();
   }
 
   const controller = new AbortController();
@@ -57,7 +66,7 @@ Deno.serve(async (req) => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({ prompt: prompt.trim() }),
+      body: JSON.stringify({ prompt: finalPrompt }),
       signal: controller.signal,
     });
 
