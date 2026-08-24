@@ -332,11 +332,22 @@ const MehndiTryOn = () => {
                 <Download className="h-4 w-4" aria-hidden="true" />
                 Download
               </Button>
+              <BookDesignDialog style={style} designImageUrl={result} source="try-on" />
               <Button variant="outline" onClick={reset}>
                 <RotateCcw className="h-4 w-4" aria-hidden="true" />
                 नई photo
               </Button>
             </div>
+
+            <div className="space-y-2">
+              <Label className="text-sm font-medium">Share करें</Label>
+              <SocialShareButtons
+                imageUrl={result}
+                title="देखिए मेरा AI Virtual Mehndi Try-On — AIMehendi.in par free try karein!"
+                pageUrl="https://aimehendi.in/try-on"
+              />
+            </div>
+
           </div>
         ) : (
           <div className="flex min-h-[320px] flex-col items-center justify-center gap-3 rounded-xl border border-dashed border-border text-center text-muted-foreground">
