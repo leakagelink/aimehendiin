@@ -116,7 +116,7 @@ const Admin = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="container py-12">
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <div className="flex items-center justify-between mb-6">
             <div>
               <h1 className="font-serif text-3xl font-bold text-foreground">Admin Dashboard</h1>
