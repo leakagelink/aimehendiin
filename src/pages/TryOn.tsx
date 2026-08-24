@@ -137,9 +137,27 @@ const TryOn = () => {
             </p>
           </section>
 
+          <section className="mt-14" aria-labelledby="tryon-faq">
+            <h2
+              id="tryon-faq"
+              className="mb-6 font-serif text-2xl font-bold text-foreground md:text-3xl"
+            >
+              Virtual Mehndi Try-On — अक्सर पूछे जाने वाले सवाल
+            </h2>
+            <div className="grid gap-4 md:grid-cols-2">
+              {faqs.map((f) => (
+                <div key={f.q} className="rounded-xl border border-border bg-card/50 p-5">
+                  <h3 className="mb-2 font-medium text-foreground">{f.q}</h3>
+                  <p className="text-sm text-muted-foreground">{f.a}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
           <div className="mt-12">
             <CategoryLinks />
           </div>
+
         </div>
       </main>
 
