@@ -287,7 +287,12 @@ const Contact = () => {
                         )}
 
                       </Button>
+                      <p className="text-xs text-muted-foreground">
+                        Ye form aapka email app khol dega with your message pre-filled — send karne
+                        ke liye wahan se bhejein, ya seedhe contact@aimehendi.in par mail karein.
+                      </p>
                     </form>
+
                   </>
                 )}
               </div>
