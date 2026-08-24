@@ -358,7 +358,30 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
                 </SelectContent>
               </Select>
             </div>
+
+            <div className="space-y-1 md:space-y-2 col-span-2 md:col-span-1">
+              <Label className="text-xs md:text-sm font-medium">
+                Look (लुक) — Real Hand Photo?
+              </Label>
+              <Select value={look} onValueChange={(v) => setLook(v as LookMode)}>
+                <SelectTrigger className="w-full h-9 md:h-10 text-xs md:text-sm">
+                  <SelectValue placeholder="Select" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="illustration" className="text-xs md:text-sm">
+                    Illustration (ड्रॉइंग स्टाइल)
+                  </SelectItem>
+                  <SelectItem value="realistic" className="text-xs md:text-sm">
+                    Real Hands Photo (असली हाथ)
+                  </SelectItem>
+                </SelectContent>
+              </Select>
+              <p className="text-[10px] md:text-xs text-muted-foreground">
+                Real photo look ke liye "Both Hands" + Real Hands Photo चुनें।
+              </p>
+            </div>
           </div>
+
 
           {/* Style Modifiers - Compact grid */}
           <div className="space-y-2">
