@@ -8,7 +8,14 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import SocialShareButtons from "./SocialShareButtons";
-import { buildMehendiPrompt, type LookMode } from "@/lib/mehendiPrompt";
+import {
+  buildMehendiPrompt,
+  type LookMode,
+  bodyPartPrompts,
+  occasionPrompts,
+  regionStylePrompts,
+  motifPrompts,
+} from "@/lib/mehendiPrompt";
 import ZoomableImage from "./ZoomableImage";
 
 
