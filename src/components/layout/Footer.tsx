@@ -7,7 +7,9 @@ const Footer = () => {
   const footerLinks = {
     explore: [
       { name: "AI Generator", path: "/generate" },
+      { name: "Virtual Try-On", path: "/try-on" },
       { name: "Gallery", path: "/gallery" },
+
       { name: "Bridal Mehendi", path: "/gallery/bridal" },
       { name: "Arabic Designs", path: "/gallery/arabic" },
     ],
