@@ -73,12 +73,15 @@ export function buildMehendiPrompt({
     return `${lookPrompts.realistic} The hands are decorated with ${designPrompt} ${handPrompt}. ${stylePrompts}. ${customPrompt.trim()}
 
 Requirements:
-- Real human hands photographed, not a drawing or illustration
-- Authentic Indian mehendi/henna artwork with paisleys, flowers, leaves and traditional motifs
-- Natural background, softly blurred, warm tones
-- Ultra high resolution, sharp detail on the henna patterns
+- Looks like a real photograph taken by a mehendi artist for Instagram, NOT a drawing, painting, 3D render or illustration
+- Henna stain follows the natural curves of the fingers and hand, wrapping realistically over knuckles and finger sides
+- Authentic Indian mehendi artwork: paisleys, mandalas, florals, jaali net fill, fine dotted and checkered bands on the fingers
+- Realistic henna colour: rich reddish-brown to maroon stain, slightly darker on the palms, softer near the edges
+- Optional subtle detail: delicate gold bangle or ring, plain warm background fabric
+- Ultra high resolution, tack-sharp detail on the henna patterns and skin
 ${NEGATIVE_HINTS}`.trim();
   }
+
 
   return `Create a beautiful traditional Indian mehendi (henna) tattoo design illustration. ${designPrompt} ${handPrompt}. ${stylePrompts}. ${customPrompt.trim()}
 
