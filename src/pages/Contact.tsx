@@ -278,15 +278,21 @@ const Contact = () => {
                         disabled={isSubmitting}
                       >
                         {isSubmitting ? (
-                          "Sending..."
+                          "Opening email app..."
                         ) : (
                           <>
-                            <Send className="h-4 w-4 mr-2" />
-                            Send Message
+                            <Send className="h-4 w-4 mr-2" aria-hidden="true" />
+                            Send via Email App
                           </>
                         )}
+
                       </Button>
+                      <p className="text-xs text-muted-foreground">
+                        Ye form aapka email app khol dega with your message pre-filled — send karne
+                        ke liye wahan se bhejein, ya seedhe contact@aimehendi.in par mail karein.
+                      </p>
                     </form>
+
                   </>
                 )}
               </div>
