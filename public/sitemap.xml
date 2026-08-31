@@ -61,6 +61,16 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://aimehendi.in/cookie-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://aimehendi.in/editorial-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://aimehendi.in/gallery/bridal</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
