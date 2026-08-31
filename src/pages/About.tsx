@@ -191,27 +191,62 @@ const About = () => {
             </div>
           </div>
 
-          {/* Stats */}
+          {/* Publisher / Author */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <div className="bg-card rounded-2xl p-8 md:p-12 border border-border shadow-soft">
+              <h2 className="font-serif text-2xl font-bold text-foreground mb-6">
+                Who runs AIMehendi.in | साइट कौन चलाता है
+              </h2>
+              <div className="text-muted-foreground space-y-4">
+                <p>
+                  AIMehendi.in ek independent website hai jise <strong className="text-foreground">Dheeraj Tagde</strong>{" "}
+                  India se chalate hain. Site par publish hone wale tutorials, step-by-step guides aur
+                  occasion-based mehendi ideas hamari team likhti hai aur publish se pehle review karti hai.
+                </p>
+                <p>
+                  Hum readers ko free me practical mehendi guidance dena chahte hain — beginners ke liye
+                  simple patterns se lekar bridal designs tak — aur AI tools se unhe apni pasand ka design
+                  jaldi visualise karne me madad karte hain.
+                </p>
+                <p>
+                  Transparency hamare liye zaroori hai: site par kai design images AI se generate hoti hain,
+                  aur site advertising se supported hai. Hamari{" "}
+                  <a href="/editorial-policy" className="text-primary underline underline-offset-4">
+                    Editorial & AI Content Policy
+                  </a>{" "}
+                  me poori jaankari di gayi hai.
+                </p>
+                <p>
+                  Sawaal, feedback ya correction ke liye:{" "}
+                  <a href="mailto:contact@aimehendi.in" className="text-primary underline underline-offset-4">
+                    contact@aimehendi.in
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* What we offer */}
           <div className="bg-gradient-to-r from-primary via-primary/90 to-mehendi-dark rounded-2xl p-8 md:p-12 text-center">
             <h2 className="font-serif text-2xl md:text-3xl font-bold text-primary-foreground mb-8">
-              Our Impact | हमारा प्रभाव
+              What You Get | आपको क्या मिलता है
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-primary-foreground/80 text-sm">
               <div>
-                <div className="font-serif text-3xl md:text-4xl font-bold text-secondary mb-2">10K+</div>
-                <div className="text-sm text-primary-foreground/80">Designs Created</div>
+                <div className="font-serif text-xl md:text-2xl font-bold text-secondary mb-2">AI Generator</div>
+                <div>Apne prompt se design banayein</div>
               </div>
               <div>
-                <div className="font-serif text-3xl md:text-4xl font-bold text-secondary mb-2">50+</div>
-                <div className="text-sm text-primary-foreground/80">Design Styles</div>
+                <div className="font-serif text-xl md:text-2xl font-bold text-secondary mb-2">Virtual Try-On</div>
+                <div>Apni hand photo par design dekhein</div>
               </div>
               <div>
-                <div className="font-serif text-3xl md:text-4xl font-bold text-secondary mb-2">1000+</div>
-                <div className="text-sm text-primary-foreground/80">Happy Users</div>
+                <div className="font-serif text-xl md:text-2xl font-bold text-secondary mb-2">Design Gallery</div>
+                <div>Bridal, Arabic, mandala aur simple styles</div>
               </div>
               <div>
-                <div className="font-serif text-3xl md:text-4xl font-bold text-secondary mb-2">Free</div>
-                <div className="text-sm text-primary-foreground/80">Forever</div>
+                <div className="font-serif text-xl md:text-2xl font-bold text-secondary mb-2">Free Guides</div>
+                <div>Step-by-step Hindi tutorials</div>
               </div>
             </div>
           </div>

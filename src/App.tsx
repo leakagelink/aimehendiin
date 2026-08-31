@@ -14,6 +14,8 @@ import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import Disclaimer from "./pages/Disclaimer";
+import CookiePolicy from "./pages/CookiePolicy";
+import EditorialPolicy from "./pages/EditorialPolicy";
 import CookieConsent from "./components/layout/CookieConsent";
 import NotFound from "./pages/NotFound";
 import BridalMehendi2026 from "./pages/landing/BridalMehendi2026";
@@ -44,6 +46,8 @@ const App = () => (
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/disclaimer" element={<Disclaimer />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/editorial-policy" element={<EditorialPolicy />} />
           {/* SEO Landing Pages */}
           <Route path="/bridal-mehendi-design-2026" element={<BridalMehendi2026 />} />
           <Route path="/karwa-chauth-mehndi-design" element={<KarwaChauthMehendi />} />

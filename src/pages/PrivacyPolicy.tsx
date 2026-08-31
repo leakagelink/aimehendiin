@@ -105,10 +105,99 @@ const PrivacyPolicy = () => {
               <ul className="list-disc pl-6 text-muted-foreground">
                 <li><strong>Google AdSense:</strong> For displaying advertisements</li>
                 <li><strong>Google Analytics:</strong> For website analytics</li>
-                <li><strong>AI Services:</strong> For generating mehendi designs</li>
+                <li><strong>AI image services:</strong> For generating mehendi designs and virtual try-on results</li>
+                <li><strong>Hosting &amp; database provider:</strong> For serving the website and storing site data</li>
               </ul>
               <p className="text-muted-foreground mt-4">
                 These services have their own privacy policies. We encourage you to review them.
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="font-serif text-2xl font-bold text-foreground mb-4">
+                6. Advertising &amp; Google AdSense | विज्ञापन
+              </h2>
+              <ul className="list-disc pl-6 text-muted-foreground space-y-2">
+                <li>
+                  Third-party vendors, including Google, use cookies to serve ads based on your prior visits
+                  to this website or other websites.
+                </li>
+                <li>
+                  Google's use of advertising cookies (including the DoubleClick DART cookie) enables it and
+                  its partners to serve ads to you based on your visit to this and/or other sites on the
+                  Internet.
+                </li>
+                <li>
+                  You may opt out of personalised advertising by visiting{" "}
+                  <a
+                    href="https://www.google.com/settings/ads"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary underline underline-offset-4"
+                  >
+                    Google Ads Settings
+                  </a>
+                  , or opt out of some third-party vendors' cookies at{" "}
+                  <a
+                    href="https://optout.aboutads.info/"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary underline underline-offset-4"
+                  >
+                    aboutads.info
+                  </a>
+                  .
+                </li>
+                <li>
+                  For users in the EEA, UK and Switzerland, personalised ads are only served after consent is
+                  given through our cookie banner. See our{" "}
+                  <a href="/cookie-policy" className="text-primary underline underline-offset-4">
+                    Cookie Policy
+                  </a>
+                  .
+                </li>
+              </ul>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="font-serif text-2xl font-bold text-foreground mb-4">
+                7. AI Generator &amp; Virtual Try-On Data | AI टूल्स का डेटा
+              </h2>
+              <ul className="list-disc pl-6 text-muted-foreground space-y-2">
+                <li>
+                  Text prompts you enter are sent to our AI image provider solely to generate your design.
+                </li>
+                <li>
+                  Photos uploaded to the Virtual Try-On tool are processed only to create your try-on result
+                  and are <strong>not stored</strong> on our servers after processing.
+                </li>
+                <li>
+                  Designs you generate are saved only in your own browser storage so you can view them again;
+                  clearing your browser data removes them.
+                </li>
+                <li>
+                  If you submit a booking or contact request, we keep your name, phone number and message only
+                  to respond to that request, and delete it on request.
+                </li>
+              </ul>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="font-serif text-2xl font-bold text-foreground mb-4">
+                8. Your Rights under GDPR &amp; CCPA
+              </h2>
+              <p className="text-muted-foreground mb-4">
+                If you are located in the European Economic Area, the UK, or California, you have the right to
+                access, correct, delete, or restrict processing of your personal data, to object to processing,
+                to data portability, and to withdraw consent at any time. California residents may also opt out
+                of the "sale" or "sharing" of personal information; we do not sell personal information.
+              </p>
+              <p className="text-muted-foreground">
+                To exercise any of these rights, email{" "}
+                <a href="mailto:contact@aimehendi.in" className="text-primary underline underline-offset-4">
+                  contact@aimehendi.in
+                </a>
+                . We respond within 30 days.
               </p>
             </section>
 
