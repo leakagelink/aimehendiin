@@ -14,6 +14,8 @@ import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import Disclaimer from "./pages/Disclaimer";
+import CookiePolicy from "./pages/CookiePolicy";
+import EditorialPolicy from "./pages/EditorialPolicy";
 import CookieConsent from "./components/layout/CookieConsent";
 import NotFound from "./pages/NotFound";
 import BridalMehendi2026 from "./pages/landing/BridalMehendi2026";
