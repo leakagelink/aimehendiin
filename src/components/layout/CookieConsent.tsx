@@ -38,7 +38,11 @@ const CookieConsent = () => {
           <Cookie className="mt-0.5 h-4 w-4 shrink-0 text-secondary" aria-hidden="true" />
           <span>
             Hum cookies ka upyog site functionality, analytics aur personalised ads (Google AdSense) ke liye
-            karte hain. Details ke liye{" "}
+            karte hain. "Reject" chunne par personalised advertising cookies set nahi ki jaayengi. Details ke liye{" "}
+            <Link to="/cookie-policy" className="text-primary underline underline-offset-4">
+              Cookie Policy
+            </Link>{" "}
+            aur{" "}
             <Link to="/privacy-policy" className="text-primary underline underline-offset-4">
               Privacy Policy
             </Link>{" "}
