@@ -34,7 +34,7 @@ const PrivacyPolicy = () => {
               Privacy Policy | गोपनीयता नीति
             </h1>
             <p className="text-muted-foreground">
-              Last Updated: February 1, 2026
+              Last Updated: August 31, 2026
             </p>
           </div>
 
@@ -202,14 +202,14 @@ const PrivacyPolicy = () => {
             </section>
 
             <section className="mb-8">
-              <h2 className="font-serif text-2xl font-bold text-foreground mb-4">6. Data Security | डेटा सुरक्षा</h2>
+              <h2 className="font-serif text-2xl font-bold text-foreground mb-4">9. Data Security | डेटा सुरक्षा</h2>
               <p className="text-muted-foreground">
                 We implement appropriate technical and organizational security measures to protect your personal information. However, no method of transmission over the Internet is 100% secure. We cannot guarantee absolute security but strive to use commercially acceptable means to protect your data.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="font-serif text-2xl font-bold text-foreground mb-4">7. Your Rights | आपके अधिकार</h2>
+              <h2 className="font-serif text-2xl font-bold text-foreground mb-4">10. Your Rights | आपके अधिकार</h2>
               <p className="text-muted-foreground mb-4">You have the right to:</p>
               <ul className="list-disc pl-6 text-muted-foreground">
                 <li>Access your personal data</li>
@@ -221,21 +221,21 @@ const PrivacyPolicy = () => {
             </section>
 
             <section className="mb-8">
-              <h2 className="font-serif text-2xl font-bold text-foreground mb-4">8. Children's Privacy | बच्चों की गोपनीयता</h2>
+              <h2 className="font-serif text-2xl font-bold text-foreground mb-4">11. Children's Privacy | बच्चों की गोपनीयता</h2>
               <p className="text-muted-foreground">
                 Our website is not intended for children under 13 years of age. We do not knowingly collect personal information from children. If you believe we have collected information from a child, please contact us immediately.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="font-serif text-2xl font-bold text-foreground mb-4">9. Changes to This Policy | इस नीति में परिवर्तन</h2>
+              <h2 className="font-serif text-2xl font-bold text-foreground mb-4">12. Changes to This Policy | इस नीति में परिवर्तन</h2>
               <p className="text-muted-foreground">
                 We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.
               </p>
             </section>
 
             <section>
-              <h2 className="font-serif text-2xl font-bold text-foreground mb-4">10. Contact Us | संपर्क करें</h2>
+              <h2 className="font-serif text-2xl font-bold text-foreground mb-4">13. Contact Us | संपर्क करें</h2>
               <p className="text-muted-foreground">
                 If you have any questions about this Privacy Policy, please contact us at:
               </p>
