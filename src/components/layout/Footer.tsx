@@ -162,10 +162,25 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Disclosure */}
+        <p className="border-t border-border mt-12 pt-8 text-xs text-muted-foreground text-center md:text-left">
+          Disclosure: Is website par dikhne wali kai mehendi design images artificial intelligence se
+          generate ki gayi hain aur creative reference ke liye hain. Site Google AdSense ads aur affiliate
+          links se supported hai. Zyada jaankari ke liye{" "}
+          <Link to="/editorial-policy" className="text-primary underline underline-offset-4">
+            Editorial Policy
+          </Link>{" "}
+          aur{" "}
+          <Link to="/disclaimer" className="text-primary underline underline-offset-4">
+            Disclaimer
+          </Link>{" "}
+          padhein.
+        </p>
+
         {/* Bottom Bar */}
-        <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-8 pt-4 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground text-center md:text-left">
-            © {currentYear} AIMehendi.in. All rights reserved.
+            © {currentYear} AIMehendi.in. Published by Dheeraj Tagde. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground flex items-center gap-1">
             Made with <Heart className="h-4 w-4 text-accent fill-accent" aria-hidden="true" /> in India
