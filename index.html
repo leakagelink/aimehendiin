@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="n0BfW2pR7ScMDWC2VTaFb3UlVQ9jTn9Jp5yUVAK_RM8" />
 
+    <!-- Ad personalisation respects the cookie consent choice -->
+    <script>
+      (function () {
+        window.adsbygoogle = window.adsbygoogle || [];
+        try {
+          if (localStorage.getItem("aimehendi_cookie_consent") === "rejected") {
+            window.adsbygoogle.requestNonPersonalizedAds = 1;
+          }
+        } catch (e) {
+          /* storage blocked — default behaviour */
+        }
+      })();
+    </script>
+
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4580754396684091" crossorigin="anonymous"></script>
     
