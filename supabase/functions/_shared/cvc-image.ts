@@ -1,7 +1,7 @@
 // Shared image-generation client for the CVC (starimg) OpenAI-compatible API.
 
 const API_URL = "https://ai.starimg.ru/v1/images/generations";
-export const DEFAULT_IMAGE_MODEL = "gpt-image-2";
+export const DEFAULT_IMAGE_MODEL = "gpt-image-2-mini";
 
 export interface CvcImageOptions {
   prompt: string;
