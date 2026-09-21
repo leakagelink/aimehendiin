@@ -1,6 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient, SupabaseClient } from "https://esm.sh/@supabase/supabase-js@2.93.0";
-import { generateImage } from "../_shared/cloudflare-image.ts";
+import { generateImage } from "../_shared/cvc-image.ts";
 
 declare const EdgeRuntime: {
   waitUntil(promise: Promise<unknown>): void;
