@@ -37,6 +37,7 @@ export async function generateImageBase64(
         prompt: opts.prompt,
         n: 1,
         size: opts.size ?? "1024x1024",
+        quality: opts.quality ?? "medium",
       }),
       signal: controller.signal,
     });
