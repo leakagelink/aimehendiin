@@ -1,5 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { generateImage } from "../_shared/cloudflare-image.ts";
+import { generateImage } from "../_shared/cvc-image.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
