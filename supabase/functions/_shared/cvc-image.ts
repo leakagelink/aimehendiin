@@ -6,6 +6,7 @@ export const DEFAULT_IMAGE_MODEL = "gpt-image-2-mini";
 export interface CvcImageOptions {
   prompt: string;
   model?: string;
+  quality?: string;
   size?: string;
   timeoutMs?: number;
 }
