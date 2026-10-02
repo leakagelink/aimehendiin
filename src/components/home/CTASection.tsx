@@ -54,7 +54,7 @@ const CTASection = () => {
             </span>
             <span className="flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-secondary" />
-              Unlimited Downloads
+              Free HD Downloads
             </span>
           </div>
         </div>

@@ -62,7 +62,7 @@ const HomeSEO = () => {
     url: siteUrl,
     logo: `${siteUrl}/logo.png`,
     image: `${siteUrl}/og-image.jpg`,
-    description: "India's #1 AI Mehendi Design Generator - Create beautiful bridal, Arabic, mandala mehndi designs instantly with artificial intelligence.",
+    description: "Free AI Mehendi Design Generator - Create beautiful bridal, Arabic, mandala mehndi designs instantly with artificial intelligence.",
     priceRange: "Free",
     areaServed: {
       "@type": "Country",
@@ -86,7 +86,7 @@ const HomeSEO = () => {
           must be Helmet-managed so other routes can replace them cleanly. */}
       <title>AI Mehendi Design Generator | Free मेहंदी | AIMehendi.in</title>
       <meta name="title" content="AI Mehendi Design Generator | Free मेहंदी | AIMehendi.in" />
-      <meta name="description" content="AI से बनाएं खूबसूरत मेहंदी डिज़ाइन। Free AI Generator for bridal, Arabic, mandala & simple mehendi designs। 1000+ designs gallery।" />
+      <meta name="description" content="AI से बनाएं खूबसूरत मेहंदी डिज़ाइन। Free AI Generator for bridal, Arabic, mandala & simple mehendi designs। Free HD designs gallery।" />
       <meta name="robots" content="index, follow" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={`${siteUrl}/`} />
