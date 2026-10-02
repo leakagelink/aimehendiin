@@ -1,3 +1,4 @@
+import ReportDesignButton from "@/components/ReportDesignButton";
 import { X, Download, Heart, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -111,6 +112,7 @@ const ImageViewerModal = ({
             <Download className="h-4 w-4" />
             Download
           </Button>
+          <ReportDesignButton context={`${title} (${category})`} />
         </div>
       </DialogContent>
     </Dialog>
