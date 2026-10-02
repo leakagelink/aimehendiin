@@ -1,3 +1,4 @@
+import ReportDesignButton from "@/components/ReportDesignButton";
 import { useState, useRef, useEffect } from "react";
 import { Sparkles, Download, RefreshCw, Hand, Loader2, Upload, X, Share2, CheckCircle2, Circle, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";

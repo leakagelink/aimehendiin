@@ -1,3 +1,4 @@
+import ReportDesignButton from "@/components/ReportDesignButton";
 import { X, Download, Heart, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
