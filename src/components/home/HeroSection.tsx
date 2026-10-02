@@ -20,7 +20,7 @@ const HeroSection = () => {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 mb-6 animate-fade-in">
             <Sparkles className="h-4 w-4 text-secondary" />
             <span className="text-sm font-medium text-secondary">
-              #1 AI Mehendi Design Generator
+              Free AI Mehendi Design Generator
             </span>
             <Star className="h-4 w-4 text-secondary fill-secondary" />
           </div>
@@ -58,12 +58,12 @@ const HeroSection = () => {
           {/* Stats */}
           <div className="mt-12 grid grid-cols-3 gap-4 max-w-lg mx-auto animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
             <div className="text-center">
-              <div className="font-serif text-2xl md:text-3xl font-bold text-foreground">10K+</div>
-              <div className="text-xs md:text-sm text-muted-foreground">Designs Created</div>
+              <div className="font-serif text-2xl md:text-3xl font-bold text-foreground">AI</div>
+              <div className="text-xs md:text-sm text-muted-foreground">Powered Designs</div>
             </div>
             <div className="text-center border-x border-border">
-              <div className="font-serif text-2xl md:text-3xl font-bold text-foreground">50+</div>
-              <div className="text-xs md:text-sm text-muted-foreground">Design Styles</div>
+              <div className="font-serif text-2xl md:text-3xl font-bold text-foreground">6</div>
+              <div className="text-xs md:text-sm text-muted-foreground">Style Collections</div>
             </div>
             <div className="text-center">
               <div className="font-serif text-2xl md:text-3xl font-bold text-foreground">Free</div>

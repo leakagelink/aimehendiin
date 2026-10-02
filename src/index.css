@@ -154,6 +154,15 @@
   body {
     @apply bg-background text-foreground font-sans;
     font-family: 'Poppins', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior-y: none;
+  }
+
+  /* Leave room for the app-style bottom navigation on phones */
+  @media (max-width: 767px) {
+    body {
+      padding-bottom: calc(4rem + env(safe-area-inset-bottom));
+    }
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -269,6 +278,13 @@
 
   .bg-cream {
     background-color: hsl(var(--cream));
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
 }
 

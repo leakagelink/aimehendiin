@@ -6,6 +6,7 @@ import GalleryPreview from "@/components/home/GalleryPreview";
 import CTASection from "@/components/home/CTASection";
 import MehendiGenerator from "@/components/generator/MehendiGenerator";
 import HomeSEO from "@/components/seo/HomeSEO";
+import MobileHome from "@/components/home/MobileHome";
 
 const Index = () => {
   return (
@@ -14,8 +15,11 @@ const Index = () => {
       <Header />
       
       <main>
-        {/* Hero Section */}
-        <HeroSection />
+        {/* App-style home on mobile, full hero on desktop */}
+        <MobileHome />
+        <div className="hidden md:block">
+          <HeroSection />
+        </div>
 
         {/* Features Section */}
         <FeaturesSection />
