@@ -17,6 +17,7 @@ import Disclaimer from "./pages/Disclaimer";
 import CookiePolicy from "./pages/CookiePolicy";
 import EditorialPolicy from "./pages/EditorialPolicy";
 import CookieConsent from "./components/layout/CookieConsent";
+import MobileBottomNav from "./components/layout/MobileBottomNav";
 import NotFound from "./pages/NotFound";
 import BridalMehendi2026 from "./pages/landing/BridalMehendi2026";
 import KarwaChauthMehendi from "./pages/landing/KarwaChauthMehendi";
@@ -82,6 +83,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         <CookieConsent />
+        <MobileBottomNav />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
