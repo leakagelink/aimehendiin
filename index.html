@@ -20,7 +20,19 @@
     </script>
 
     <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4580754396684091" crossorigin="anonymous"></script>
+    <!-- AdSense is web-only: Google does not allow AdSense inside Play Store app WebViews -->
+    <meta name="google-adsense-account" content="ca-pub-4580754396684091" />
+    <script>
+      (function () {
+        var native = window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform();
+        if (native || /; wv\)/.test(navigator.userAgent)) return;
+        var s = document.createElement("script");
+        s.async = true;
+        s.crossOrigin = "anonymous";
+        s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4580754396684091";
+        document.head.appendChild(s);
+      })();
+    </script>
     
     <!-- Primary Meta Tags -->
     <title>AI Mehendi Design Generator | Free मेहंदी | AIMehendi.in</title>

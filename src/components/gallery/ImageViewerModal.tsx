@@ -111,6 +111,7 @@ const ImageViewerModal = ({
             <Download className="h-4 w-4" />
             Download
           </Button>
+          <ReportDesignButton context={`${title} (${category})`} />
         </div>
       </DialogContent>
     </Dialog>

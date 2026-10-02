@@ -590,6 +590,7 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
             <h2 className="font-serif text-base md:text-lg font-semibold text-foreground">Preview</h2>
             {generatedImage && (
               <div className="flex gap-1.5 md:gap-2">
+                <ReportDesignButton context="AI generated design" compact />
                 <Button variant="outline" size="sm" onClick={generateDesign} disabled={isGenerating} aria-label="Regenerate" className="h-8 w-8 p-0 md:h-9 md:w-auto md:px-3">
                   <RefreshCw className={`h-3.5 w-3.5 md:h-4 md:w-4 ${isGenerating ? "animate-spin" : ""}`} aria-hidden="true" />
                 </Button>
