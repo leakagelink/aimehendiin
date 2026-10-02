@@ -103,7 +103,8 @@ const PrivacyPolicy = () => {
               <h2 className="font-serif text-2xl font-bold text-foreground mb-4">5. Third-Party Services | तृतीय-पक्ष सेवाएं</h2>
               <p className="text-muted-foreground mb-4">We use the following third-party services:</p>
               <ul className="list-disc pl-6 text-muted-foreground">
-                <li><strong>Google AdSense:</strong> For displaying advertisements</li>
+                <li><strong>Google AdSense:</strong> For displaying advertisements on the website</li>
+                <li><strong>Google AdMob:</strong> For displaying advertisements in our Android app. AdMob may collect your device's advertising ID, IP address and app interaction data to show and measure ads. You can reset or delete your advertising ID in your phone's Settings &gt; Google &gt; Ads. EEA/UK users are asked for consent before personalised ads are shown.</li>
                 <li><strong>Google Analytics:</strong> For website analytics</li>
                 <li><strong>AI image services:</strong> For generating mehendi designs and virtual try-on results</li>
                 <li><strong>Hosting &amp; database provider:</strong> For serving the website and storing site data</li>

@@ -142,6 +142,24 @@ const MehndiTryOn = () => {
 
   const remaining = Math.max(0, DAILY_LIMIT - used);
 
+  const watchAdForTryOn = async () => {
+    const earned = await showRewarded();
+    if (!earned) {
+      toast({ title: "Ad पूरा नहीं हुआ", description: "Extra try-on के लिए पूरा ad देखें।" });
+      return;
+    }
+    try {
+      localStorage.setItem(
+        QUOTA_KEY,
+        JSON.stringify({ date: todayKey(), count: Math.max(0, readQuota() - 1) }),
+      );
+    } catch {
+      /* ignore */
+    }
+    setUsed(readQuota());
+    toast({ title: "🎉 1 extra Try-On मिल गया!" });
+  };
+
   const handleFile = async (file?: File | null) => {
     if (!file) return;
     if (!file.type.startsWith("image/")) {
@@ -308,6 +326,11 @@ const MehndiTryOn = () => {
           <p className="text-center text-xs text-muted-foreground">
             आज {remaining} / {DAILY_LIMIT} free try-on बाकी हैं
           </p>
+          {remaining <= 0 && isNativeApp() && (
+            <Button variant="outline" className="w-full" onClick={watchAdForTryOn}>
+              🎁 Ad देखें और 1 extra Try-On पाएं
+            </Button>
+          )}
         </div>
 
         <p className="flex items-start gap-2 rounded-lg bg-muted/50 p-3 text-xs text-muted-foreground">

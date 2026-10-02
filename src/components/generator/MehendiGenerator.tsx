@@ -278,6 +278,8 @@ const MehendiGenerator = ({ compact = false }: MehendiGeneratorProps) => {
 
       if (data?.imageUrl) {
         setGeneratedImage(data.imageUrl);
+        // Native app only: interstitial at a natural break (max 1 per 3 min, every 3rd design)
+        setTimeout(() => void maybeShowInterstitialAfterDesign(), 2500);
         const label = `${designType}${bodyPart !== "hands" ? " · " + bodyPart : ""}${selectedMotifs.length ? " · " + selectedMotifs.slice(0, 2).join(",") : ""}${selectedStyles.length ? " · " + selectedStyles.slice(0, 2).join(",") : ""}`;
         setSessionGallery((prev) => {
           const next = [
