@@ -4,76 +4,60 @@
 
 /* AIMehendi.in Design System - Traditional Indian Mehendi Aesthetic */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Karla:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@500;600;700&display=swap');
 
 @layer base {
   :root {
-    /* Warm Mehendi/Henna Color Palette */
-    --background: 35 40% 97%;
-    --foreground: 25 45% 15%;
-
-    --card: 35 35% 95%;
-    --card-foreground: 25 45% 15%;
-
-    --popover: 35 35% 95%;
-    --popover-foreground: 25 45% 15%;
-
-    /* Primary - Rich Henna Brown */
-    --primary: 25 60% 30%;
-    --primary-foreground: 40 45% 96%;
-
-    /* Secondary - Warm Gold */
-    --secondary: 43 75% 55%;
-    --secondary-foreground: 25 45% 15%;
-
-    /* Muted - Soft Beige */
-    --muted: 35 25% 90%;
-    --muted-foreground: 25 35% 30%;
-
-    /* Accent - Saffron Orange */
-    --accent: 25 85% 50%;
+    /* Bridal Rose & Gold */
+    --background: 350 69% 97%;
+    --foreground: 341 50% 16%;
+    --card: 0 0% 100%;
+    --card-foreground: 341 50% 16%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 341 50% 16%;
+    --primary: 341 65% 33%;
+    --primary-foreground: 350 69% 97%;
+    --secondary: 42 54% 54%;
+    --secondary-foreground: 341 50% 14%;
+    --muted: 350 55% 93%;
+    --muted-foreground: 341 25% 34%;
+    --accent: 340 62% 55%;
     --accent-foreground: 0 0% 100%;
+    --destructive: 0 75% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 350 45% 88%;
+    --input: 350 45% 88%;
+    --ring: 341 65% 33%;
+    --radius: 1.25rem;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --mehendi-brown: 341 65% 33%;
+    --mehendi-dark: 341 60% 20%;
+    --mehendi-light: 345 45% 55%;
+    --gold: 42 54% 54%;
+    --gold-light: 43 70% 75%;
+    --saffron: 340 62% 55%;
+    --cream: 350 69% 97%;
+    --terracotta: 350 55% 45%;
+    --blush: 350 69% 87%;
 
-    --border: 35 30% 85%;
-    --input: 35 30% 88%;
-    --ring: 25 60% 30%;
+    --gradient-hero: linear-gradient(135deg, hsl(341 65% 28%) 0%, hsl(340 55% 42%) 55%, hsl(42 54% 54%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42 54% 50%) 0%, hsl(43 70% 72%) 100%);
+    --gradient-warm: linear-gradient(180deg, hsl(350 69% 97%) 0%, hsl(350 60% 93%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(350 60% 96%) 100%);
 
-    --radius: 0.75rem;
+    --shadow-soft: 0 6px 24px -8px hsl(341 65% 33% / 0.15);
+    --shadow-card: 0 14px 40px -14px hsl(341 65% 33% / 0.25);
+    --shadow-glow: 0 0 40px -10px hsl(340 62% 55% / 0.35);
+    --shadow-gold: 0 8px 28px -8px hsl(42 54% 54% / 0.45);
 
-    /* Custom Mehendi Colors */
-    --mehendi-brown: 25 60% 30%;
-    --mehendi-dark: 20 55% 20%;
-    --mehendi-light: 30 45% 45%;
-    --gold: 43 75% 55%;
-    --gold-light: 45 80% 70%;
-    --saffron: 25 85% 50%;
-    --cream: 40 45% 96%;
-    --terracotta: 15 55% 45%;
-
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(25 60% 30%) 0%, hsl(43 75% 55%) 50%, hsl(25 85% 50%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(43 75% 55%) 0%, hsl(45 80% 70%) 100%);
-    --gradient-warm: linear-gradient(180deg, hsl(35 40% 97%) 0%, hsl(35 35% 92%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(35 35% 95%) 0%, hsl(35 30% 92%) 100%);
-
-    /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(25 60% 30% / 0.15);
-    --shadow-card: 0 8px 30px -8px hsl(25 60% 30% / 0.2);
-    --shadow-glow: 0 0 40px -10px hsl(43 75% 55% / 0.4);
-    --shadow-gold: 0 4px 25px -5px hsl(43 75% 55% / 0.35);
-
-    /* Sidebar */
-    --sidebar-background: 35 35% 95%;
-    --sidebar-foreground: 25 45% 15%;
-    --sidebar-primary: 25 60% 30%;
-    --sidebar-primary-foreground: 40 45% 96%;
-    --sidebar-accent: 35 25% 90%;
-    --sidebar-accent-foreground: 25 45% 15%;
-    --sidebar-border: 35 30% 85%;
-    --sidebar-ring: 25 60% 30%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 341 50% 16%;
+    --sidebar-primary: 341 65% 33%;
+    --sidebar-primary-foreground: 350 69% 97%;
+    --sidebar-accent: 350 55% 93%;
+    --sidebar-accent-foreground: 341 50% 16%;
+    --sidebar-border: 350 45% 88%;
+    --sidebar-ring: 341 65% 33%;
   }
 
   .dark {
@@ -153,7 +137,7 @@
 
   body {
     @apply bg-background text-foreground font-sans;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Karla', 'Noto Sans Devanagari', sans-serif;
     -webkit-tap-highlight-color: transparent;
     overscroll-behavior-y: none;
   }
@@ -166,14 +150,15 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cormorant Garamond', 'Noto Serif Devanagari', serif;
+    letter-spacing: -0.01em;
   }
 }
 
 @layer components {
   /* Mehendi Pattern Decorations */
   .mehendi-pattern {
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c4956a' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238b1e3f' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
 
   /* Decorative Border */
