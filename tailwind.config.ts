@@ -72,8 +72,8 @@ export default {
         terracotta: "hsl(var(--terracotta))",
       },
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'],
-        serif: ['Playfair Display', 'serif'],
+        sans: ['Karla', 'Noto Sans Devanagari', 'sans-serif'],
+        serif: ['Cormorant Garamond', 'Noto Serif Devanagari', 'serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
