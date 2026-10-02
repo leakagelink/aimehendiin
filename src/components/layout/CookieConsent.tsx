@@ -31,7 +31,7 @@ const CookieConsent = () => {
     <div
       role="dialog"
       aria-label="Cookie consent"
-      className="fixed inset-x-0 bottom-[calc(4rem+env(safe-area-inset-bottom))] md:bottom-0 z-[60] border-t border-border bg-card/95 backdrop-blur px-4 py-4 shadow-lg"
+      className="hidden md:block fixed inset-x-0 bottom-[calc(4rem+env(safe-area-inset-bottom))] md:bottom-0 z-[60] border-t border-border bg-card/95 backdrop-blur px-4 py-4 shadow-lg"
     >
       <div className="container flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
         <p className="flex items-start gap-2 text-sm text-muted-foreground">
