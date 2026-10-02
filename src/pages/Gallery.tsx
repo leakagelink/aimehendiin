@@ -27,7 +27,7 @@ const Gallery = () => {
     : "Mehendi Design Gallery — Free HD Downloads | AIMehendi.in";
   const description = category
     ? category.description
-    : "1000+ free HD mehendi designs — bridal, Arabic, mandala, finger & simple patterns। Browse, download aur inspiration pao ek hi jagah.";
+    : "Free HD mehendi designs — bridal, Arabic, mandala, finger & simple patterns। Browse, download aur inspiration pao ek hi jagah.";
   const h1 = category?.h1;
 
   // Fetch gallery images for schema (scoped to the active category)
@@ -56,7 +56,7 @@ const Gallery = () => {
     "@type": "ImageGallery",
     name: category
       ? `${category.h1} Gallery`
-      : "Mehendi Design Gallery - 1000+ Free Patterns",
+      : "Mehendi Design Gallery - Free HD Patterns",
     description,
     url: pageUrl,
     isPartOf: { "@id": `${siteUrl}/#website` },

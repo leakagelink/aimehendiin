@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: "क्या AI Mehendi Generator free है?",
-    answer: "हाँ, हमारा AI Mehendi Generator पूरी तरह से free है। आप unlimited designs generate कर सकते हैं बिना किसी payment के।"
+    answer: "हाँ, हमारा AI Mehendi Generator पूरी तरह से free है। आप बिना किसी payment के designs generate कर सकते हैं (fair-use daily limits लागू हो सकती हैं)।"
   },
   {
     question: "कौन-कौन से mehendi design styles available हैं?",
