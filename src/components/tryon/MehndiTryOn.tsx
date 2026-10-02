@@ -1,3 +1,4 @@
+import { isNativeApp, showRewarded } from "@/lib/admob";
 import { useRef, useState } from "react";
 import { Upload, Sparkles, Download, RotateCcw, ShieldCheck, Loader2, Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";
